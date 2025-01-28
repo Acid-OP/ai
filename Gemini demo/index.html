@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axios GET with Input</title>
+</head>
+<body>
+  <h1>Fetch Data Example</h1>
+  <label for="inputValue">Enter Value:</label>
+  <input type="text" id="inputValue" placeholder="Enter something...">
+  <button id="fetchButton">Fetch Data</button>
+
+  <div id="output" style="margin-top: 20px;"></div>
+
+  <!-- Include Axios from a CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script>
+    // Get references to the DOM elements
+    const inputField = document.getElementById('inputValue');
+    const fetchButton = document.getElementById('fetchButton');
+    const outputDiv = document.getElementById('output');
+
+    // Add event listener to the button
+    fetchButton.addEventListener('click', () => {
+      const userInput = inputField.value.trim(); // Get the input value
+
+      if (!userInput) {
+        outputDiv.textContent = 'Please enter a value before fetching.';
+        return;
+      }
+
+      // Send GET request with user input as a query parameter
+      axios.get(`http://localhost:3000/api/content?query=${encodeURIComponent(userInput)}`)
+        .then(response => {
+          // Extract the result field from the response
+          let resultText = response.data.result;
+
+          // Replace \n with <br> to display as new lines in HTML
+          resultText = resultText.replace(/\n/g, '<br>');
+
+          // Set the innerHTML of the outputDiv to allow rendering of <br> tags
+          outputDiv.innerHTML = resultText;
+        })
+        .catch(error => {
+          outputDiv.textContent = `Error: ${error.message}`;
+        });
+    });
+  </script>
+</body>
+</html>
