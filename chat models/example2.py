@@ -1,20 +1,16 @@
-import google.generativeai as genai
+from langchain_google_genai import GoogleGenerativeAI
+from langchain.schema import SystemMessage, HumanMessage
+from dotenv import load_dotenv
+load_dotenv()
 
-# Set up your Gemini API key
-genai.configure(api_key="enter your key here")
+llm = GoogleGenerativeAI(model="gemini-pro")
 
-# Define the prompt with instructions (SystemMessage)
-system_message = "Solve the following math problems"
+messages = [
+    SystemMessage("You are a helpful AI assistant that solves math problems."),
+    HumanMessage("What is 81 divided by 9?")
+]
 
-# User’s question (HumanMessage)
-human_message = "What is 81 divided by 9?"
+result = llm.invoke(messages);
+print(result)
 
-# Combine both to create a full prompt
-prompt = f"{system_message}\n{human_message}"
-
-# Call the model with the prompt
-response = genai.GenerativeModel("gemini-1.5-flash").generate_content(prompt)
-
-# Print the AI's answer (AIMessage)
-print(f"Answer from AI: {response.text}")
  

@@ -1,11 +1,11 @@
-import google.generativeai as genai
+from langchain_google_genai import GoogleGenerativeAI
 
-genai.configure(api_key="enter your key here")
-model = genai.GenerativeModel("gemini-1.5-flash")
+from dotenv import load_dotenv
 
-product_name = "Smartphone with 5G connectivity"
+load_dotenv()
+# Initialize the model
+llm = GoogleGenerativeAI(model="gemini-pro")
 
-response = model.generate_content(f"Generate a product description for {product_name}")
-print(response.text)
-
-
+# Run inference
+response = llm.invoke("What is LangChain?")
+print(response)
