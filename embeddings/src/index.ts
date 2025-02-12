@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 // Initialize HF API
-const hf = new HfInference("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");
+const hf = new HfInference("Enter your key here");
 
 // Path for storing embeddings
 const embeddingsPath = path.join(__dirname, "embeddings.json");
