@@ -1,87 +1,74 @@
-# LangChain Bootcamp
+# Chat Models - README
 
-Welcome to the LangChain Bootcamp repository!
-Here is my growth that i have been documenting in the field of Ai and Lanchain.
+## Overview
 
----
+This folder contains four different implementations of AI-powered chat models using Google Gemini via LangChain. These implementations showcase different functionalities, ranging from simple LLM responses to interactive chat history management using Firestore.
 
-## Course Outline
+## Prerequisites
 
-1. **Setup Environment**
-2. **Chat Models**
-3. **Prompt Templates**
-4. **Chains**
-5. **RAG (Retrieval-Augmented Generation)**
-6. **Agents & Tools**
+Before running any script, ensure you have the following installed:
 
----
+- Python 3.8+
+- Required Python packages (install using `pip install -r requirements.txt`)
+- A valid Google API key (for Google Generative AI and Firestore, if applicable)
+- `.env` file with the API key stored as `GOOGLE_API_KEY`
+- Firestore credentials (for the Firestore-backed chat history script)
 
-## Getting Started
+### Install Required Dependencies
 
-### Prerequisites
+Run the following command to install dependencies:
 
-Before you begin, ensure you have the following installed:
+```sh
+pip install langchain langchain-google-genai google-cloud-firestore python-dotenv
+```
 
-- **Python 3.10 or 3.11**
-- **Poetry** (Follow the [Poetry installation tutorial](https://python-poetry.org/docs/#installation) to install Poetry on your system)
+## Scripts Explanation
 
-### Installation
+### 1. `simple_inference.py`
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/Acid-OP/ai
-   cd ai
-   ```
+This script initializes the `GoogleGenerativeAI` model and performs a basic query using the Gemini model.
 
-2. **Install dependencies using Poetry**:
-   ```bash
-   poetry install --no-root
-   ```
+#### How to Run:
 
-3. **Activate the Poetry shell** to run the examples:
-   ```bash
-   poetry shell
-   ```
+```sh
+python simple_inference.py
+```
 
-4. **Install all dependencies**:
-   Ensure all dependencies are installed by running:
-   ```bash
-   poetry install
-   ```
+### 2. `interactive_chat.py`
 
-5. **Run the code examples**:
-   Open the project in your preferred code editor (e.g., VS Code) and run the examples directly from the editor or using the terminal.
+This script enables an interactive chat experience with memory by maintaining the chat history within the session.
 
----
+#### How to Run:
 
-## Repository Structure
+```sh
+python interactive_chat.py
+```
 
-Here’s a breakdown of the folders and what you’ll find in each:
+Type messages and interact with the AI. Type `exit` to stop the chat.
 
-### 1. Chat Models
+### 3. `firestore_chat.py`
 
-This folder contains examples demonstrating how to use LangChain's chat models.
+This script integrates Firestore to store and retrieve chat history, allowing for persistent conversations across sessions.
 
-- **`example1.py`**: Basic example of using a chat model.
-- **`example2.py`**: Example of a basic conversation using a chat model.
+#### Firestore Setup:
 
-## Contributing
+- Set up Firestore in Google Cloud.
+- Create a service account and download the JSON key file.
+- Set the path to the JSON key file in the script.
 
-Feel free to contribute to this project by opening issues or submitting pull requests. Your contributions are welcome!
+#### How to Run:
 
----
+```sh
+python firestore_chat.py
+```
 
-## License
+## Future Improvements
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+- Enhance memory capabilities using vector databases.
+- Implement different LLMs for comparison.
+- Expand with UI integration for real-time chat applications.
 
 ---
 
-## Acknowledgments
+For any issues, feel free to reach out!
 
-- [LangChain](https://www.langchain.com/) for providing the framework.
-- [Poetry](https://python-poetry.org/) for dependency management.
-
----
-
-Keep Grinding! 🚀
