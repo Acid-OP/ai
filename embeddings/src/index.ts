@@ -1,44 +1,31 @@
-import { HfInference } from "@huggingface/inference";
-import fs from "fs";
-import path from "path";
+import { ChromaClient } from "chromadb";
 
-// Initialize HF API
-const hf = new HfInference("Enter your key here");
+async function run() {
+    const client = new ChromaClient();
 
-// Path for storing embeddings
-const embeddingsPath = path.join(__dirname, "embeddings.json");
-
-// Text file path
-const filePath = path.join(__dirname, "../documents/odf.txt");
-
-// Read the text file
-async function readTextFile(filePath: string): Promise<string> {
-    return fs.readFileSync(filePath, "utf-8");
-}
-
-// Generate embeddings
-async function getEmbeddings(text: string) {
-    return await hf.featureExtraction({
-        model: "sentence-transformers/all-MiniLM-L6-v2",
-        inputs: text,
+    // Get or create the collection
+    const collection = await client.getOrCreateCollection({
+        name: "my_collection",
     });
+
+    // Upsert documents
+    await collection.upsert({
+        documents: [
+            "This is a document about pineapple",
+            "This is a document about oranges",
+        ],
+        ids: ["id1", "id2"],
+        
+    });
+
+    // Query the collection
+    const results = await collection.query({
+        queryTexts: "This is a query document about florida", // Chroma will embed this for you
+        nResults: 2, // How many results to return
+    });
+
+    console.log(results);
 }
 
-// Save embeddings to a JSON file
-async function saveEmbeddings() {
-    try {
-        const text = await readTextFile(filePath);
-        console.log("Extracted Text:", text.slice(0, 500)); // Show first 500 chars
-
-        const embeddings = await getEmbeddings(text);
-        console.log("Embeddings generated successfully!");
-
-        fs.writeFileSync(embeddingsPath, JSON.stringify(embeddings, null, 2));
-        console.log(`Embeddings saved to ${embeddingsPath}`);
-    } catch (error) {
-        console.error("Error:", error);
-    }
-}
-
-// Run the function
-saveEmbeddings();
+// Call the async function to execute
+run().catch((error) => console.error("Error:", error));
