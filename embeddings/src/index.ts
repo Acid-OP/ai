@@ -1,9 +1,9 @@
 import { HfInference } from "@huggingface/inference";
-import { ChromaClient } from "chromadb";
+import { ChromaClient, IEmbeddingFunction } from "chromadb";
 import fs from "fs";
 import path from "path";
 
-// Initialize HF API and ChromaDB client
+// Initialize Hugging Face API and ChromaDB client
 const hf = new HfInference("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");
 const client = new ChromaClient();
 
@@ -23,16 +23,50 @@ async function getEmbeddings(text: string): Promise<number[]> {
         inputs: text,
     });
 
-    // Ensure it is always a flat number[] array
-    return Array.isArray(embedding[0]) ? (embedding as number[][])[0] : (embedding as number[]);
+    return Array.isArray(embedding[0]) ? (embedding as number[][])[0] : (embedding as number[]); // Ensure embedding is flat
 }
 
-// Store embeddings in ChromaDB
-async function storeInChromaDB(documents: string[], embeddings: number[][]) {
-    const collection = await client.getOrCreateCollection({ name: "my_collection" });
+// Chunk the document into smaller parts
+function chunkDocument(text: string, chunkSize: number): string[] {
+    const chunks: string[] = [];
+    let startIndex = 0;
 
-    // Generate IDs dynamically
-    const ids = documents.map((_, index) => `doc_${index}`);
+    while (startIndex < text.length) {
+        let chunk = text.slice(startIndex, startIndex + chunkSize);
+        chunks.push(chunk);
+        startIndex += chunkSize;
+    }
+
+    return chunks;
+}
+
+// Define embedding function as a class implementing the IEmbeddingFunction interface
+class MyEmbeddingFunction implements IEmbeddingFunction {
+    // The embed method which generates embeddings for texts
+    async embed(texts: string[]): Promise<number[][]> {
+        const embeddings = await Promise.all(
+            texts.map(async (text) => {
+                return await getEmbeddings(text);
+            })
+        );
+        return embeddings;
+    }
+
+    // The required generate method that ChromaDB expects
+    async generate(texts: string[]): Promise<number[][]> {
+        return this.embed(texts); // Simply call embed and return its result
+    }
+}
+
+// Store chunks and embeddings in ChromaDB
+async function storeInChromaDB(documents: string[], embeddings: number[][]) {
+    const collection = await client.getOrCreateCollection({
+        name: "my_collection",
+        embeddingFunction: new MyEmbeddingFunction(),
+    });
+
+    // Generate IDs dynamically for each chunk
+    const ids = documents.map((_, index) => `doc_chunk_${index}`);
 
     // Insert embeddings into ChromaDB
     await collection.upsert({
@@ -44,26 +78,94 @@ async function storeInChromaDB(documents: string[], embeddings: number[][]) {
     console.log("Embeddings stored in ChromaDB successfully!");
 }
 
-// Generate and save embeddings
-async function saveEmbeddings() {
+// Query ChromaDB with user input and get multiple matching documents
+async function queryChromaDB(query: string) {
     try {
-        const text = await readTextFile(filePath);
-        console.log("Extracted Text:", text.slice(0, 500)); // Show first 500 chars
+        // Generate embedding for the query
+        const queryEmbedding = await getEmbeddings(query);
+        console.log("Query Embedding Generated!");
 
-        const embeddings = await getEmbeddings(text);
-        console.log("Embeddings generated successfully!");
+        // Get collection from ChromaDB
+        const collection = await client.getCollection({
+            name: "my_collection",
+            embeddingFunction: new MyEmbeddingFunction(),
+        });
 
-        // Save embeddings and document text
-        const data = { documents: [text], embeddings: [embeddings] };
-        fs.writeFileSync(embeddingsPath, JSON.stringify(data, null, 2));
-        console.log(`Embeddings saved to ${embeddingsPath}`);
+        // Perform similarity search and fetch top 3 results
+        const results = await collection.query({
+            queryEmbeddings: [queryEmbedding], // Search with the generated embedding
+            nResults: 3, // Retrieve top 3 closest matches
+        });
 
-        // Store in ChromaDB
-        await storeInChromaDB([text], [embeddings]);
+        // Extract the best-matching documents (chunks)
+        if (results.documents && results.documents.length > 0) {
+            console.log("Best Matches:", results.documents);
+            return results.documents[0]; // Return the closest document/chunk
+        } else {
+            console.log("No matching document found.");
+            return "No relevant answer found.";
+        }
     } catch (error) {
-        console.error("Error:", error);
+        console.error("Error querying ChromaDB:", error);
+        return "Error retrieving answer.";
     }
 }
 
-// Run function
-saveEmbeddings();
+// Implement QA using Hugging Face model for extractive question answering
+async function getAnswerFromQAModel(question: string, context: string): Promise<string> {
+    const result = await hf.questionAnswering({
+        model: "distilbert-base-cased-distilled-squad",
+        inputs: { question, context },
+    });
+    return result.answer;
+}
+
+// Query ChromaDB and use the QA model for extracting the answer
+async function queryChromaDBWithQA(query: string) {
+    try {
+        // Generate embedding for the query
+        const queryEmbedding = await getEmbeddings(query);
+        console.log("Query Embedding Generated!");
+
+        // Get collection from ChromaDB
+        const collection = await client.getCollection({
+            name: "my_collection",
+            embeddingFunction: new MyEmbeddingFunction(),
+        });
+
+        // Perform similarity search and fetch top 3 results
+        const results = await collection.query({
+            queryEmbeddings: [queryEmbedding], // Search with the generated embedding
+            nResults: 3, // Retrieve top 3 chunks for better context
+        });
+
+        // Extract the best-matching chunk and answer the question
+        if (results.documents && results.documents.length > 0) {
+            const bestMatch = results.documents[0][0]; // Get the best matching chunk
+            if (bestMatch) {
+                // Use the best match to get the answer from the QA model
+                const answer = await getAnswerFromQAModel(query, bestMatch);
+                console.log("Answer:", answer);
+                return answer; // Return the extracted answer
+            } else {
+                console.log("Best match is null.");
+                return "No relevant answer found.";
+            }
+        } else {
+            console.log("No matching document found.");
+            return "No relevant answer found.";
+        }
+    } catch (error) {
+        console.error("Error querying ChromaDB:", error);
+        return "Error retrieving answer.";
+    }
+}
+
+// Example: Run a query
+async function runQuery() {
+    const userQuery = "Who is the father of Naruto?"; // Example input
+    const answer = await queryChromaDBWithQA(userQuery); // Use the QA approach
+    console.log("Answer:", answer);
+}
+
+runQuery(); // Call this function to test querying and QA
