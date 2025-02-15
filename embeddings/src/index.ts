@@ -1,31 +1,69 @@
+import { HfInference } from "@huggingface/inference";
 import { ChromaClient } from "chromadb";
+import fs from "fs";
+import path from "path";
 
-async function run() {
-    const client = new ChromaClient();
+// Initialize HF API and ChromaDB client
+const hf = new HfInference("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");
+const client = new ChromaClient();
 
-    // Get or create the collection
-    const collection = await client.getOrCreateCollection({
-        name: "my_collection",
-    });
+// Define paths
+const embeddingsPath = path.join(__dirname, "embeddings.json");
+const filePath = path.join(__dirname, "../documents/odf.txt");
 
-    // Upsert documents
-    await collection.upsert({
-        documents: [
-            "This is a document about pineapple",
-            "This is a document about oranges",
-        ],
-        ids: ["id1", "id2"],
-        
-    });
-
-    // Query the collection
-    const results = await collection.query({
-        queryTexts: "This is a query document about florida", // Chroma will embed this for you
-        nResults: 2, // How many results to return
-    });
-
-    console.log(results);
+// Read text file
+async function readTextFile(filePath: string): Promise<string> {
+    return fs.readFileSync(filePath, "utf-8");
 }
 
-// Call the async function to execute
-run().catch((error) => console.error("Error:", error));
+// Generate embeddings using Hugging Face
+async function getEmbeddings(text: string): Promise<number[]> {
+    const embedding = await hf.featureExtraction({
+        model: "sentence-transformers/all-MiniLM-L6-v2",
+        inputs: text,
+    });
+
+    // Ensure it is always a flat number[] array
+    return Array.isArray(embedding[0]) ? (embedding as number[][])[0] : (embedding as number[]);
+}
+
+// Store embeddings in ChromaDB
+async function storeInChromaDB(documents: string[], embeddings: number[][]) {
+    const collection = await client.getOrCreateCollection({ name: "my_collection" });
+
+    // Generate IDs dynamically
+    const ids = documents.map((_, index) => `doc_${index}`);
+
+    // Insert embeddings into ChromaDB
+    await collection.upsert({
+        ids,
+        documents,
+        embeddings,
+    });
+
+    console.log("Embeddings stored in ChromaDB successfully!");
+}
+
+// Generate and save embeddings
+async function saveEmbeddings() {
+    try {
+        const text = await readTextFile(filePath);
+        console.log("Extracted Text:", text.slice(0, 500)); // Show first 500 chars
+
+        const embeddings = await getEmbeddings(text);
+        console.log("Embeddings generated successfully!");
+
+        // Save embeddings and document text
+        const data = { documents: [text], embeddings: [embeddings] };
+        fs.writeFileSync(embeddingsPath, JSON.stringify(data, null, 2));
+        console.log(`Embeddings saved to ${embeddingsPath}`);
+
+        // Store in ChromaDB
+        await storeInChromaDB([text], [embeddings]);
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+
+// Run function
+saveEmbeddings();
