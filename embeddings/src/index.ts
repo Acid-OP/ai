@@ -4,7 +4,7 @@ import fs from "fs";
 import path from "path";
 
 // Initialize Hugging Face API and ChromaDB client
-const hf = new HfInference("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");
+const hf = new HfInference("put your hugging face api key here ");
 const client = new ChromaClient();
 
 // Define paths
