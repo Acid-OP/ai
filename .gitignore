@@ -12,7 +12,9 @@ dist
 dist-ssr
 *.local
 .env
-
+documents
+getting-started
+chroma_data
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
