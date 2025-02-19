@@ -1,62 +1,62 @@
-# README
+# Document Embedding and Retrieval using Hugging Face and ChromaDB
 
 ## Overview
-This project generates text embeddings using Hugging Face's `sentence-transformers/all-MiniLM-L6-v2` model and saves them to a JSON file. The embeddings can be used for various NLP tasks such as similarity search, clustering, and information retrieval.
+This project demonstrates how to:
+- Read a text document and generate embeddings using a Hugging Face model.
+- Store the embeddings in ChromaDB for efficient retrieval.
+- Query ChromaDB and retrieve the most relevant chunk of text.
+- Use Hugging Face's extractive question-answering model to generate answers from the retrieved text.
+
+## Features
+- **Text Chunking**: Splits a document into smaller segments for better embedding and retrieval.
+- **Embeddings with Hugging Face**: Generates embeddings using the `sentence-transformers/all-MiniLM-L6-v2` model.
+- **Vector Storage with ChromaDB**: Stores and retrieves document chunks based on similarity search.
+- **Extractive QA**: Uses the `distilbert-base-cased-distilled-squad` model for answering queries based on the retrieved text.
 
 ## Prerequisites
-Ensure you have the following installed:
-- **Node.js** (Latest LTS recommended)
-- **npm or yarn** (for package management)
+Ensure you have Node.js installed on your system.
 
-## Installation
-1. Clone the repository:
-   ```sh
-   git clone <repo_url>
-   cd <repo_folder>
-   ```
-2. Install dependencies:
-   ```sh
-   npm install @huggingface/inference fs path
-   ```
-
-## Project Structure
-```
-project-root/
-│── dist/
-|   ├── embeddings.json            # Stores generated embeddings (included in gitignore)
-│── src/
-│   ├── generateEmbeddings.ts  # Main script for generating embeddings
-│── documents/
-│   ├── odf.txt                # Sample text file
+### Install Dependencies
+```sh
+npm install @huggingface/inference chromadb fs path
 ```
 
-## How It Works
-1. Reads the text file from `../documents/odf.txt`.
-2. Generates embeddings using the Hugging Face API.
-3. Saves the generated embeddings to `embeddings.json`.
+### Set Up API Key
+Replace `"put your hugging face api key here"` with your actual Hugging Face API key.
 
 ## Usage
-Run the script to generate and store embeddings:
+### 1. Store Document Chunks in ChromaDB
+The script reads the `odf.txt` file, splits it into smaller parts, generates embeddings, and stores them in ChromaDB.
 ```sh
-node src/generateEmbeddings.js
+node index.js
 ```
 
-## Configuration
-- **Text File Path:** Update `filePath` in `generateEmbeddings.ts` to point to your desired text file.
-- **Hugging Face API Key:** Replace the placeholder API key in `HfInference` with your own from [Hugging Face](https://huggingface.co/settings/tokens).
+### 2. Query the System
+After storing the document, the script runs an example query (`"Who is Gaurav?"`). You can modify this in the `runQuery` function.
 
-## Example Output
-```sh
-Extracted Text: "This is an example document..."
-Embeddings generated successfully!
-Embeddings saved to embeddings.json
+### 3. Expected Output
+- Retrieves the most relevant chunk from ChromaDB.
+- Passes it to the QA model to extract an answer.
+- Prints the final response.
+
+## File Structure
+```
+project-folder/
+│-- documents/
+│   └── odf.txt  # Your input text file
+│-- index.js  # Main script
+│-- package.json
 ```
 
-## Next Steps
-- Implement similarity search using cosine similarity.
-- Store embeddings in a database instead of a JSON file.
-- Expand to multiple documents and chunk-based embeddings.
+## Customization
+- Modify `filePath` to load a different document.
+- Change the `chunkSize` in `chunkDocument` function.
+- Update the `runQuery` function to take user input dynamically.
+
+## Notes
+- Ensure ChromaDB is running or accessible for storing and retrieving embeddings.
+- Use a proper API key to avoid request failures.
 
 ## License
-This project is licensed under the MIT License.
+This project is open-source and available under the MIT License.
 
