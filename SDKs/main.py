@@ -231,58 +231,26 @@ Preferences:
 
 
 def save_to_pdf(portfolio: str, profile: dict, validation: list, filename: str):
-    from fpdf import FPDF
-    pdf = FPDF()
-    pdf.set_auto_page_break(auto=True, margin=15)
-    
-    # Page 1: User Input Summary
-    pdf.add_page()
-    pdf.set_font("Arial", "B", 16)
-    pdf.cell(0, 10, "USER INPUT (Quiz Results)", ln=True, align="C")
-    pdf.ln(5)
-    
-    pdf.set_font("Arial", "B", 11)
-    pdf.cell(0, 8, "Parsed Profile:", ln=True)
-    pdf.set_font("Arial", size=10)
-    pdf.multi_cell(0, 6, f"Goal: {profile.get('goal', 'N/A')}")
-    pdf.multi_cell(0, 6, f"Time Horizon: {profile.get('time_horizon', 'N/A')}")
-    pdf.multi_cell(0, 6, f"Risk Behavior: {profile.get('risk_behavior', 'N/A')}")
-    pdf.multi_cell(0, 6, f"Amount: ${profile.get('amount', 0):,.2f}")
-    pdf.multi_cell(0, 6, f"Regions: {', '.join(profile.get('regions', [])) or 'None'}")
-    pdf.multi_cell(0, 6, f"Sectors: {', '.join(profile.get('sectors', [])) or 'None'}")
-    pdf.multi_cell(0, 6, f"Trends: {', '.join(profile.get('trends', [])) or 'None'}")
-    pdf.multi_cell(0, 6, f"Bonds: {', '.join(profile.get('bonds', [])) or 'None'}")
-    pdf.multi_cell(0, 6, f"Commodities: {', '.join(profile.get('commodities', [])) or 'None'}")
-    
-    pdf.ln(10)
-    pdf.set_font("Arial", "B", 11)
-    pdf.cell(0, 8, f"ETF Validation ({len(validation)} matched in approved list):", ln=True)
-    pdf.set_font("Arial", size=9)
-    for r in validation:
-        text = f"[{r['score']:.0%}] {r['matched_to']}"
-        pdf.multi_cell(0, 5, text.encode('latin-1', 'replace').decode('latin-1'))
-    
-    # Page 2: Portfolio
-    pdf.add_page()
-    pdf.set_font("Arial", "B", 16)
-    pdf.cell(0, 10, "GENERATED PORTFOLIO", ln=True, align="C")
-    pdf.ln(5)
-    pdf.set_font("Arial", size=10)
-    for line in portfolio.split('\n'):
-        line = line.replace('✓', '*').replace('✔', '*').replace('•', '*')
-        clean_line = line.encode('latin-1', 'replace').decode('latin-1')
-        if line.startswith(('Portfolio Overview', 'Asset Allocation', 'Core Holdings', 
-                           'Thematic', 'Portfolio Characteristics', 'Key Features',
-                           'Investment Rationale', 'Rebalancing')):
-            pdf.set_font("Arial", "B", 11)
-            pdf.ln(3)
-            pdf.multi_cell(0, 6, clean_line)
-            pdf.set_font("Arial", size=10)
-        else:
-            pdf.multi_cell(0, 5, clean_line)
-    
-    pdf.output(filename)
-    print(f"Saved to {filename}")
+    """Generate professional PDF with charts"""
+    try:
+        from pdf_generator import generate_portfolio_pdf
+        generate_portfolio_pdf(portfolio, profile, filename)
+    except Exception as e:
+        print(f"Professional PDF failed: {e}")
+        print("Using basic PDF fallback...")
+        from fpdf import FPDF
+        pdf = FPDF()
+        pdf.set_auto_page_break(auto=True, margin=15)
+        pdf.add_page()
+        pdf.set_font("Arial", "B", 16)
+        pdf.cell(0, 10, "Portfolio Report", ln=True, align="C")
+        pdf.set_font("Arial", size=10)
+        for line in portfolio.split('\n'):
+            line = line.replace('✓', '*').replace('✔', '*')
+            clean = line.encode('latin-1', 'replace').decode('latin-1')
+            pdf.multi_cell(0, 5, clean)
+        pdf.output(filename)
+        print(f"Basic PDF saved to {filename}")
 
 
 def run_portfolio(user_input: str):
@@ -318,7 +286,9 @@ def run_portfolio(user_input: str):
     for r in fuzzy_results:
         print(f"    [{r['score']:.0%}] {r['matched_to'][:50]}...")
     
-    save_to_pdf(response, profile, fuzzy_results, "portfolio.pdf")
+    from datetime import datetime
+    filename = f"Portfolio_Report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
+    save_to_pdf(response, profile, fuzzy_results, filename)
     return profile, response, fuzzy_results
 
 
@@ -346,19 +316,7 @@ Preferred Topics: World (all regions), Emerging markets, Asia-Pacific, Latin Ame
     print("=" * 60)
     print("PORTFOLIO GENERATOR")
     print("=" * 60)
-    print("\nPaste the quiz results (press Enter twice when done):\n")
-    
-    lines = []
-    while True:
-        line = input()
-        if line == "":
-            if lines and lines[-1] == "":
-                break
-            lines.append(line)
-        else:
-            lines.append(line)
-    
-    user_input = '\n'.join(lines)
+    user_input = input("\nPaste quiz results and press Enter: ")
     run_portfolio(user_input)
 
 
