@@ -1,0 +1,7 @@
+google-genai
+python-dotenv
+fpdf
+matplotlib
+yfinance
+pandas
+

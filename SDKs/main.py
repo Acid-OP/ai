@@ -1,18 +1,29 @@
+"""
+Portfolio Generator - Main Entry Point
+Paste quiz results, press Enter, get JSON + PDF in output/portfolio_X/
+"""
+
 import os
 import re
 import json
 from difflib import SequenceMatcher
 from dotenv import load_dotenv
 from google import genai
+from portfolio_json_generator import generate_portfolio_json
+from pdf_generator import generate_pdf
 
 load_dotenv()
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+UTILS_DIR = os.path.join(BASE_DIR, 'utils')
+OUTPUT_DIR = os.path.join(BASE_DIR, 'output')
+
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
-with open("extracted_names.json", "r") as f:
+with open(os.path.join(UTILS_DIR, "extracted_names.json"), "r") as f:
     ETF_DATABASE = json.load(f)
 
-# All possible options from the quiz
+# Quiz options for parsing user input
 REGIONS = ["World (all regions)", "US Market", "Europe", "Asia-Pacific", "Emerging markets", 
            "Developed markets", "China", "Latin America", "Poland"]
 SECTORS = ["Technology", "Fintech", "Healthcare", "Energy", "Real Estate", "Industrials",
@@ -23,25 +34,33 @@ BONDS = ["Treasury Bonds", "Corporate Bonds", "Total Bond Market"]
 COMMODITIES = ["Gold", "Silver", "Palladium", "Platinum", "Uranium", "Oil", "Water"]
 
 
+def get_next_portfolio_number():
+    """Get next portfolio folder number (portfolio_1, portfolio_2, etc.)"""
+    if not os.path.exists(OUTPUT_DIR):
+        os.makedirs(OUTPUT_DIR)
+        return 1
+    existing = [d for d in os.listdir(OUTPUT_DIR) if d.startswith('portfolio_')]
+    if not existing:
+        return 1
+    numbers = []
+    for d in existing:
+        try:
+            numbers.append(int(d.split('_')[1]))
+        except:
+            pass
+    return max(numbers) + 1 if numbers else 1
+
+
 def parse_user_input(input_string: str) -> dict:
-    """Parse the quiz result string into a profile dict"""
-    
+    """Parse quiz result string into structured profile dict"""
     profile = {
-        "goal": "",
-        "risk_behavior": "",
-        "time_horizon": "",
-        "amount": 5000,
-        "regions": [],
-        "sectors": [],
-        "trends": [],
-        "bonds": [],
-        "commodities": []
+        "goal": "", "risk_behavior": "", "time_horizon": "", "amount": 5000,
+        "regions": [], "sectors": [], "trends": [], "bonds": [], "commodities": []
     }
     
-    lines = input_string.strip().split('\n')
     full_text = input_string.lower()
     
-    # Parse Investment Goal
+    # Parse goal
     if "grow them aggressively" in full_text or "grow aggressively" in full_text:
         profile["goal"] = "Grow them aggressively"
     elif "grow moderately" in full_text:
@@ -51,17 +70,17 @@ def parse_user_input(input_string: str) -> dict:
     elif "avoid losing money" in full_text:
         profile["goal"] = "Avoid losing money"
     
-    # Parse Time Horizon
-    if "1-3 year" in full_text or "1 to 3" in full_text:
+    # Parse time horizon
+    if "1-3 year" in full_text:
         profile["time_horizon"] = "1-3 years"
-    elif "3-5 year" in full_text or "3 to 5" in full_text:
+    elif "3-5 year" in full_text:
         profile["time_horizon"] = "3-5 years"
-    elif "6-10 year" in full_text or "6 to 10" in full_text:
+    elif "6-10 year" in full_text:
         profile["time_horizon"] = "6-10 years"
-    elif "10+ year" in full_text or "more than 10" in full_text:
+    elif "10+ year" in full_text:
         profile["time_horizon"] = "10+ years"
     
-    # Parse Risk Behavior
+    # Parse risk behavior
     if "sell everything" in full_text:
         profile["risk_behavior"] = "I'd sell everything"
     elif "sell some" in full_text:
@@ -71,7 +90,7 @@ def parse_user_input(input_string: str) -> dict:
     elif "buy more" in full_text:
         profile["risk_behavior"] = "I'd buy more"
     
-    # Parse Amount (look for Capital/Amount followed by dollar value)
+    # Parse amount
     amount_match = re.search(r'(?:capital|amount)[:\s]*\$?([\d,]+(?:\.\d{2})?)', input_string, re.IGNORECASE)
     if amount_match:
         try:
@@ -79,23 +98,19 @@ def parse_user_input(input_string: str) -> dict:
         except:
             pass
     
-    # Parse Preferred Topics
+    # Parse preferences
     for region in REGIONS:
         if region.lower() in full_text:
             profile["regions"].append(region)
-    
     for sector in SECTORS:
         if sector.lower() in full_text:
             profile["sectors"].append(sector)
-    
     for trend in TRENDS:
         if trend.lower() in full_text:
             profile["trends"].append(trend)
-    
     for bond in BONDS:
         if bond.lower() in full_text:
             profile["bonds"].append(bond)
-    
     for commodity in COMMODITIES:
         if commodity.lower() in full_text:
             profile["commodities"].append(commodity)
@@ -104,16 +119,16 @@ def parse_user_input(input_string: str) -> dict:
 
 
 def normalize(text: str) -> str:
+    """Normalize text for fuzzy matching"""
     text = text.lower()
     text = re.sub(r'[^a-z0-9\s]', ' ', text)
-    text = re.sub(r'\s+', ' ', text).strip()
-    return text
+    return re.sub(r'\s+', ' ', text).strip()
 
 
-def fuzzy_match(name: str, threshold: float = 0.6) -> tuple[str | None, float]:
+def fuzzy_match(name: str, threshold: float = 0.6):
+    """Find best matching ETF from database"""
     name_normalized = normalize(name)
-    best_match = None
-    best_score = 0
+    best_match, best_score = None, 0
     
     for etf in ETF_DATABASE:
         etf_normalized = normalize(etf)
@@ -121,86 +136,58 @@ def fuzzy_match(name: str, threshold: float = 0.6) -> tuple[str | None, float]:
             return etf, 1.0
         score = SequenceMatcher(None, name_normalized, etf_normalized).ratio()
         if score > best_score:
-            best_score = score
-            best_match = etf
+            best_score, best_match = score, etf
     
-    if best_score >= threshold:
-        return best_match, best_score
-    return None, 0
+    return (best_match, best_score) if best_score >= threshold else (None, 0)
 
 
-def extract_etf_names(response_text: str) -> list[str]:
-    etf_patterns = [
-        r'([A-Za-z][A-Za-z0-9\s&\-\']+(?:UCITS|ETF)[A-Za-z0-9\s&\-\'\(\)]*)',
-    ]
+def validate_portfolio(response_text: str) -> list:
+    """Validate ETF names from Gemini response against approved list"""
+    pattern = r'([A-Za-z][A-Za-z0-9\s&\-\']+(?:UCITS|ETF)[A-Za-z0-9\s&\-\'\(\)]*)'
     found = set()
-    for pattern in etf_patterns:
-        matches = re.findall(pattern, response_text)
-        for match in matches:
-            clean = match.strip()
-            if len(clean) > 15 and not clean.startswith("This ETF"):
-                found.add(clean)
-    return list(found)
-
-
-def validate_portfolio_fuzzy(response_text: str) -> list[dict]:
-    etf_names = extract_etf_names(response_text)
+    for match in re.findall(pattern, response_text):
+        clean = match.strip()
+        if len(clean) > 15 and not clean.startswith("This ETF"):
+            found.add(clean)
+    
     results = []
-    for name in etf_names:
+    for name in found:
         match, score = fuzzy_match(name)
         if match:
-            results.append({
-                "gemini_said": name,
-                "matched_to": match,
-                "score": score
-            })
+            results.append({"gemini_said": name, "matched_to": match, "score": score})
     return results
 
 
+# System prompt for Gemini
 SYSTEM_PROMPT = """You are a UCITS-compliant portfolio advisor.
-
-Recommend real UCITS ETFs. Be specific with full ETF names.
-
-Rules:
-- Maximum 7 ETFs
-- Use full official ETF names
-- No markdown tables
+Recommend real UCITS ETFs with full official names. Maximum 7 ETFs. No markdown tables.
 
 Response format:
-
 Portfolio Overview
-
 Total Capital: $[amount]
 Risk Profile: [profile]
 Time Horizon: [horizon]
 Strategy: [one line]
 
 Asset Allocation (7 ETFs)
-
 Core Holdings ([X]%) - $[amount]
-
 [Full ETF Name] - [X]% ($[amount])
 - [Why this ETF]
 
 Thematic Holdings ([X]%) - $[amount]
-
 [Full ETF Name] - [X]% ($[amount])
 - [Why this ETF]
 
 Portfolio Characteristics
-
 Equity/Bond Split: [X]% / [X]%
 Expected Return: [X-X]%
 Volatility: [Low/Medium/High]
 
 Key Features
-
 * [Feature 1]
 * [Feature 2]
-* [Feature 3]
 
 Investment Rationale
-
 [Why this portfolio fits their profile]
 
 Rebalancing: [recommendation]
@@ -208,13 +195,12 @@ Rebalancing: [recommendation]
 
 
 def generate_portfolio(user_profile: dict) -> str:
+    """Call Gemini API to generate portfolio recommendation"""
     prompt = f"""Create a personalized UCITS portfolio:
-
 Investment Goal: {user_profile.get('goal')}
 Risk Behavior: "{user_profile.get('risk_behavior')}"
 Time Horizon: {user_profile.get('time_horizon')}
 Amount: ${user_profile.get('amount', 5000)}
-
 Preferences:
 - Regions: {', '.join(user_profile.get('regions', [])) or 'Any'}
 - Sectors: {', '.join(user_profile.get('sectors', [])) or 'Any'}
@@ -230,92 +216,47 @@ Preferences:
     return response.text
 
 
-def save_to_pdf(portfolio: str, profile: dict, validation: list, filename: str):
-    """Generate professional PDF with charts"""
-    try:
-        from pdf_generator import generate_portfolio_pdf
-        generate_portfolio_pdf(portfolio, profile, filename)
-    except Exception as e:
-        print(f"Professional PDF failed: {e}")
-        print("Using basic PDF fallback...")
-        from fpdf import FPDF
-        pdf = FPDF()
-        pdf.set_auto_page_break(auto=True, margin=15)
-        pdf.add_page()
-        pdf.set_font("Arial", "B", 16)
-        pdf.cell(0, 10, "Portfolio Report", ln=True, align="C")
-        pdf.set_font("Arial", size=10)
-        for line in portfolio.split('\n'):
-            line = line.replace('✓', '*').replace('✔', '*')
-            clean = line.encode('latin-1', 'replace').decode('latin-1')
-            pdf.multi_cell(0, 5, clean)
-        pdf.output(filename)
-        print(f"Basic PDF saved to {filename}")
-
-
 def run_portfolio(user_input: str):
-    """Generate portfolio from input string"""
-    print("\n" + "-" * 60)
-    print("PARSED PROFILE:")
-    print("-" * 60)
+    """Main workflow: parse input -> generate portfolio -> save JSON + PDF"""
+    portfolio_num = get_next_portfolio_number()
+    folder_path = os.path.join(OUTPUT_DIR, f"portfolio_{portfolio_num}")
+    os.makedirs(folder_path, exist_ok=True)
     
+    print(f"\n{'='*50}")
+    print(f"GENERATING PORTFOLIO #{portfolio_num}")
+    print(f"{'='*50}")
+    
+    # Parse user input
     profile = parse_user_input(user_input)
-    print(f"  Goal:         {profile['goal']}")
-    print(f"  Time Horizon: {profile['time_horizon']}")
-    print(f"  Risk Behavior: {profile['risk_behavior']}")
-    print(f"  Amount:       ${profile['amount']:,.2f}")
-    print(f"  Regions:      {', '.join(profile['regions']) or 'None'}")
-    print(f"  Sectors:      {', '.join(profile['sectors']) or 'None'}")
-    print(f"  Trends:       {', '.join(profile['trends']) or 'None'}")
-    print(f"  Bonds:        {', '.join(profile['bonds']) or 'None'}")
-    print(f"  Commodities:  {', '.join(profile['commodities']) or 'None'}")
+    print(f"\nProfile: {profile['goal']} | {profile['time_horizon']} | ${profile['amount']:,.0f}")
     
-    print("\n" + "=" * 60)
-    print("GENERATING PORTFOLIO...")
-    print("=" * 60 + "\n")
-    
+    # Generate portfolio with Gemini
+    print(f"\nCalling Gemini...")
     response = generate_portfolio(profile)
     print(response.replace('✓', '*').replace('✔', '*'))
     
-    print("\n" + "-" * 60)
-    print("VALIDATION:")
-    print("-" * 60)
+    # Validate ETFs
+    validation = validate_portfolio(response)
+    print(f"\n{len(validation)} ETFs matched in approved list")
     
-    fuzzy_results = validate_portfolio_fuzzy(response)
-    print(f"  {len(fuzzy_results)} ETFs matched in approved list:")
-    for r in fuzzy_results:
-        print(f"    [{r['score']:.0%}] {r['matched_to'][:50]}...")
+    # Save JSON
+    json_path = os.path.join(folder_path, 'portfolio_data.json')
+    json_data = generate_portfolio_json(response, profile, validation, json_path)
     
-    from datetime import datetime
-    filename = f"Portfolio_Report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
-    save_to_pdf(response, profile, fuzzy_results, filename)
-    return profile, response, fuzzy_results
+    # Generate PDF
+    print(f"\nGenerating PDF...")
+    pdf_path = os.path.join(folder_path, 'portfolio_report.pdf')
+    generate_pdf(json_data, pdf_path)
+    
+    print(f"\n{'='*50}")
+    print(f"DONE! Output: output/portfolio_{portfolio_num}/")
+    print(f"{'='*50}")
 
 
 def main():
-    import sys
-    
-    # Test mode with sample input
-    if len(sys.argv) > 1 and sys.argv[1] == "--test":
-        print("=" * 60)
-        print("RUNNING TEST WITH SAMPLE INPUT")
-        print("=" * 60)
-        
-        sample_input = """Investment Goals: Grow with caution
-Withdraw Expectation: In 6-10 years
-Scenario Question Answer: I'll do nothing
-Portfolio Committed Capital: $5,000.00
-Preferred Topics: World (all regions), Emerging markets, Asia-Pacific, Latin America, Healthcare, Technology, Industrials, Nuclear Energy, Electric Vehicles, Biotech, Corporate Bonds, Total Bond Market, Palladium, Uranium, Water"""
-        
-        print("\nSAMPLE INPUT:")
-        print(sample_input)
-        run_portfolio(sample_input)
-        return
-    
-    # Interactive mode
-    print("=" * 60)
+    print("="*50)
     print("PORTFOLIO GENERATOR")
-    print("=" * 60)
+    print("="*50)
     user_input = input("\nPaste quiz results and press Enter: ")
     run_portfolio(user_input)
 

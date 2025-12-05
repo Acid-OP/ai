@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Portfolio Report | Paasa</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="logo">Paasa</div>
+            <div class="date" id="report-date"></div>
+        </div>
+        
+        <div class="content">
+            <h1 class="title">Investment Portfolio Report</h1>
+            
+            <div class="section">
+                <div class="section-title">Investment Profile</div>
+                <div class="profile-grid">
+                    <div class="profile-left">
+                        <div class="profile-row">
+                            <span class="profile-label">Goal</span>
+                            <span class="profile-value" id="profile-goal"></span>
+                        </div>
+                        <div class="profile-row">
+                            <span class="profile-label">Time Horizon</span>
+                            <span class="profile-value" id="profile-horizon"></span>
+                        </div>
+                        <div class="profile-row">
+                            <span class="profile-label">Risk Behavior</span>
+                            <span class="profile-value" id="profile-risk"></span>
+                        </div>
+                        <div class="profile-row">
+                            <span class="profile-label">Investment</span>
+                            <span class="profile-value" id="profile-amount"></span>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <div class="donut-wrapper">
+                            <canvas id="allocationChart"></canvas>
+                            <div class="donut-center">
+                                <div class="donut-amount" id="donut-amount"></div>
+                                <div class="donut-label">Total</div>
+                            </div>
+                        </div>
+                        <div class="legend">
+                            <div class="legend-item">
+                                <div class="legend-dot equity"></div>
+                                <span id="equity-legend"></span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-dot bonds"></div>
+                                <span id="bonds-legend"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Holdings</div>
+                <table class="etf-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>ETF</th>
+                            <th>Weight</th>
+                            <th>Amount</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody id="etf-table-body"></tbody>
+                </table>
+                <div class="table-legend">C = Core (stable base) | T = Thematic (growth sectors)</div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Expected Annual Returns</div>
+                <p style="font-size: 13px; color: #666; margin-bottom: 15px;">
+                    Based on <span id="scenario-split"></span> allocation:
+                </p>
+                <div class="metrics-grid">
+                    <div class="metric-card best">
+                        <div class="metric-title">Best Year</div>
+                        <div class="metric-value positive" id="scenario-best"></div>
+                    </div>
+                    <div class="metric-card avg">
+                        <div class="metric-title">Average</div>
+                        <div class="metric-value neutral" id="scenario-avg"></div>
+                    </div>
+                    <div class="metric-card worst">
+                        <div class="metric-title">Worst Year</div>
+                        <div class="metric-value negative" id="scenario-worst"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">3-Year Backtested Performance</div>
+                <p style="font-size: 13px; color: #666; margin-bottom: 15px;">
+                    How your portfolio would have performed vs S&P 500
+                </p>
+                <div class="backtest-grid">
+                    <div class="backtest-chart">
+                        <canvas id="backtestChart"></canvas>
+                    </div>
+                    <div class="returns-box">
+                        <div class="returns-title">3-Year Returns</div>
+                        <div class="return-row">
+                            <div class="return-dot" style="background: #0088ff;"></div>
+                            <span class="return-label">Portfolio</span>
+                            <span class="return-value" id="portfolio-return"></span>
+                        </div>
+                        <div class="return-row">
+                            <div class="return-dot" style="background: #dc2626;"></div>
+                            <span class="return-label">S&P 500</span>
+                            <span class="return-value" id="sp500-return"></span>
+                        </div>
+                        <div class="return-row" style="border-top: 1px solid #e5e7eb; margin-top: 8px; padding-top: 12px;">
+                            <span class="return-label">Difference</span>
+                            <span class="return-value" id="return-diff"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Themes Covered</div>
+                <div class="themes-grid" id="themes-grid"></div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Next Steps</div>
+                <ol class="steps-list">
+                    <li>1. Open a brokerage account with UCITS ETF access</li>
+                    <li>2. Transfer <span id="step-amount"></span> to your account</li>
+                    <li>3. Purchase ETFs in the allocations shown</li>
+                    <li>4. Rebalance annually (or when drifting >5%)</li>
+                </ol>
+                <div class="cost-row">
+                    <span class="cost-label">Annual Cost:</span>
+                    <span id="annual-cost"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Past performance does not guarantee future results. Backtested returns are simulated using historical data.
+            This is not financial advice. Consult a qualified advisor before investing.<br>
+            Paasa, Inc. | support@paasa.com
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
