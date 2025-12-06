@@ -1,8 +1,3 @@
-"""
-Portfolio Generator - Main Entry Point
-Paste quiz results, press Enter, get JSON + PDF in output/portfolio_X/
-"""
-
 import os
 import re
 import json
@@ -257,7 +252,15 @@ def main():
     print("="*50)
     print("PORTFOLIO GENERATOR")
     print("="*50)
-    user_input = input("\nPaste quiz results and press Enter: ")
+    print("\nPaste quiz results and press Enter:")
+    print("(Tip: Click 'Paste as one line' if dialog appears)\n")
+    
+    user_input = input("> ")
+    
+    if not user_input.strip():
+        print("No input received!")
+        return
+    
     run_portfolio(user_input)
 
 

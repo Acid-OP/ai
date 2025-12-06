@@ -26,18 +26,54 @@ LOGO_PATH = os.path.join(BASE_DIR, 'utils', 'Logo.png')
 
 # ETF ticker mapping for backtest charts
 ETF_TICKER_MAP = {
+    # Global equity
     'vanguard ftse all-world': 'VWCE.DE',
     'ishares core msci world': 'IWDA.AS',
-    'ishares core global aggregate bond': 'AGGH.L',
-    'ishares core msci emerging markets': 'EIMI.L',
+    'ishares msci world': 'IWDA.AS',
+    'ishares core msci emerging markets': 'IEMG',
     'ishares msci emerging markets': 'IEMG',
+    # US equity
+    'invesco eqqq nasdaq': 'QQQ',
+    'invesco nasdaq': 'QQQ',
+    'ishares s&p 500': 'IVV',
+    # Sectors
+    'xtrackers msci world information technology': 'XLK',
+    'ishares s&p 500 information technology': 'XLK',
+    'vaneck semiconductor': 'SMH',
+    'ishares semiconductor': 'SOXX',
+    'l&g artificial intelligence': 'BOTZ',
+    'ishares automation & robotics': 'IRBO',
+    'l&g cyber security': 'CIBR',
+    'ishares aerospace & defense': 'ITA',
     'ishares global healthcare': 'IXJ',
-    'ishares healthcare innovation': 'HEAL.L',
+    'ishares healthcare innovation': 'XLV',
+    'xtrackers msci world health': 'XLV',
     'ishares global clean energy': 'ICLN',
-    'l&g clean water': 'GLUG.L',
-    'ishares global water': 'IH2O.L',
+    'l&g clean water': 'PHO',
+    'ishares global water': 'PHO',
+    'xtrackers msci global water': 'PHO',
     'global x uranium': 'URA',
-    'ishares electric vehicles': 'ECAR.L',
+    'ishares electric vehicles': 'DRIV',
+    'l&g battery value-chain': 'LIT',
+    'vaneck digital assets': 'BITO',
+    'vaneck defense': 'ITA',
+    # Bonds
+    'ishares core global aggregate bond': 'AGG',
+    'ishares global aggregate bond': 'AGG',
+    'xtrackers global aggregate bond': 'AGG',
+    'vanguard global aggregate bond': 'BND',
+    'ishares global corporate bond': 'LQD',
+    'ishares usd treasury bond': 'SHY',
+    'govt bond': 'SHY',
+    'corp bond': 'LQD',
+    'xtrackers eur overnight': 'BIL',
+    'pimco': 'MINT',
+    # Commodities
+    'invesco physical gold': 'GLD',
+    'ishares physical gold': 'GLD',
+    'xtrackers physical gold': 'GLD',
+    'wisdomtree physical gold': 'GLD',
+    'ishares physical silver': 'SLV',
 }
 
 

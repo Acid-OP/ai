@@ -12,26 +12,54 @@ import pandas as pd
 
 # ETF name to Yahoo Finance ticker mapping
 ETF_TICKER_MAP = {
+    # Global equity
     'vanguard ftse all-world': 'VWCE.DE',
     'ishares core msci world': 'IWDA.AS',
     'ishares msci world': 'IWDA.AS',
-    'ishares core global aggregate bond': 'AGGH.L',
-    'ishares global aggregate bond': 'AGGH.L',
-    'xtrackers global aggregate bond': 'XGAG.DE',
-    'vanguard global aggregate bond': 'VAGP.L',
-    'ishares core msci emerging markets': 'EIMI.L',
+    'ishares core msci emerging markets': 'IEMG',
     'ishares msci emerging markets': 'IEMG',
-    'xtrackers msci world information technology': 'XDWT.DE',
-    'ishares s&p 500 information technology': 'IUIT.L',
+    # US equity
+    'invesco eqqq nasdaq': 'QQQ',
+    'invesco nasdaq': 'QQQ',
+    'ishares s&p 500': 'IVV',
+    # Sectors
+    'xtrackers msci world information technology': 'XLK',
+    'ishares s&p 500 information technology': 'XLK',
+    'vaneck semiconductor': 'SMH',
+    'ishares semiconductor': 'SOXX',
+    'l&g artificial intelligence': 'BOTZ',
+    'ishares automation & robotics': 'IRBO',
+    'l&g cyber security': 'CIBR',
+    'ishares aerospace & defense': 'ITA',
     'ishares global healthcare': 'IXJ',
-    'ishares healthcare innovation': 'HEAL.L',
+    'ishares healthcare innovation': 'XLV',
+    'xtrackers msci world health': 'XLV',
     'ishares global clean energy': 'ICLN',
-    'l&g clean water': 'GLUG.L',
-    'ishares global water': 'IH2O.L',
+    'l&g clean water': 'PHO',
+    'ishares global water': 'PHO',
+    'xtrackers msci global water': 'PHO',
     'global x uranium': 'URA',
-    'ishares global corporate bond': 'CORP.L',
-    'ishares electric vehicles': 'ECAR.L',
-    'l&g battery value-chain': 'BATG.L',
+    'ishares electric vehicles': 'DRIV',
+    'l&g battery value-chain': 'LIT',
+    'vaneck digital assets': 'BITO',
+    'vaneck defense': 'ITA',
+    # Bonds
+    'ishares core global aggregate bond': 'AGG',
+    'ishares global aggregate bond': 'AGG',
+    'xtrackers global aggregate bond': 'AGG',
+    'vanguard global aggregate bond': 'BND',
+    'ishares global corporate bond': 'LQD',
+    'ishares usd treasury bond': 'SHY',
+    'govt bond': 'SHY',
+    'corp bond': 'LQD',
+    'xtrackers eur overnight': 'BIL',
+    'pimco': 'MINT',
+    # Commodities
+    'invesco physical gold': 'GLD',
+    'ishares physical gold': 'GLD',
+    'xtrackers physical gold': 'GLD',
+    'wisdomtree physical gold': 'GLD',
+    'ishares physical silver': 'SLV',
 }
 
 
@@ -123,8 +151,8 @@ def parse_portfolio_response(text, profile):
     if match:
         data['volatility'] = match.group(1)
     
-    # Parse ETFs: [Name] - [X]% ($[amount])
-    pattern = r'([A-Za-z][A-Za-z0-9\s&\-\']+(?:UCITS|ETF)[A-Za-z0-9\s\(\)\-]*)\s*-\s*(\d+)%\s*\(\$?([\d,\.]+)\)'
+    # Parse ETFs: [Name] - [X]% ($[amount]) - handles markdown bold **Name**
+    pattern = r'\*?\*?([A-Za-z][A-Za-z0-9\s&\-\']+(?:UCITS|ETF)[A-Za-z0-9\s\(\)\-]*)\*?\*?\s*-\s*(\d+)%\s*\(\$?([\d,\.]+)\)'
     seen = set()
     for name, alloc, amount in re.findall(pattern, text):
         name = name.strip()
