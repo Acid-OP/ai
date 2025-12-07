@@ -1,36 +1,24 @@
+"""
+Portfolio Generator - Main Entry Point
+Clean architecture: Data (Python) + Template (HTML)
+"""
+
 import os
 import re
-import json
-from difflib import SequenceMatcher
 from dotenv import load_dotenv
-from google import genai
-from portfolio_json_generator import generate_portfolio_json
-from pdf_generator import generate_pdf
+from data_provider import get_portfolio_data
+from renderer import render_portfolio
 
 load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-UTILS_DIR = os.path.join(BASE_DIR, 'utils')
 OUTPUT_DIR = os.path.join(BASE_DIR, 'output')
 
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-
-with open(os.path.join(UTILS_DIR, "extracted_names.json"), "r") as f:
-    ETF_DATABASE = json.load(f)
-
-# Quiz options for parsing user input
-REGIONS = ["World (all regions)", "US Market", "Europe", "Asia-Pacific", "Emerging markets", 
-           "Developed markets", "China", "Latin America", "Poland"]
-SECTORS = ["Technology", "Fintech", "Healthcare", "Energy", "Real Estate", "Industrials",
-           "Semiconductors", "Materials and Mining", "Consumer"]
-TRENDS = ["AI", "Nuclear Energy", "Clean Energy", "Electric Vehicles", "Crypto", 
-          "Cybersecurity", "Robotics", "Defense", "Biotech"]
-BONDS = ["Treasury Bonds", "Corporate Bonds", "Total Bond Market"]
-COMMODITIES = ["Gold", "Silver", "Palladium", "Platinum", "Uranium", "Oil", "Water"]
+BEARER_TOKEN = os.getenv("PAASA_BEARER_TOKEN", "")
 
 
 def get_next_portfolio_number():
-    """Get next portfolio folder number (portfolio_1, portfolio_2, etc.)"""
+    """Get next portfolio folder number"""
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
         return 1
@@ -49,15 +37,16 @@ def get_next_portfolio_number():
 def parse_user_input(input_string: str) -> dict:
     """Parse quiz result string into structured profile dict"""
     profile = {
-        "goal": "", "risk_behavior": "", "time_horizon": "", "amount": 5000,
-        "regions": [], "sectors": [], "trends": [], "bonds": [], "commodities": []
+        "goal": "", "risk_behavior": "", "time_horizon": "",
+        "user_name": "", "user_email": "", "customer_id": ""
     }
     
     full_text = input_string.lower()
+    original_text = input_string
     
     # Parse goal
     if "grow them aggressively" in full_text or "grow aggressively" in full_text:
-        profile["goal"] = "Grow them aggressively"
+        profile["goal"] = "Grow aggressively"
     elif "grow moderately" in full_text:
         profile["goal"] = "Grow moderately"
     elif "grow with caution" in full_text:
@@ -66,13 +55,13 @@ def parse_user_input(input_string: str) -> dict:
         profile["goal"] = "Avoid losing money"
     
     # Parse time horizon
-    if "1-3 year" in full_text:
+    if "1-3 year" in full_text or "in 1-3" in full_text:
         profile["time_horizon"] = "1-3 years"
-    elif "3-5 year" in full_text:
+    elif "3-5 year" in full_text or "in 3-5" in full_text:
         profile["time_horizon"] = "3-5 years"
-    elif "6-10 year" in full_text:
+    elif "6-10 year" in full_text or "in 6-10" in full_text:
         profile["time_horizon"] = "6-10 years"
-    elif "10+ year" in full_text:
+    elif "10+ year" in full_text or "10 year" in full_text:
         profile["time_horizon"] = "10+ years"
     
     # Parse risk behavior
@@ -85,183 +74,88 @@ def parse_user_input(input_string: str) -> dict:
     elif "buy more" in full_text:
         profile["risk_behavior"] = "I'd buy more"
     
-    # Parse amount
-    amount_match = re.search(r'(?:capital|amount)[:\s]*\$?([\d,]+(?:\.\d{2})?)', input_string, re.IGNORECASE)
-    if amount_match:
-        try:
-            profile["amount"] = float(amount_match.group(1).replace(',', ''))
-        except:
-            pass
+    # Parse Name (stop at newline or next field)
+    name_match = re.search(r'Name:\s*\n?([A-Za-z][A-Za-z\s]*?)(?:\n|Customer|Email|$)', original_text, re.IGNORECASE)
+    if name_match:
+        profile["user_name"] = name_match.group(1).strip()
     
-    # Parse preferences
-    for region in REGIONS:
-        if region.lower() in full_text:
-            profile["regions"].append(region)
-    for sector in SECTORS:
-        if sector.lower() in full_text:
-            profile["sectors"].append(sector)
-    for trend in TRENDS:
-        if trend.lower() in full_text:
-            profile["trends"].append(trend)
-    for bond in BONDS:
-        if bond.lower() in full_text:
-            profile["bonds"].append(bond)
-    for commodity in COMMODITIES:
-        if commodity.lower() in full_text:
-            profile["commodities"].append(commodity)
+    # Parse Email
+    email_match = re.search(r'Email:\s*\n?([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})', original_text, re.IGNORECASE)
+    if email_match:
+        profile["user_email"] = email_match.group(1).strip()
+    
+    # Parse Customer ID
+    id_match = re.search(r'Customer\s*Id:\s*\n?(\d+)', original_text, re.IGNORECASE)
+    if id_match:
+        profile["customer_id"] = id_match.group(1).strip()
     
     return profile
 
 
-def normalize(text: str) -> str:
-    """Normalize text for fuzzy matching"""
-    text = text.lower()
-    text = re.sub(r'[^a-z0-9\s]', ' ', text)
-    return re.sub(r'\s+', ' ', text).strip()
-
-
-def fuzzy_match(name: str, threshold: float = 0.6):
-    """Find best matching ETF from database"""
-    name_normalized = normalize(name)
-    best_match, best_score = None, 0
+def run_portfolio(user_input: str, bearer_token: str = None):
+    """
+    Main workflow:
+    1. Parse user input
+    2. Get data (API + Gemini)
+    3. Render to template
+    """
+    token = bearer_token or BEARER_TOKEN
+    if not token:
+        print("ERROR: No bearer token provided!")
+        return None
     
-    for etf in ETF_DATABASE:
-        etf_normalized = normalize(etf)
-        if name_normalized in etf_normalized or etf_normalized in name_normalized:
-            return etf, 1.0
-        score = SequenceMatcher(None, name_normalized, etf_normalized).ratio()
-        if score > best_score:
-            best_score, best_match = score, etf
-    
-    return (best_match, best_score) if best_score >= threshold else (None, 0)
-
-
-def validate_portfolio(response_text: str) -> list:
-    """Validate ETF names from Gemini response against approved list"""
-    pattern = r'([A-Za-z][A-Za-z0-9\s&\-\']+(?:UCITS|ETF)[A-Za-z0-9\s&\-\'\(\)]*)'
-    found = set()
-    for match in re.findall(pattern, response_text):
-        clean = match.strip()
-        if len(clean) > 15 and not clean.startswith("This ETF"):
-            found.add(clean)
-    
-    results = []
-    for name in found:
-        match, score = fuzzy_match(name)
-        if match:
-            results.append({"gemini_said": name, "matched_to": match, "score": score})
-    return results
-
-
-# System prompt for Gemini
-SYSTEM_PROMPT = """You are a UCITS-compliant portfolio advisor.
-Recommend real UCITS ETFs with full official names. Maximum 7 ETFs. No markdown tables.
-
-Response format:
-Portfolio Overview
-Total Capital: $[amount]
-Risk Profile: [profile]
-Time Horizon: [horizon]
-Strategy: [one line]
-
-Asset Allocation (7 ETFs)
-Core Holdings ([X]%) - $[amount]
-[Full ETF Name] - [X]% ($[amount])
-- [Why this ETF]
-
-Thematic Holdings ([X]%) - $[amount]
-[Full ETF Name] - [X]% ($[amount])
-- [Why this ETF]
-
-Portfolio Characteristics
-Equity/Bond Split: [X]% / [X]%
-Expected Return: [X-X]%
-Volatility: [Low/Medium/High]
-
-Key Features
-* [Feature 1]
-* [Feature 2]
-
-Investment Rationale
-[Why this portfolio fits their profile]
-
-Rebalancing: [recommendation]
-"""
-
-
-def generate_portfolio(user_profile: dict) -> str:
-    """Call Gemini API to generate portfolio recommendation"""
-    prompt = f"""Create a personalized UCITS portfolio:
-Investment Goal: {user_profile.get('goal')}
-Risk Behavior: "{user_profile.get('risk_behavior')}"
-Time Horizon: {user_profile.get('time_horizon')}
-Amount: ${user_profile.get('amount', 5000)}
-Preferences:
-- Regions: {', '.join(user_profile.get('regions', [])) or 'Any'}
-- Sectors: {', '.join(user_profile.get('sectors', [])) or 'Any'}
-- Trends: {', '.join(user_profile.get('trends', [])) or 'Any'}
-- Bonds: {', '.join(user_profile.get('bonds', [])) or 'None'}
-- Commodities: {', '.join(user_profile.get('commodities', [])) or 'None'}"""
-
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt,
-        config={"system_instruction": SYSTEM_PROMPT}
-    )
-    return response.text
-
-
-def run_portfolio(user_input: str):
-    """Main workflow: parse input -> generate portfolio -> save JSON + PDF"""
     portfolio_num = get_next_portfolio_number()
     folder_path = os.path.join(OUTPUT_DIR, f"portfolio_{portfolio_num}")
-    os.makedirs(folder_path, exist_ok=True)
     
     print(f"\n{'='*50}")
     print(f"GENERATING PORTFOLIO #{portfolio_num}")
     print(f"{'='*50}")
     
-    # Parse user input
+    # 1. Parse user input
     profile = parse_user_input(user_input)
-    print(f"\nProfile: {profile['goal']} | {profile['time_horizon']} | ${profile['amount']:,.0f}")
+    print(f"\nUser: {profile['user_name']} ({profile['user_email']})")
+    print(f"Goal: {profile['goal']}")
+    print(f"Risk: {profile['risk_behavior']}")
+    print(f"Horizon: {profile['time_horizon']}")
     
-    # Generate portfolio with Gemini
-    print(f"\nCalling Gemini...")
-    response = generate_portfolio(profile)
-    print(response.replace('✓', '*').replace('✔', '*'))
+    # 2. Get data (API + Gemini)
+    print(f"\n--- DATA RETRIEVAL ---")
+    data = get_portfolio_data(profile, token)
     
-    # Validate ETFs
-    validation = validate_portfolio(response)
-    print(f"\n{len(validation)} ETFs matched in approved list")
-    
-    # Save JSON
-    json_path = os.path.join(folder_path, 'portfolio_data.json')
-    json_data = generate_portfolio_json(response, profile, validation, json_path)
-    
-    # Generate PDF
-    print(f"\nGenerating PDF...")
-    pdf_path = os.path.join(folder_path, 'portfolio_report.pdf')
-    generate_pdf(json_data, pdf_path)
+    # 3. Render to template
+    print(f"\n--- RENDERING ---")
+    output = render_portfolio(data, folder_path)
     
     print(f"\n{'='*50}")
     print(f"DONE! Output: output/portfolio_{portfolio_num}/")
+    print(f"  - HTML: {output['html']}")
+    print(f"  - JSON: {output['json']}")
     print(f"{'='*50}")
+    
+    return data
 
 
 def main():
     print("="*50)
     print("PORTFOLIO GENERATOR")
+    print("Data: Paasa API + Gemini")
+    print("Template: HTML/CSS")
     print("="*50)
-    print("\nPaste quiz results and press Enter:")
-    print("(Tip: Click 'Paste as one line' if dialog appears)\n")
     
+    if not BEARER_TOKEN:
+        print("\nWARNING: No PAASA_BEARER_TOKEN in .env")
+        token = input("Enter bearer token: ").strip()
+    else:
+        token = BEARER_TOKEN
+    
+    print("\nPaste quiz results and press Enter:\n")
     user_input = input("> ")
     
     if not user_input.strip():
         print("No input received!")
         return
     
-    run_portfolio(user_input)
+    run_portfolio(user_input, token)
 
 
 if __name__ == "__main__":

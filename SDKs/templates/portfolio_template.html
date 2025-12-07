@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Investment Portfolio Report</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="navbar">
+    <span class="navbar-brand">paasa</span>
+    <span class="navbar-tagline">Smart Investing Made Simple</span>
+    <span class="navbar-date">Generated: <span id="report-date">{{REPORT_DATE}}</span></span>
+</div>
+
+<div class="content">
+    <h1 class="page-title">Investment Portfolio Report</h1>
+    
+    <!-- INVESTOR PROFILE SKELETON -->
+    <div class="section-title">Investor Profile</div>
+    <table class="profile-table">
+        <tr>
+            <td>
+                <div class="profile-label">Investor Name</div>
+                <div class="profile-value" id="user-name">{{USER_NAME}}</div>
+            </td>
+            <td>
+                <div class="profile-label">Email Address</div>
+                <div class="profile-value" id="user-email">{{USER_EMAIL}}</div>
+            </td>
+            <td>
+                <div class="profile-label">Risk Profile</div>
+                <div class="profile-value">
+                    <span class="risk-badge" id="risk-badge">{{RISK_LEVEL}}</span>
+                </div>
+            </td>
+            <td>
+                <div class="profile-label">Investment Horizon</div>
+                <div class="profile-value" id="time-horizon">{{TIME_HORIZON}}</div>
+            </td>
+        </tr>
+    </table>
+    
+    <!-- METHODOLOGY SKELETON -->
+    <div class="section-title">Investment Methodology</div>
+    <div class="methodology">
+        <div class="methodology-title" id="methodology-title">{{METHODOLOGY_TITLE}}</div>
+        <div class="methodology-text" id="methodology-text">{{METHODOLOGY_TEXT}}</div>
+        <ul id="principles-list">{{PRINCIPLES_LIST}}</ul>
+    </div>
+    
+    <!-- HOLDINGS TABLE SKELETON -->
+    <div class="section-title">Portfolio Holdings</div>
+    <table class="holdings-table">
+        <thead>
+            <tr>
+                <th style="width:40px;text-align:center;">S.No</th>
+                <th style="width:70px;">Ticker</th>
+                <th>ETF Name</th>
+                <th style="width:60px;text-align:center;">Weight</th>
+                <th style="width:140px;">Category</th>
+            </tr>
+        </thead>
+        <tbody id="holdings-body">{{HOLDINGS_ROWS}}</tbody>
+    </table>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="navbar">
+    <span class="navbar-brand">paasa</span>
+    <span class="navbar-tagline">Smart Investing Made Simple</span>
+</div>
+
+<div class="content">
+    <h1 class="page-title">Performance & Allocation</h1>
+    
+    <!-- PERFORMANCE CHART SKELETON -->
+    <div class="section-title">Backtested Performance (2020-2025)</div>
+    <div class="chart-container">
+        <canvas id="performance-chart"></canvas>
+    </div>
+    
+    <!-- KEY METRICS SKELETON -->
+    <div class="section-title">Key Performance Metrics</div>
+    <table class="metrics-table">
+        <tr>
+            <td>
+                <div class="metric-label">5-Year Return</div>
+                <div class="metric-value green" id="five-yr-return">{{FIVE_YR_RETURN}}%</div>
+                <div class="metric-sub">Annualized</div>
+            </td>
+            <td>
+                <div class="metric-label">3-Year Return</div>
+                <div class="metric-value green" id="three-yr-return">{{THREE_YR_RETURN}}%</div>
+                <div class="metric-sub">Annualized</div>
+            </td>
+            <td>
+                <div class="metric-label">Volatility</div>
+                <div class="metric-value" id="volatility">{{VOLATILITY}}%</div>
+                <div class="metric-sub">Std Deviation</div>
+            </td>
+            <td>
+                <div class="metric-label">S&P 500 Benchmark</div>
+                <div class="metric-value green" id="sp500-return">{{SP500_RETURN}}%</div>
+                <div class="metric-sub">5-Year Return</div>
+            </td>
+        </tr>
+    </table>
+    
+    <!-- ALLOCATION CHART SKELETON -->
+    <div class="section-title">Asset Allocation</div>
+    <div class="allocation-row">
+        <div class="alloc-chart-wrap">
+            <canvas id="allocation-chart"></canvas>
+        </div>
+        <div class="alloc-legend" id="allocation-legend">{{ALLOCATION_LEGEND}}</div>
+    </div>
+    
+    <!-- GEOGRAPHIC EXPOSURE SKELETON -->
+    <div class="section-title">Geographic Exposure</div>
+    <table class="geo-table">
+        <thead>
+            <tr>
+                <th>Region</th>
+                <th>Allocation</th>
+            </tr>
+        </thead>
+        <tbody id="regions-body">{{REGIONS_ROWS}}</tbody>
+    </table>
+    
+    <!-- TOP STOCKS SKELETON -->
+    <div class="section-title">Top Underlying Stocks</div>
+    <div class="stocks-list" id="stocks-list">{{STOCKS_LIST}}</div>
+</div>
+
+<div class="footer">
+    Paasa, Inc. &bull; Past performance does not guarantee future results. This is not financial advice.
+</div>
+
+<!-- DATA INJECTION POINT - Python injects JSON here -->
+<script id="portfolio-data" type="application/json">{{PORTFOLIO_JSON}}</script>
+
+<!-- CHART RENDERING SCRIPT -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get injected data
+    const dataEl = document.getElementById('portfolio-data');
+    if (!dataEl || !dataEl.textContent.trim() || dataEl.textContent.includes('{{')) return;
+    
+    const data = JSON.parse(dataEl.textContent);
+    
+    // PERFORMANCE CHART
+    const chartData = data.chart_data || [];
+    if (chartData.length > 0) {
+        const ctx = document.getElementById('performance-chart').getContext('2d');
+        const labels = chartData.map(d => d.date.substring(0, 7));
+        const values = chartData.map(d => d.value);
+        
+        // Simulate S&P 500
+        let sp500 = [100];
+        for (let i = 1; i < values.length; i++) {
+            const change = (values[i] / values[i-1] - 1) * 1.15;
+            sp500.push(sp500[sp500.length-1] * (1 + change));
+        }
+        
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Your Portfolio',
+                    data: values,
+                    borderColor: '#0066CC',
+                    backgroundColor: 'rgba(0, 102, 204, 0.1)',
+                    fill: true,
+                    tension: 0.3,
+                    pointRadius: 0
+                }, {
+                    label: 'S&P 500',
+                    data: sp500,
+                    borderColor: '#EF4444',
+                    borderDash: [5, 5],
+                    fill: false,
+                    tension: 0.3,
+                    pointRadius: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'top', align: 'start' } },
+                scales: {
+                    x: { display: true, ticks: { maxTicksLimit: 6 } },
+                    y: { display: true }
+                }
+            }
+        });
+    }
+    
+    // ALLOCATION CHART
+    const holdings = data.holdings || [];
+    if (holdings.length > 0) {
+        const categories = {};
+        const colors = {};
+        holdings.forEach(h => {
+            if (!categories[h.category]) {
+                categories[h.category] = 0;
+                colors[h.category] = h.color || '#888888';
+            }
+            categories[h.category] += h.weight;
+        });
+        
+        const ctx2 = document.getElementById('allocation-chart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+                labels: Object.keys(categories),
+                datasets: [{
+                    data: Object.values(categories),
+                    backgroundColor: Object.values(colors),
+                    borderWidth: 2,
+                    borderColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '60%',
+                plugins: { legend: { display: false } }
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>

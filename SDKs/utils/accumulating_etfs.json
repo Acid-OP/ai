@@ -1,0 +1,4198 @@
+[
+  {
+    "name": "iShares Core S&P 500 UCITS ETF USD (Acc)",
+    "ticker": "CSPX.L"
+  },
+  {
+    "name": "iShares Core MSCI World UCITS ETF USD (Acc)",
+    "ticker": "IWDA.L"
+  },
+  {
+    "name": "iShares US Aggregate Bond UCITS ETF",
+    "ticker": "IUAA.L"
+  },
+  {
+    "name": "iShares $ Treasury Bond 1-3yr UCITS ETF",
+    "ticker": "IBTA.L"
+  },
+  {
+    "name": "iShares $ Corp Bond UCITS ETF USD (Acc)",
+    "ticker": "LQDA.L"
+  },
+  {
+    "name": "iShares NASDAQ 100 UCITS ETF USD (Acc)",
+    "ticker": "CSNDX.SW"
+  },
+  {
+    "name": "iShares Core MSCI EM IMI UCITS ETF",
+    "ticker": "EIMI.L"
+  },
+  {
+    "name": "iShares MSCI China UCITS ETF",
+    "ticker": "ICHN.AS"
+  },
+  {
+    "name": "iShares VII PLC - iShares MSCI USA UCITS ETF USD (Acc)",
+    "ticker": "ISMCF"
+  },
+  {
+    "name": "Vanguard FTSE Developed World UCITS ETF",
+    "ticker": "VGDDF"
+  },
+  {
+    "name": "iShares $ High Yield Corp Bond UCITS ETF",
+    "ticker": "IHYA.L"
+  },
+  {
+    "name": "Amundi Nasdaq-100 II UCITS ETF Acc",
+    "ticker": "NASD.L"
+  },
+  {
+    "name": "iShares Nasdaq US Biotechnology UCITS ETF USD (Acc)",
+    "ticker": "BTEC.L"
+  },
+  {
+    "name": "Vanguard FTSE All-World UCITS ETF",
+    "ticker": "VWRA.L"
+  },
+  {
+    "name": "Vanguard S&P 500 UCITS ETF",
+    "ticker": "VUAA.L"
+  },
+  {
+    "name": "iShares Core Global Aggregate Bond UCITS ETF",
+    "ticker": "AGGU.L"
+  },
+  {
+    "name": "Amundi MSCI World Financials UCITS ETF USD Acc",
+    "ticker": "FINW.L"
+  },
+  {
+    "name": "Amundi Index Solutions - Amundi S&P 500 UCITS ETF C USD",
+    "ticker": "500U.L"
+  },
+  {
+    "name": "Vanguard FTSE Developed World UCITS ETF",
+    "ticker": "VHVE.L"
+  },
+  {
+    "name": "WisdomTree Europe Equity UCITS ETF",
+    "ticker": "HEDK.L"
+  },
+  {
+    "name": "iShares NASDAQ 100 UCITS ETF USD (Acc)",
+    "ticker": "CNDX.L"
+  },
+  {
+    "name": "iShares $ Corp Bond UCITS ETF USD (Dist)",
+    "ticker": "LQDE.L"
+  },
+  {
+    "name": "iShares US Aggregate Bond UCITS ETF USD (Dist)",
+    "ticker": "IUAG.L"
+  },
+  {
+    "name": "iShares MSCI USA ESG Screened UCITS ETF",
+    "ticker": "SDUS.L"
+  },
+  {
+    "name": "iShares VII PLC - iShares MSCI Japan UCITS ETF USD (Acc)",
+    "ticker": "CJPU.L"
+  },
+  {
+    "name": "Invesco NASDAQ-100 Swap UCITS ETF",
+    "ticker": "EQQS.L"
+  },
+  {
+    "name": "iShares Core Global Aggregate Bond UCITS ETF",
+    "ticker": "AGGG.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Information Technology Sector UCITS ETF USD (Acc)",
+    "ticker": "IUIT.L"
+  },
+  {
+    "name": "iShares MSCI China UCITS ETF USD (Acc)",
+    "ticker": "ICHN"
+  },
+  {
+    "name": "Amundi FTSE EPRA NAREIT Global UCITS ETF Acc",
+    "ticker": "EPRU"
+  },
+  {
+    "name": "iShares MSCI World Information Technology Sector UCITS ETF USD (Acc)",
+    "ticker": "WITS"
+  },
+  {
+    "name": "iShares Core MSCI World UCITS ETF USD (Acc)}",
+    "ticker": "WHCS"
+  },
+  {
+    "name": "iShares S&P 500 Swap UCITS ETF USD (Acc)",
+    "ticker": "I500"
+  },
+  {
+    "name": "iShares USD Asia Investment Grade Corporate Bond UCITS ETF (Acc)",
+    "ticker": "ASIG"
+  },
+  {
+    "name": "iShares Core Global Aggregate Bond UCITS ETF USD Hedged (Acc)",
+    "ticker": "AGUG"
+  },
+  {
+    "name": "iShares USD TIPS 0-5 UCITS ETF USD (Acc)",
+    "ticker": "TI5A"
+  },
+  {
+    "name": "iShares MSCI World ex-USA UCITS ETF USD (Acc)",
+    "ticker": "XUSE"
+  },
+  {
+    "name": "iShares MSCI World Swap UCITS ETF USD (Acc)",
+    "ticker": "IWDS"
+  },
+  {
+    "name": "iShares China CNY Bond UCITS ETF",
+    "ticker": "CNYB.AS"
+  },
+  {
+    "name": "Amundi DAX III UCITS ETF Acc",
+    "ticker": "DAXX.L"
+  },
+  {
+    "name": "Amundi MSCI India II UCITS ETF -Acc (USD)-",
+    "ticker": "INRL.L"
+  },
+  {
+    "name": "Market Access Rogers International Commodity Index UCITS ETF",
+    "ticker": "RICI.L"
+  },
+  {
+    "name": "Market Access NYSE Arca Gold BUGS Index UCITS ETF",
+    "ticker": "GOLB.L"
+  },
+  {
+    "name": "Amundi MSCI Emerging Markets III UCITS ETF -Acc (USD)-",
+    "ticker": "LEML.L"
+  },
+  {
+    "name": "Amundi IBEX 35 UCITS ETF",
+    "ticker": "CS1.L"
+  },
+  {
+    "name": "UBS CMCI Composite SF UCITS ETF Accum USD",
+    "ticker": "UC15.L"
+  },
+  {
+    "name": "UBS ETF SICAV - UBS ETF - MSCI Emerging Markets UCITS ETF A Distribution",
+    "ticker": "UB32.L"
+  },
+  {
+    "name": "Amundi Global Hydrogen UCITS ETF - Acc",
+    "ticker": "ANRJ.L"
+  },
+  {
+    "name": "UBS MSCI AC Asia ex Japan SF UCITS ETF Accum USD",
+    "ticker": "UC48.L"
+  },
+  {
+    "name": "Amundi Global Equity Quality Income UCITS ETF ACC",
+    "ticker": "SGQL.L"
+  },
+  {
+    "name": "VanEck World Equal Weight Screened UCITS ETF",
+    "ticker": "TSGB.L"
+  },
+  {
+    "name": "VanEck European Equal Weight Screened UCITS ETF",
+    "ticker": "TEGB.L"
+  },
+  {
+    "name": "Amundi MSCI China A UCITS ETF Acc",
+    "ticker": "CNAL.L"
+  },
+  {
+    "name": "Amundi Global Equity Quality Income UCITS ETF GBP Hedged ACC",
+    "ticker": "SGQX.L"
+  },
+  {
+    "name": "Amundi USD Fed Funds Rate UCITS ETF",
+    "ticker": "FEDG.L"
+  },
+  {
+    "name": "Amundi Smart Overnight Return UCITS ETF C-GBP- Capitalisation",
+    "ticker": "CSH2.L"
+  },
+  {
+    "name": "Amundi EURO STOXX 50 II UCITS ETF Act -Daily Hedged to GBP Acc- Capitalisation",
+    "ticker": "MSEX.L"
+  },
+  {
+    "name": "UBS CMCI Ex-Agriculture SF UCITS ETF Accum USD",
+    "ticker": "CXAP.L"
+  },
+  {
+    "name": "Amundi Core S&P 500 Swap UCITS ETF Acc",
+    "ticker": "SP5L.L"
+  },
+  {
+    "name": "Amundi Index Solutions - Amundi Index J.P. Morgan GBI Global Govies UCITS ETF DR",
+    "ticker": "GGOV.L"
+  },
+  {
+    "name": "Amundi Core Euro Government Bond UCITS ETF Acc",
+    "ticker": "MTXX.L"
+  },
+  {
+    "name": "UBS Core BBG TIPS 1-10 UCITS ETF -hGBP acc- Capitalisation",
+    "ticker": "UBTP.L"
+  },
+  {
+    "name": "Amundi Global Aggregate Green Bond UCITS ETF Acc",
+    "ticker": "CLIM.L"
+  },
+  {
+    "name": "Amundi Euro Inflation Expectations 2-10Y UCITS ETF",
+    "ticker": "INFL.L"
+  },
+  {
+    "name": "UBS (Lux) Fund Solutions - Bloomberg Barclays TIPS 10+ UCITS ETF",
+    "ticker": "UBTL.L"
+  },
+  {
+    "name": "Amundi Index Solutions - Amundi Index Barclays Global AGG 500M UCITS ETF DR",
+    "ticker": "GAGG.L"
+  },
+  {
+    "name": "UBS BBG Commodity CMCI SF UCITS ETF Accum USD",
+    "ticker": "UD07.L"
+  },
+  {
+    "name": "Amundi Index Solutions - Amundi MSCI World UCITS ETF C USD",
+    "ticker": "CW8G.L"
+  },
+  {
+    "name": "UBS Global Gender Equality UCITS ETF Accum -A- USD",
+    "ticker": "GENE.L"
+  },
+  {
+    "name": "Amundi Core EURO STOXX 50 UCITS ETF EUR Acc",
+    "ticker": "MSED.L"
+  },
+  {
+    "name": "Amundi Global Gender Equality UCITS ETF -Acc- Capitalisation",
+    "ticker": "GEND.L"
+  },
+  {
+    "name": "Market Access Stoxx China A Minimum Variance Index UCITS ETF",
+    "ticker": "M9SV.L"
+  },
+  {
+    "name": "Amundi Euro Government Inflation-Linked Bond UCITS ETF Acc",
+    "ticker": "MTIX.L"
+  },
+  {
+    "name": "Amundi Core MSCI Japan UCITS ETF Acc",
+    "ticker": "LCJP.L"
+  },
+  {
+    "name": "Amundi Euro Stoxx Banks UCITS ETF Acc",
+    "ticker": "BNKE.L"
+  },
+  {
+    "name": "Amundi STOXX Europe 600 Banks UCITS ETF -Acc- Capitalisation",
+    "ticker": "CB5.L"
+  },
+  {
+    "name": "Amundi MSCI EM Asia ESG Broad Transition UCITS ETF Acc",
+    "ticker": "LCAL.L"
+  },
+  {
+    "name": "UBS (Lux) Fund Solutions – MSCI EMU Select Factor Mix UCITS ETF",
+    "ticker": "EUFM.L"
+  },
+  {
+    "name": "Amundi MSCI All Country World UCITS",
+    "ticker": "ACWL.L"
+  },
+  {
+    "name": "Amundi STOXX Europe 600 Healthcare UCITS ETF -Acc- Capitalisation",
+    "ticker": "CH5.L"
+  },
+  {
+    "name": "Amundi MSCI China ESG Selection Extra UCITS ETF Acc",
+    "ticker": "ASIL.L"
+  },
+  {
+    "name": "Amundi Core Nasdaq-100 Swap UCITS ETF Acc",
+    "ticker": "NASL.L"
+  },
+  {
+    "name": "Amundi MSCI Europe ESG Selection UCITS ETF Acc",
+    "ticker": "ESGL.L"
+  },
+  {
+    "name": "Amundi MSCI Semiconductors ESG Screened UCITS ETF",
+    "ticker": "SEMG.L"
+  },
+  {
+    "name": "Amundi EUR Corporate Bond Climate Paris Aligned UCITS ETF Acc",
+    "ticker": "CRPX.L"
+  },
+  {
+    "name": "Amundi Core MSCI Japan UCITS ETF GBP Hedged Acc",
+    "ticker": "LCJG.L"
+  },
+  {
+    "name": "Amundi MSCI Smart Cities UCITS ETF ACC",
+    "ticker": "IQCY.L"
+  },
+  {
+    "name": "Amundi Global Aggregate Proceeds Bond 1-10Y UCITS ETF Acc",
+    "ticker": "XCO2.L"
+  },
+  {
+    "name": "UBS (Lux) Fund Solutions – Bloomberg TIPS 10+ UCITS ETF",
+    "ticker": "T10G.L"
+  },
+  {
+    "name": "UBS CMCI Commodity Carry SF UCITS ETF USD acc",
+    "ticker": "CCUA.L"
+  },
+  {
+    "name": "Amundi MSCI Smart Mobility UCITS ETF Capitalisation",
+    "ticker": "ELCR.L"
+  },
+  {
+    "name": "Amundi MSCI Millennials UCITS ETF Acc",
+    "ticker": "MILL.L"
+  },
+  {
+    "name": "UBS BBG Japan Gov 1-3 UCITS ETF -JPY acc- Capitalisation",
+    "ticker": "JT13.L"
+  },
+  {
+    "name": "Amundi MSCI Disruptive Technology UCITS ETF Acc",
+    "ticker": "DTEC.L"
+  },
+  {
+    "name": "UBS J.P. Morgan USD EM IG Screened Diversified Bond UCITS ETF USD acc",
+    "ticker": "EMIG.L"
+  },
+  {
+    "name": "Amundi S&P Eurozone Climate Paris Aligned UCITS ETF Capitalisation",
+    "ticker": "PABG.L"
+  },
+  {
+    "name": "UBS (Lux) Fund Solutions SICAV - UBS Solactive China Technology UCITS ETF USD acc- Capitalisation",
+    "ticker": "CHTE.L"
+  },
+  {
+    "name": "Amundi Euro Government Green Bond UCITS ETF Acc",
+    "ticker": "EART.L"
+  },
+  {
+    "name": "UBS Bloomberg MSCI US Liquid Corporates 1-5 Y Sus UCITS ETF",
+    "ticker": "CBS5.L"
+  },
+  {
+    "name": "iShares Core FTSE 100 UCITS ETF GBP (Dist)",
+    "ticker": "ISF.L"
+  },
+  {
+    "name": "iShares Core Global Aggregate Bond UCITS ETF",
+    "ticker": "AGBP.L"
+  },
+  {
+    "name": "iShares MSCI USA ESG Screened UCITS ETF",
+    "ticker": "GPSA.L"
+  },
+  {
+    "name": "iShares MSCI AC Far East ex-Japan UCITS ETF",
+    "ticker": "IFFF.L"
+  },
+  {
+    "name": "iShares € Govt Bond 1-3yr UCITS ETF EUR (Dist)",
+    "ticker": "IBGS.L"
+  },
+  {
+    "name": "iShares UK Dividend UCITS ETF",
+    "ticker": "IUKD.L"
+  },
+  {
+    "name": "iShares EURO STOXX Mid UCITS ETF",
+    "ticker": "DJMC.L"
+  },
+  {
+    "name": "iShares MSCI World UCITS ETF",
+    "ticker": "IWRD.L"
+  },
+  {
+    "name": "iShares Euro Total Market Growth Large UCITS ETF",
+    "ticker": "IDJG.L"
+  },
+  {
+    "name": "iShares STOXX Europe 50 UCITS ETF",
+    "ticker": "EUN.L"
+  },
+  {
+    "name": "iShares China Large Cap UCITS ETF",
+    "ticker": "FXC.L"
+  },
+  {
+    "name": "iShares MSCI Japan UCITS ETF USD (Dist)",
+    "ticker": "IJPN.L"
+  },
+  {
+    "name": "iShares MSCI Korea UCITS ETF (Dist)",
+    "ticker": "IKOR.L"
+  },
+  {
+    "name": "iShares Euro Dividend UCITS ETF",
+    "ticker": "IDVY.L"
+  },
+  {
+    "name": "iShares AEX UCITS ETF EUR (Dist)",
+    "ticker": "IAEX.L"
+  },
+  {
+    "name": "iShares $ Corp Bond UCITS ETF USD (Dist)",
+    "ticker": "LQDS.L"
+  },
+  {
+    "name": "iShares $ Treasury Bond 1-3yr UCITS ETF USD (Dist)",
+    "ticker": "IBTS.L"
+  },
+  {
+    "name": "iShares US Property Yield UCITS ETF",
+    "ticker": "IUSP.L"
+  },
+  {
+    "name": "iShares € Inflation Linked Govt Bond UCITS ETF",
+    "ticker": "IBCI.L"
+  },
+  {
+    "name": "iShares MSCI North America UCITS ETF",
+    "ticker": "INAA.L"
+  },
+  {
+    "name": "iShares Asia Property Yield UCITS ETF USD (Dist)",
+    "ticker": "IASP.L"
+  },
+  {
+    "name": "iShares Developed Markets Property Yield UCITS ETF USD (Dist)",
+    "ticker": "IWDP.L"
+  },
+  {
+    "name": "iShares European Property Yield UCITS ETF",
+    "ticker": "IPRP.L"
+  },
+  {
+    "name": "iShares MSCI Europe ex-UK UCITS ETF",
+    "ticker": "IEUX.L"
+  },
+  {
+    "name": "Xtrackers MSCI Europe Communication Services ESG Screened UCITS ETF",
+    "ticker": "XSKR.L"
+  },
+  {
+    "name": "Xtrackers MSCI Europe Health Care ESG Screened UCITS ETF",
+    "ticker": "XSDR.L"
+  },
+  {
+    "name": "iShares Global Water UCITS ETF USD (Dist)",
+    "ticker": "IH2O.L"
+  },
+  {
+    "name": "iShares Listed Private Equity UCITS ETF",
+    "ticker": "IPRV.L"
+  },
+  {
+    "name": "Xtrackers MSCI Europe Utilities ESG Screened UCITS ETF",
+    "ticker": "XS6R.L"
+  },
+  {
+    "name": "iShares € Govt Bond 15-30yr UCITS ETF",
+    "ticker": "IBGL.L"
+  },
+  {
+    "name": "iShares € Govt Bond 7-10yr UCITS ETF",
+    "ticker": "IBGM.L"
+  },
+  {
+    "name": "XtrackersMSCI Europe Materials ESG Screened UCITS ETF",
+    "ticker": "XSPR.L"
+  },
+  {
+    "name": "iShares Core MSCI Europe UCITS ETF EUR (Dist)",
+    "ticker": "IMEU.L"
+  },
+  {
+    "name": "Xtrackers MSCI EM Asia Swap UCITS ETF 1C",
+    "ticker": "XMAS.L"
+  },
+  {
+    "name": "iShares UK Property UCITS ETF",
+    "ticker": "IUKP.L"
+  },
+  {
+    "name": "iShares Global Infrastructure UCITS ETF",
+    "ticker": "INFR.L"
+  },
+  {
+    "name": "Xtrackers MSCI Europe Financials ESG Screened UCITS ETF",
+    "ticker": "XS7R.L"
+  },
+  {
+    "name": "iShares € Govt Bond 3-5yr UCITS ETF",
+    "ticker": "IBGX.L"
+  },
+  {
+    "name": "Xtrackers MSCI Europe Information Technology ESG Screened UCITS ETF",
+    "ticker": "XS8R.L"
+  },
+  {
+    "name": "iShares Global Timber & Forestry UCITS ETF",
+    "ticker": "WOOD.L"
+  },
+  {
+    "name": "Xtrackers MSCI Europe Consumer Staples ESG Screened UCITS ETF",
+    "ticker": "XS3R.L"
+  },
+  {
+    "name": "Xtrackers MSCI Europe Industrial ESG Screened UCITS ETF",
+    "ticker": "XSNR.L"
+  },
+  {
+    "name": "iShares MSCI EM Latin America UCITS ETF",
+    "ticker": "LTAM.L"
+  },
+  {
+    "name": "iShares Global Inflation Linked Govt Bond UCITS ETF USD (Acc)",
+    "ticker": "SGIL.L"
+  },
+  {
+    "name": "Xtrackers MSCI Europe ESG Screened UCITS ETF",
+    "ticker": "XEUM.L"
+  },
+  {
+    "name": "iShares VII PLC - iShares MSCI EMU Small Cap UCITS ETF EUR (Acc)",
+    "ticker": "CES1.L"
+  },
+  {
+    "name": "iShares S&P Small Cap 600 UCITS ETF USD (Dist)",
+    "ticker": "ISP6.L"
+  },
+  {
+    "name": "iShares BRIC 50 UCITS ETF",
+    "ticker": "BRIC.L"
+  },
+  {
+    "name": "iShares € Corp Bond Large Cap UCITS ETF",
+    "ticker": "IBCX.L"
+  },
+  {
+    "name": "iShares Core UK Gilts UCITS ETF GBP (Dist)",
+    "ticker": "IGLT.L"
+  },
+  {
+    "name": "iShares MSCI AC Far East ex-Japan Small Cap UCITS ETF USD (Dist)",
+    "ticker": "ISFE.L"
+  },
+  {
+    "name": "iShares Core € Corp Bond UCITS ETF EUR (Dist)",
+    "ticker": "IEBC.L"
+  },
+  {
+    "name": "iShares Global Govt Bond UCITS ETF USD (Dist)",
+    "ticker": "SGLO.L"
+  },
+  {
+    "name": "iShares € Corp Bond ex-Financials UCITS ETF",
+    "ticker": "EEXF.L"
+  },
+  {
+    "name": "iShares € Govt Bond 5-7yr UCITS ETF",
+    "ticker": "IBGY.L"
+  },
+  {
+    "name": "iShares $ Treasury Bond 7-10yr UCITS ETF USD (Dist)",
+    "ticker": "IBTM.L"
+  },
+  {
+    "name": "iShares Core € Govt Bond UCITS ETF EUR (Dist)",
+    "ticker": "SEGA.L"
+  },
+  {
+    "name": "Xtrackers MSCI Pacific ex Japan ESG Screened UCITS ETF",
+    "ticker": "XPXJ.L"
+  },
+  {
+    "name": "Invesco FTSE 250 UCITS ETF",
+    "ticker": "S250.L"
+  },
+  {
+    "name": "iShares Core MSCI Japan IMI UCITS ETF USD (Acc)",
+    "ticker": "SJPA.L"
+  },
+  {
+    "name": "iShares J.P. Morgan $ EM Bond UCITS ETF USD (Dist)",
+    "ticker": "SEMB.L"
+  },
+  {
+    "name": "Invesco Markets PLC - Invesco Ftse 100 Ucits ETF",
+    "ticker": "S100.L"
+  },
+  {
+    "name": "iShares UK Gilts 0-5yr UCITS ETF GBP (Dist)",
+    "ticker": "IGLS.L"
+  },
+  {
+    "name": "iShares Core MSCI Europe UCITS ETF EUR (Acc)",
+    "ticker": "SMEA.L"
+  },
+  {
+    "name": "iShares VII PLC - iShares MSCI USA Small Cap ESG Enhanced UCITS ETF USD (Acc)",
+    "ticker": "CUS1.L"
+  },
+  {
+    "name": "iShares MSCI EM UCITS ETF USD (Acc)",
+    "ticker": "SEMA.L"
+  },
+  {
+    "name": "iShares VII PLC -iShares Core MSCI EMU UCITS ETF EUR (Acc)",
+    "ticker": "CEU1.L"
+  },
+  {
+    "name": "iShares VII PLC - iShares FTSE MIB UCITS ETF EUR (Acc)",
+    "ticker": "CMB1.L"
+  },
+  {
+    "name": "iShares $ TIPS UCITS ETF USD (Acc)",
+    "ticker": "ITPS.L"
+  },
+  {
+    "name": "iShares VII PLC - iShares MSCI Japan UCITS ETF USD (Acc)",
+    "ticker": "CSJP.L"
+  },
+  {
+    "name": "Invesco STOXX Europe 600 Optimised Banks UCITS ETF",
+    "ticker": "X7PP.L"
+  },
+  {
+    "name": "iShares VII PLC - iShares € Govt Bond 1-3yr UCITS ETF EUR (Acc)",
+    "ticker": "CE31.L"
+  },
+  {
+    "name": "iShares VII PLC - iShares € Govt Bond 3-7yr UCITS ETF EUR (Acc)",
+    "ticker": "CE71.L"
+  },
+  {
+    "name": "iShares VII PLC - iShares MSCI USA UCITS ETF USD (Acc)",
+    "ticker": "CU1.L"
+  },
+  {
+    "name": "iShares Core S&P 500 UCITS ETF USD (Acc)",
+    "ticker": "CSP1.L"
+  },
+  {
+    "name": "Invesco MSCI Europe UCITS ETF",
+    "ticker": "MXEU.L"
+  },
+  {
+    "name": "iShares NASDAQ 100 UCITS ETF USD (Acc)",
+    "ticker": "CNX1.L"
+  },
+  {
+    "name": "iShares VII PLC - iShares MSCI EM Asia UCITS ETF USD (Acc)",
+    "ticker": "CEA1.L"
+  },
+  {
+    "name": "iShares € High Yield Corp Bond UCITS ETF EUR (Dist)",
+    "ticker": "SHYG.L"
+  },
+  {
+    "name": "iShares VII PLC - iShares Nikkei 225 UCITS ETF JPY (Acc)",
+    "ticker": "CNKY.L"
+  },
+  {
+    "name": "iShares VII PLC - iShares € Govt Bond 7-10yr UCITS ETF EUR (Acc)",
+    "ticker": "CE01.L"
+  },
+  {
+    "name": "iShares VII PLC - iShares $ Treasury Bond 1-3yr UCITS ETF USD (Acc)",
+    "ticker": "CU31.L"
+  },
+  {
+    "name": "iShares V PLC - iShares MSCI World GBP Hedged UCITS ETF (Acc)",
+    "ticker": "IGWD.L"
+  },
+  {
+    "name": "iShares MSCI Australia UCITS ETF",
+    "ticker": "SAUS.L"
+  },
+  {
+    "name": "Xtrackers Bloomberg Commodity ex-Agriculture & Livestock Swap UCITS ETF",
+    "ticker": "XDBG.L"
+  },
+  {
+    "name": "iShares Core € Corp Bond UCITS ETF EUR (Dist)",
+    "ticker": "IEAC.L"
+  },
+  {
+    "name": "iShares $ Treasury Bond 3-7yr UCITS ETF USD (Acc)",
+    "ticker": "CU71.L"
+  },
+  {
+    "name": "iShares MSCI Europe SRI UCITS ETF EUR (Acc)",
+    "ticker": "IESG.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 GBP Hedged UCITS ETF (Acc)",
+    "ticker": "IGUS.L"
+  },
+  {
+    "name": "iShares V PLC - iShares MSCI Poland UCITS ETF",
+    "ticker": "SPOL.L"
+  },
+  {
+    "name": "PIMCO Emerging Markets Advantage Local Bond Index UCITS ETF Acc USD",
+    "ticker": "EMLP.L"
+  },
+  {
+    "name": "iShares US Aggregate Bond UCITS ETF USD (Dist)",
+    "ticker": "SUAG.L"
+  },
+  {
+    "name": "iShares J.P. Morgan EM Local Govt Bond UCITS ETF",
+    "ticker": "SEML.L"
+  },
+  {
+    "name": "iShares GBP Corp Bond 0-5yr UCITS ETF",
+    "ticker": "IS15.L"
+  },
+  {
+    "name": "iShares $ High Yield Corp Bond UCITS ETF USD (Dist)",
+    "ticker": "SHYU.L"
+  },
+  {
+    "name": "iShares V PLC - iShares Agribusiness UCITS ETF USD (Acc)",
+    "ticker": "SPAG.L"
+  },
+  {
+    "name": "iShares V PLC - iShares Gold Producers UCITS ETF USD (Acc)",
+    "ticker": "SPGP.L"
+  },
+  {
+    "name": "iShares V PLC - iShares Oil & Gas Exploration & Production UCITS ETF USD (Acc)",
+    "ticker": "SPOG.L"
+  },
+  {
+    "name": "SPDR FTSE UK All Share UCITS ETF Acc",
+    "ticker": "FTAL.L"
+  },
+  {
+    "name": "SPDR MSCI ACWI UCITS ETF",
+    "ticker": "ACWI.L"
+  },
+  {
+    "name": "iShares V PLC - iShares MSCI ACWI UCITS ETF USD (Acc)",
+    "ticker": "SSAC.L"
+  },
+  {
+    "name": "SPDR S&P 500 Low Volatility UCITS ETF",
+    "ticker": "USLV.L"
+  },
+  {
+    "name": "iShares V PLC - iShares EM Dividend UCITS ETF USD (Dist)",
+    "ticker": "SEDY.L"
+  },
+  {
+    "name": "iShares V Public Limited Company - iShares MSCI Japan GBP Hedged UCITS ETF (Acc)",
+    "ticker": "IJPH.L"
+  },
+  {
+    "name": "iShares Global AAA-AA Govt Bond UCITS ETF USD (Dist)",
+    "ticker": "SAAA.L"
+  },
+  {
+    "name": "iShares Edge MSCI Europe Minimum Volatility UCITS ETF",
+    "ticker": "IMV.L"
+  },
+  {
+    "name": "First Trust United Kingdom AlphaDEX UCITS ETF",
+    "ticker": "FKU.L"
+  },
+  {
+    "name": "iShares Edge S&P 500 Minimum Volatility UCITS ETF",
+    "ticker": "MVUS.L"
+  },
+  {
+    "name": "iShares V PLC - iShares MSCI World EUR Hedged UCITS ETF (Acc)",
+    "ticker": "IWDE.L"
+  },
+  {
+    "name": "iShares Emerging Asia Local Govt Bond UCITS ETF USD (Dist)",
+    "ticker": "SGEA.L"
+  },
+  {
+    "name": "Xtrackers DAX Income UCITS ETF",
+    "ticker": "XDDX.L"
+  },
+  {
+    "name": "iShares Global High Yield Corp Bond UCITS ETF USD (Dist)",
+    "ticker": "IGHY.L"
+  },
+  {
+    "name": "iShares V PLC - iShares MSCI Japan EUR Hedged UCITS ETF (Acc)",
+    "ticker": "IJPE.L"
+  },
+  {
+    "name": "iShares Edge MSCI World Minimum Volatility UCITS ETF USD (Acc)",
+    "ticker": "MINV.L"
+  },
+  {
+    "name": "iShares Global Corp Bond UCITS ETF USD (Dist)",
+    "ticker": "CRPS.L"
+  },
+  {
+    "name": "SPDR Bloomberg SASB U.S. High Yield Corporate ESG UCITS ETF",
+    "ticker": "JNKS.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 EUR Hedged UCITS ETF (Acc)",
+    "ticker": "IUSE.L"
+  },
+  {
+    "name": "SPDR MSCI World Small Cap UCITS ETF",
+    "ticker": "WOSC.L"
+  },
+  {
+    "name": "iShares Edge MSCI Europe Minimum Volatility UCITS ETF",
+    "ticker": "MVEU.L"
+  },
+  {
+    "name": "iShares $ Ultrashort Bond UCITS ETF",
+    "ticker": "ERNU.L"
+  },
+  {
+    "name": "iShares $ Short Duration Corp Bond UCITS ETF USD (Dist)",
+    "ticker": "IGSD.L"
+  },
+  {
+    "name": "iShares $ Short Duration High Yield Corp Bond UCITS ETF",
+    "ticker": "SDHG.L"
+  },
+  {
+    "name": "First Trust US Large Cap Core AlphaDEX UCITS ETF",
+    "ticker": "FEX.L"
+  },
+  {
+    "name": "Xtrackers MSCI AC World ESG Screened UCITS ETF",
+    "ticker": "XMAW.L"
+  },
+  {
+    "name": "SPDR Russell 2000 US Small Cap UCITS ETF",
+    "ticker": "R2SC.L"
+  },
+  {
+    "name": "iShares Core MSCI EM IMI UCITS ETF",
+    "ticker": "EMIM.L"
+  },
+  {
+    "name": "iShares Edge MSCI World Value Factor UCITS ETF USD (Acc)",
+    "ticker": "IWFV.L"
+  },
+  {
+    "name": "iShares £ Ultrashort Bond UCITS ETF",
+    "ticker": "ERNS.L"
+  },
+  {
+    "name": "First Trust Emerging Markets AlphaDEX UCITS ETF",
+    "ticker": "FEM.L"
+  },
+  {
+    "name": "iShares € Ultrashort Bond UCITS ETF",
+    "ticker": "ERN1.L"
+  },
+  {
+    "name": "iShares MSCI France UCITS ETF",
+    "ticker": "ISFR.L"
+  },
+  {
+    "name": "iShares Edge MSCI World Momentum Factor UCITS ETF",
+    "ticker": "IWFM.L"
+  },
+  {
+    "name": "First Trust Eurozone AlphaDEX UCITS ETF",
+    "ticker": "FEUZ.L"
+  },
+  {
+    "name": "iShares MSCI World Mid-Cap Equal Weight UCITS ETF USD",
+    "ticker": "IWFS.L"
+  },
+  {
+    "name": "iShares MSCI Target UK Real Estate UCITS ETF GBP (Dist)",
+    "ticker": "UKRE.L"
+  },
+  {
+    "name": "Xtrackers MSCI USA Screened UCITS ETF Accum Shs -1C- USD",
+    "ticker": "XRSS.L"
+  },
+  {
+    "name": "iShares Edge MSCI Europe Value Factor UCITS ETF",
+    "ticker": "IEFV.L"
+  },
+  {
+    "name": "Xtrackers MSCI Japan Screened UCITS ETF 1D",
+    "ticker": "XDNS.L"
+  },
+  {
+    "name": "iShares MSCI Europe Mid-Cap Equal Weight UCITS ETF",
+    "ticker": "IEFS.L"
+  },
+  {
+    "name": "iShares MSCI Europe ex-UK GBP Hedged UCITS ETF",
+    "ticker": "EUXS.L"
+  },
+  {
+    "name": "Xtrackers MSCI Japan Screened UCITS ETF 2D GBP Hedged",
+    "ticker": "XDNG.L"
+  },
+  {
+    "name": "iShares Edge MSCI Europe Multifactor UCITS ETF EUR (Acc)",
+    "ticker": "FSEU.L"
+  },
+  {
+    "name": "iShares VII PLC - iShares MSCI EMU USD Hedged UCITS ETF (Acc)",
+    "ticker": "EMUU.L"
+  },
+  {
+    "name": "iShares Edge MSCI Europe Momentum Factor UCITS ETF",
+    "ticker": "IEFM.L"
+  },
+  {
+    "name": "iShares STOXX World Equity Multifactor UCITS ETF Accum Shs USD",
+    "ticker": "FSWD.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Energy Sector UCITS ETF USD (Acc)",
+    "ticker": "IESU.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Financials Sector UCITS ETF USD (Acc)",
+    "ticker": "UIFS.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Health Care Sector UCITS ETF USD (Acc)",
+    "ticker": "IHCU.L"
+  },
+  {
+    "name": "iShares $ Treasury Bond 20+yr UCITS ETF USD (Dist)",
+    "ticker": "IBTL.L"
+  },
+  {
+    "name": "First Trust United Kingdom AlphaDEX UCITS ETF",
+    "ticker": "FKUD.L"
+  },
+  {
+    "name": "WisdomTree Europe Equity UCITS ETF",
+    "ticker": "HEDG.L"
+  },
+  {
+    "name": "WisdomTree Japan Equity UCITS ETF",
+    "ticker": "DXJG.L"
+  },
+  {
+    "name": "iShares € Corp Bond 0-3yr ESG UCITS ETF",
+    "ticker": "SUSS.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Consumer Discretionary Sector UCITS ETF USD (Acc)",
+    "ticker": "ICDU.L"
+  },
+  {
+    "name": "iShares Fallen Angels High Yield Corp Bond UCITS ETF",
+    "ticker": "RISE.L"
+  },
+  {
+    "name": "iShares € Ultrashort Bond UCITS ETF",
+    "ticker": "ERNE.L"
+  },
+  {
+    "name": "Xtrackers II Global Aggregate Bond Swap UCITS ETF 3D - GBP Hedged",
+    "ticker": "XBGG.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Information Technology Sector UCITS ETF USD (Acc)",
+    "ticker": "IITU.L"
+  },
+  {
+    "name": "WisdomTree Eurozone Quality Dividend Growth UCITS ETF",
+    "ticker": "EGRG.L"
+  },
+  {
+    "name": "WisdomTree Emerging Markets Equity Income UCITS ETF",
+    "ticker": "DEMS.L"
+  },
+  {
+    "name": "SPDR MSCI World Financials UCITS ETF USD Acc",
+    "ticker": "FNCW.L"
+  },
+  {
+    "name": "iShares Healthcare Innovation UCITS ETF",
+    "ticker": "DRDR.L"
+  },
+  {
+    "name": "iShares MSCI USA Mid-Cap Equal Weight UCITS ETF Accum Shs USD",
+    "ticker": "IUSF.L"
+  },
+  {
+    "name": "iShares US Mortgage Backed Securities UCITS ETF USD (Dist)",
+    "ticker": "SMBS.L"
+  },
+  {
+    "name": "iShares Automation & Robotics UCITS ETF",
+    "ticker": "RBTX.L"
+  },
+  {
+    "name": "iShares Edge MSCI USA Momentum Factor UCITS ETF USD (Acc)",
+    "ticker": "IUMF.L"
+  },
+  {
+    "name": "iShares Edge MSCI Europe Value Factor UCITS ETF",
+    "ticker": "IEVL.L"
+  },
+  {
+    "name": "iShares Digitalisation UCITS ETF",
+    "ticker": "DGIT.L"
+  },
+  {
+    "name": "iShares MSCI USA SRI UCITS ETF USD (Acc)",
+    "ticker": "SUUS.L"
+  },
+  {
+    "name": "iShares MSCI EM SRI UCITS ETF",
+    "ticker": "SUES.L"
+  },
+  {
+    "name": "iShares Edge MSCI USA Quality Factor UCITS ETF USD (Acc)",
+    "ticker": "IUQF.L"
+  },
+  {
+    "name": "iShares Edge MSCI USA Value Factor UCITS ETF USD (Acc)",
+    "ticker": "IUVF.L"
+  },
+  {
+    "name": "WisdomTree US Equity Income UCITS ETF - Acc",
+    "ticker": "DHSP.L"
+  },
+  {
+    "name": "WisdomTree US Quality Dividend Growth UCITS ETF",
+    "ticker": "DGRG.L"
+  },
+  {
+    "name": "WisdomTree Europe SmallCap Dividend UCITS ETF",
+    "ticker": "DFEP.L"
+  },
+  {
+    "name": "WisdomTree Global Quality Dividend Growth UCITS ETF",
+    "ticker": "GGRG.L"
+  },
+  {
+    "name": "WisdomTree US Equity Income UCITS ETF",
+    "ticker": "DHSG.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Industrials Sector UCITS ETF",
+    "ticker": "IISU.L"
+  },
+  {
+    "name": "VanEck J.P. Morgan EM Local Currency Bond UCITS ETF",
+    "ticker": "EMGB.L"
+  },
+  {
+    "name": "WisdomTree Eurozone Quality Dividend Growth UCITS ETF",
+    "ticker": "EGRA.L"
+  },
+  {
+    "name": "iShares MSCI Japan SRI UCITS ETF",
+    "ticker": "SUJA.L"
+  },
+  {
+    "name": "WisdomTree Europe Equity Income UCITS ETF Acc",
+    "ticker": "EEIP.L"
+  },
+  {
+    "name": "iShares $ TIPS 0-5 UCITS ETF USD (Dist)",
+    "ticker": "TP05.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Materials Sector UCITS ETF",
+    "ticker": "IMSU.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Utilities Sector UCITS ETF",
+    "ticker": "IUSU.L"
+  },
+  {
+    "name": "WisdomTree Europe SmallCap Dividend UCITS ETF",
+    "ticker": "DFEA.L"
+  },
+  {
+    "name": "WisdomTree Enhanced Commodity UCITS ETF - USD Acc",
+    "ticker": "WCOB.L"
+  },
+  {
+    "name": "WisdomTree Europe Equity UCITS ETF",
+    "ticker": "HEDS.L"
+  },
+  {
+    "name": "iShares Diversified Commodity Swap UCITS ETF",
+    "ticker": "COMM.L"
+  },
+  {
+    "name": "iShares MSCI Europe Quality Dividend ESG UCITS ETF",
+    "ticker": "EQDS.L"
+  },
+  {
+    "name": "iShares MSCI World Quality Dividend ESG UCITS ETF",
+    "ticker": "WQDS.L"
+  },
+  {
+    "name": "WisdomTree Europe Equity Income UCITS ETF",
+    "ticker": "EEIA.L"
+  },
+  {
+    "name": "iShares $ Floating Rate Bond UCITS ETF",
+    "ticker": "FLO5.L"
+  },
+  {
+    "name": "iShares Global Inflation Linked Govt Bond UCITS ETF EUR Hedged (Dist)",
+    "ticker": "GILE.L"
+  },
+  {
+    "name": "iShares $ Corp Bond UCITS ETF EUR Hedged (Dist)",
+    "ticker": "LQEE.L"
+  },
+  {
+    "name": "iShares Core MSCI World UCITS ETF",
+    "ticker": "IWDG.L"
+  },
+  {
+    "name": "iShares Core Global Aggregate Bond UCITS ETF",
+    "ticker": "SAGG.L"
+  },
+  {
+    "name": "iShares € High Yield Corp Bond UCITS ETF",
+    "ticker": "HIGH.L"
+  },
+  {
+    "name": "Fidelity Europe Quality Income UCITS ETF",
+    "ticker": "FEQD.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Consumer Staples Sector UCITS ETF",
+    "ticker": "ICSU.L"
+  },
+  {
+    "name": "iShares MSCI Europe Mid Cap UCITS ETF",
+    "ticker": "EUMD.L"
+  },
+  {
+    "name": "iShares MSCI Europe Mid Cap UCITS ETF",
+    "ticker": "EMID.L"
+  },
+  {
+    "name": "iShares MSCI World SRI UCITS ETF",
+    "ticker": "SUWG.L"
+  },
+  {
+    "name": "iShares Edge MSCI Europe Multifactor UCITS ETF",
+    "ticker": "IFSD.L"
+  },
+  {
+    "name": "Fidelity Europe Quality Income UCITS ETF GBP",
+    "ticker": "FEQP.L"
+  },
+  {
+    "name": "iShares Edge MSCI Europe Value Factor UCITS ETF",
+    "ticker": "IEDL.L"
+  },
+  {
+    "name": "iShares $ Floating Rate Bond UCITS ETF",
+    "ticker": "FLOS.L"
+  },
+  {
+    "name": "iShares $ TIPS 0-5 UCITS ETF",
+    "ticker": "TI5G.L"
+  },
+  {
+    "name": "iShares $ Corp Bond UCITS ETF GBP Hedged (Dist)",
+    "ticker": "LQGH.L"
+  },
+  {
+    "name": "iShares Developed Markets Property Yield UCITS ETF",
+    "ticker": "DPYG.L"
+  },
+  {
+    "name": "iShares Global Govt Bond UCITS ETF",
+    "ticker": "IGLH.L"
+  },
+  {
+    "name": "iShares $ TIPS UCITS ETF",
+    "ticker": "ITPG.L"
+  },
+  {
+    "name": "iShares $ Treasury Bond 1-3yr UCITS ETF",
+    "ticker": "IBTG.L"
+  },
+  {
+    "name": "iShares Global Corp Bond UCITS ETF GBP Hedged (Dist)",
+    "ticker": "CRHG.L"
+  },
+  {
+    "name": "Fidelity Global Quality Income UCITS ETF GBP Hedged Inc",
+    "ticker": "FGQP.L"
+  },
+  {
+    "name": "iShares Edge MSCI Europe Minimum Volatility UCITS ETF",
+    "ticker": "MVED.L"
+  },
+  {
+    "name": "iShares US Aggregate Bond UCITS ETF",
+    "ticker": "IUAE.L"
+  },
+  {
+    "name": "iShares US Aggregate Bond UCITS ETF",
+    "ticker": "IUGA.L"
+  },
+  {
+    "name": "Xtrackers MSCI USA ESG UCITS ETF",
+    "ticker": "XESU.L"
+  },
+  {
+    "name": "iShares $ Treasury Bond 20+yr UCITS ETF EUR Hedged (Dist)",
+    "ticker": "DTLE.L"
+  },
+  {
+    "name": "iShares Fallen Angels High Yield Corporate Bond UCITS ETF GBP Hedged (Dist)",
+    "ticker": "WIGG.L"
+  },
+  {
+    "name": "iShares Edge MSCI World Value Factor UCITS ETF",
+    "ticker": "IWVG.L"
+  },
+  {
+    "name": "SPDR Bloomberg Global Aggregate Bond USD Hdg UCITS ETF Acc",
+    "ticker": "GLBL.L"
+  },
+  {
+    "name": "iShares Core MSCI EM IMI UCITS ETF",
+    "ticker": "EMGU.L"
+  },
+  {
+    "name": "PIMCO US Short-Term High Yield Corporate Bond UCITS ETF Accum Shs Hedged EUR",
+    "ticker": "STEA.L"
+  },
+  {
+    "name": "iShares $ Treasury Bond 1-3yr UCITS ETF",
+    "ticker": "IBTE.L"
+  },
+  {
+    "name": "iShares MSCI World Small Cap UCITS ETF",
+    "ticker": "WLDS.L"
+  },
+  {
+    "name": "iShares J.P. Morgan $ EM Bond UCITS ETF",
+    "ticker": "EMHG.L"
+  },
+  {
+    "name": "iShares $ High Yield Corp Bond UCITS ETF",
+    "ticker": "IHYE.L"
+  },
+  {
+    "name": "iShares Edge MSCI Europe Momentum Factor UCITS ETF",
+    "ticker": "IEMD.L"
+  },
+  {
+    "name": "First Trust Eurozone AlphaDEX UCITS ETF",
+    "ticker": "FEUD.L"
+  },
+  {
+    "name": "iShares Nasdaq US Biotechnology UCITS ETF USD (Acc)",
+    "ticker": "BTEK.L"
+  },
+  {
+    "name": "iShares Developed Markets Property Yield UCITS ETF",
+    "ticker": "DPYE.L"
+  },
+  {
+    "name": "iShares $ High Yield Corp Bond UCITS ETF GBP Hedged (Dist)",
+    "ticker": "IHHG.L"
+  },
+  {
+    "name": "VanEck Global Mining UCITS ETF",
+    "ticker": "GIGB.L"
+  },
+  {
+    "name": "iShares MSCI World SRI UCITS ETF EUR (Acc)",
+    "ticker": "SUSW.L"
+  },
+  {
+    "name": "iShares MSCI EM IMI ESG Screened UCITS ETF",
+    "ticker": "GEDM.L"
+  },
+  {
+    "name": "JPMorgan ETFs (Ireland) ICAV - Global Research Enhanced Index Equity UCITS ETF - USD (acc)",
+    "ticker": "JGRE.L"
+  },
+  {
+    "name": "iShares IV PLC - iShares MSCI EM IMI Screened UCITS ETF AccumUnhedged USD",
+    "ticker": "SEGM.L"
+  },
+  {
+    "name": "iShares MSCI Europe ESG Screened UCITS ETF EUR (Acc)",
+    "ticker": "SAEU.L"
+  },
+  {
+    "name": "iShares MSCI EMU ESG Screened UCITS ETF EUR (Acc)",
+    "ticker": "SAUM.L"
+  },
+  {
+    "name": "Fidelity Emerging Markets Quality Income UCITS ETF USD Acc",
+    "ticker": "FEMQ.L"
+  },
+  {
+    "name": "Xtrackers MSCI USA Banks UCITS ETF",
+    "ticker": "XUFB.L"
+  },
+  {
+    "name": "Invesco Communications S&P US Select Sector UCITS ETF",
+    "ticker": "XLCP.L"
+  },
+  {
+    "name": "WisdomTree Artificial Intelligence UCITS ETF",
+    "ticker": "INTL.L"
+  },
+  {
+    "name": "iShares MSCI India UCITS ETF",
+    "ticker": "IIND.L"
+  },
+  {
+    "name": "WisdomTree Enhanced Commodity UCITS ETF",
+    "ticker": "WCOM.L"
+  },
+  {
+    "name": "Vanguard USD Emerging Markets Government Bond UCITS ETF",
+    "ticker": "VEMA.L"
+  },
+  {
+    "name": "Vanguard USD Treasury Bond UCITS ETF",
+    "ticker": "VUTA.L"
+  },
+  {
+    "name": "iShares MSCI Japan ESG Screened UCITS ETF",
+    "ticker": "SGJP.L"
+  },
+  {
+    "name": "Vanguard EUR Eurozone Government Bond UCITS ETF",
+    "ticker": "VETA.L"
+  },
+  {
+    "name": "Vanguard EUR Corporate Bond UCITS ETF",
+    "ticker": "VECA.L"
+  },
+  {
+    "name": "iShares Edge MSCI World Minimum Volatility UCITS ETF GBP Hedged (Acc)",
+    "ticker": "WMVG.L"
+  },
+  {
+    "name": "SPDR S&P U.S. Communication Services Select Sector UCITS ETF",
+    "ticker": "GXLC.L"
+  },
+  {
+    "name": "iShares MSCI World ESG Enhanced UCITS ETF",
+    "ticker": "EEWG.L"
+  },
+  {
+    "name": "Harbor Health Care UCITS ETF Accum Shs -A- USD",
+    "ticker": "WELP.L"
+  },
+  {
+    "name": "iShares MSCI Japan ESG Enhanced UCITS ETF",
+    "ticker": "EEJG.L"
+  },
+  {
+    "name": "iShares $ Treasury Bond 7-10yr UCITS ETF USD (Dist)",
+    "ticker": "IGTM.L"
+  },
+  {
+    "name": "Vanguard USD Corporate Bond UCITS ETF",
+    "ticker": "VCPA.L"
+  },
+  {
+    "name": "Vanguard USD Corporate 1-3 Year Bond UCITS ETF USD Accumulation",
+    "ticker": "VSCA.L"
+  },
+  {
+    "name": "iShares MSCI World ESG Enhanced UCITS ETF",
+    "ticker": "EGMW.L"
+  },
+  {
+    "name": "iShares € Corp Bond ESG UCITS ETF",
+    "ticker": "SUOE.L"
+  },
+  {
+    "name": "iShares Digital Security UCITS ETF",
+    "ticker": "SHLG.L"
+  },
+  {
+    "name": "Vanguard S&P 500 UCITS ETF",
+    "ticker": "VUAG.L"
+  },
+  {
+    "name": "iShares MSCI EMU ESG Screened UCITS ETF",
+    "ticker": "SMUD.L"
+  },
+  {
+    "name": "L&G Healthcare Technology & Innovation UCITS ETF Accum Shs USD",
+    "ticker": "DOCG.L"
+  },
+  {
+    "name": "Vanguard FTSE Developed Europe UCITS ETF",
+    "ticker": "VEUA.L"
+  },
+  {
+    "name": "Vanguard FTSE North America UCITS ETF",
+    "ticker": "VNRG.L"
+  },
+  {
+    "name": "iShares $ Corp Bond 0-3yr ESG UCITS ETF",
+    "ticker": "SGSU.L"
+  },
+  {
+    "name": "Vanguard FTSE 250 UCITS ETF",
+    "ticker": "VMIG.L"
+  },
+  {
+    "name": "Fidelity Europe Quality Income UCITS ETF EUR Inc",
+    "ticker": "FEUI.L"
+  },
+  {
+    "name": "iShares MSCI USA ESG Enhanced UCITS ETF",
+    "ticker": "EEDG.L"
+  },
+  {
+    "name": "WisdomTree Cloud Computing UCITS ETF",
+    "ticker": "KLWD.L"
+  },
+  {
+    "name": "iShares € Corp Bond ESG UCITS ETF",
+    "ticker": "SUOG.L"
+  },
+  {
+    "name": "Vanguard U.K. Gilt UCITS ETF",
+    "ticker": "VGVA.L"
+  },
+  {
+    "name": "Vanguard FTSE Developed Europe ex UK UCITS ETF",
+    "ticker": "VERG.L"
+  },
+  {
+    "name": "Vanguard Global Aggregate Bond UCITS ETF GBP Hedged Accumulation",
+    "ticker": "VAGS.L"
+  },
+  {
+    "name": "iShares $ Treasury Bond UCITS ETF",
+    "ticker": "GOVP.L"
+  },
+  {
+    "name": "Vanguard FTSE All-World UCITS ETF",
+    "ticker": "VWRP.L"
+  },
+  {
+    "name": "Vanguard FTSE All-World High Dividend Yield UCITS ETF",
+    "ticker": "VHYG.L"
+  },
+  {
+    "name": "Vanguard FTSE Developed World UCITS ETF",
+    "ticker": "VHVG.L"
+  },
+  {
+    "name": "iShares China CNY Bond UCITS ETF",
+    "ticker": "CNYB.L"
+  },
+  {
+    "name": "Fidelity Emerging Markets Quality Income UCITS ETF",
+    "ticker": "FEMD.L"
+  },
+  {
+    "name": "Vanguard FTSE Developed Asia Pacific ex Japan UCITS ETF",
+    "ticker": "VDPG.L"
+  },
+  {
+    "name": "Vanguard Funds Public Limited Company - Vanguard FTSE 100 UCITS ETF",
+    "ticker": "VUKG.L"
+  },
+  {
+    "name": "iShares MSCI EM ESG Enhanced UCITS ETF USD Acc",
+    "ticker": "EDG2.L"
+  },
+  {
+    "name": "iShares MSCI EM ESG Enhanced UCITS ETF",
+    "ticker": "EGDM.L"
+  },
+  {
+    "name": "iShares Global High Yield Corp Bond UCITS ETF",
+    "ticker": "GHYG.L"
+  },
+  {
+    "name": "Fidelity Global Equity Research Enhanced UCITS ETF Accum Shs USD",
+    "ticker": "FGLS.L"
+  },
+  {
+    "name": "Xtrackers MSCI Emerging Markets ESG UCITS ETF",
+    "ticker": "XESE.L"
+  },
+  {
+    "name": "Fidelity US Equity Research Enhanced UCITS ETF Accum Shs USD",
+    "ticker": "FUSS.L"
+  },
+  {
+    "name": "iShares MSCI EMU ESG Enhanced UCITS ETF",
+    "ticker": "EMUD.L"
+  },
+  {
+    "name": "Fidelity Europe Equity Research Enhanced UCITS ETF Accum Shs EUR",
+    "ticker": "FEUR.L"
+  },
+  {
+    "name": "Vanguard FTSE Emerging Markets UCITS ETF",
+    "ticker": "VFEG.L"
+  },
+  {
+    "name": "WisdomTree Battery Solutions UCITS ETF",
+    "ticker": "CHRG.L"
+  },
+  {
+    "name": "iShares $ Treasury Bond 20+yr UCITS ETF",
+    "ticker": "IDTG.L"
+  },
+  {
+    "name": "Vanguard FTSE Japan UCITS ETF",
+    "ticker": "VJPB.L"
+  },
+  {
+    "name": "iShares S&P 500 Swap UCITS ETF",
+    "ticker": "I500.L"
+  },
+  {
+    "name": "Xtrackers II ESG EUR Corporate Bond Short Duration UCITS ETF",
+    "ticker": "XZE5.L"
+  },
+  {
+    "name": "iShares Moderate Portfolio UCITS ETF Accum Hedged GBP",
+    "ticker": "MAMG.L"
+  },
+  {
+    "name": "iShares Edge MSCI USA Minimum Volatility ESG UCITS ETF",
+    "ticker": "MVEA.L"
+  },
+  {
+    "name": "Xtrackers ESG USD Corporate Bond UCITS ETF",
+    "ticker": "XZBU.L"
+  },
+  {
+    "name": "Fidelity Emerging Markets Equity Research Enhanced UCITS ETF",
+    "ticker": "FEMS.L"
+  },
+  {
+    "name": "iShares Edge MSCI World Minimum Volatility ESG UCITS ETF USD (Acc)",
+    "ticker": "MVEW.L"
+  },
+  {
+    "name": "iShares MSCI World SRI UCITS ETF GBP Hedged (Dist)",
+    "ticker": "SGWS.L"
+  },
+  {
+    "name": "Fidelity Pacific ex-Japan Equity Research Enhanced UCITS ETF USD Acc",
+    "ticker": "FPXS.L"
+  },
+  {
+    "name": "iShares MSCI Europe Energy Sector UCITS ETF",
+    "ticker": "ESIE.L"
+  },
+  {
+    "name": "iShares Conservative Portfolio UCITS ETF Accum Hedged GBP",
+    "ticker": "MACG.L"
+  },
+  {
+    "name": "SPDR MSCI World Value UCITS ETF",
+    "ticker": "VALW.L"
+  },
+  {
+    "name": "iShares MSCI Europe Health Care Sector UCITS ETF",
+    "ticker": "ESIH.L"
+  },
+  {
+    "name": "Fidelity Japan Equity Research Enhanced UCITS ETF JPY Acc",
+    "ticker": "FJPS.L"
+  },
+  {
+    "name": "UBS (Irl) ETF plc - S&P 500 ESG ELITE UCITS ETF (USD) A Acc",
+    "ticker": "S5EE.L"
+  },
+  {
+    "name": "Janus Henderson US Enhanced Inflation Core UCITS ETF GBP-H Acc",
+    "ticker": "TING.L"
+  },
+  {
+    "name": "iShares China CNY Bond UCITS ETF",
+    "ticker": "CYGB.L"
+  },
+  {
+    "name": "Fidelity Global Corp Bond Research Enhanced PAB UCITS ETF Accum Shs Hedged GBP",
+    "ticker": "FSMP.L"
+  },
+  {
+    "name": "iShares Smart City Infrastructure UCITS ETF",
+    "ticker": "CT2B.L"
+  },
+  {
+    "name": "iShares $ Corp Bond ESG UCITS ETF",
+    "ticker": "SUOP.L"
+  },
+  {
+    "name": "Vanguard Funds PLC - Vanguard ESG Global Corporate Bond UCITS ETF GBP Hedged Acc",
+    "ticker": "V3GS.L"
+  },
+  {
+    "name": "Fidelity UCITS II ICAV - Fidelity ESG USD EM Bond UCITS ETF AccumHedged GBP",
+    "ticker": "FEMP.L"
+  },
+  {
+    "name": "Hanetf ICAV - US Global Investors Travel UCITS ETF Accum USD",
+    "ticker": "TRIP.L"
+  },
+  {
+    "name": "VanEck Hydrogen Economy UCITS ETF",
+    "ticker": "HDGB.L"
+  },
+  {
+    "name": "WisdomTree Cybersecurity UCITS ETF",
+    "ticker": "CYSE.L"
+  },
+  {
+    "name": "Vanguard USD Corporate Bond UCITS ETF",
+    "ticker": "VGPA.L"
+  },
+  {
+    "name": "SPDR S&P U.S. Dividend Aristocrats ESG UCITS ETF",
+    "ticker": "UGDV.L"
+  },
+  {
+    "name": "L&G ESG Emerging Markets Corporate Bond (USD) UCITS ETF",
+    "ticker": "EMAG.L"
+  },
+  {
+    "name": "Invesco NASDAQ-100 Swap UCITS ETF",
+    "ticker": "EQSG.L"
+  },
+  {
+    "name": "iShares MSCI USA SRI UCITS ETF",
+    "ticker": "SUAP.L"
+  },
+  {
+    "name": "WisdomTree Broad Commodities UCITS ETF",
+    "ticker": "COMX.L"
+  },
+  {
+    "name": "Xtrackers USD Corporate Green Bond UCITS ETF",
+    "ticker": "XGBB.L"
+  },
+  {
+    "name": "WisdomTree Emerging Markets ex-State-Owned Enterprises ESG Screened UCITS ETF",
+    "ticker": "XSOP.L"
+  },
+  {
+    "name": "Goldman Sachs Access UK Gilts 1-10 Years UCITS ETF",
+    "ticker": "GBPG.L"
+  },
+  {
+    "name": "WisdomTree BioRevolution UCITS ETF AccumUSD",
+    "ticker": "WBIO.L"
+  },
+  {
+    "name": "iShares Global Aggregate Bond ESG UCITS ETF",
+    "ticker": "AEGG.L"
+  },
+  {
+    "name": "L&G Emerging Markets Quality Dividends Equal Weight UCITS ETF",
+    "ticker": "LDME.L"
+  },
+  {
+    "name": "SPDR MSCI World Climate Paris Aligned UCITS ETF",
+    "ticker": "SWPA.L"
+  },
+  {
+    "name": "iShares $ High Yield Corp Bond ESG UCITS ETF GBP Hedged Dist",
+    "ticker": "DHYG.L"
+  },
+  {
+    "name": "iShares Broad $ High Yield Corp Bond UCITS ETF",
+    "ticker": "HYSD.L"
+  },
+  {
+    "name": "iShares S&P 500 Equal Weight UCITS ETF",
+    "ticker": "ISPE.L"
+  },
+  {
+    "name": "iShares MSCI Europe Energy Sector UCITS ETF",
+    "ticker": "EYED.L"
+  },
+  {
+    "name": "iShares US Mortgage Backed Securities UCITS ETF",
+    "ticker": "IMGP.L"
+  },
+  {
+    "name": "iShares France Govt Bond UCITS ETF GBP Hedged (Dist)",
+    "ticker": "FRGP.L"
+  },
+  {
+    "name": "iShares Spain Govt Bond UCITS ETF -HEDGED- GBP",
+    "ticker": "SPPB.L"
+  },
+  {
+    "name": "iShares S&P 500 Equal Weight UCITS ETF",
+    "ticker": "EWSP.L"
+  },
+  {
+    "name": "iShares € High Yield Corp Bond ESG UCITS ETF",
+    "ticker": "EHYG.L"
+  },
+  {
+    "name": "Invesco FTSE All-World UCITS ETF USD Accumalation",
+    "ticker": "FWRG.L"
+  },
+  {
+    "name": "iShares UK Gilts 0-5yr UCITS ETF GBP (Dist)",
+    "ticker": "IGL5.L"
+  },
+  {
+    "name": "KraneShares ICBCCS S&P China 500 Index UCITS ETF",
+    "ticker": "CHIP.L"
+  },
+  {
+    "name": "WisdomTree Europe Defence UCITS ETF - EUR Acc",
+    "ticker": "WDEF.L"
+  },
+  {
+    "name": "iShares $ TIPS UCITS ETF USD (Acc)",
+    "ticker": "TPSA"
+  },
+  {
+    "name": "iShares Core MSCI Europe UCITS ETF EUR (Acc)",
+    "ticker": "IMAE"
+  },
+  {
+    "name": "Amundi S&P 500 Swap UCITS ETF USD Acc",
+    "ticker": "500E"
+  },
+  {
+    "name": "SPDR STOXX Europe 600 SRI UCITS ETF Acc",
+    "ticker": "ZPDX"
+  },
+  {
+    "name": "iShares Global Water UCITS ETF USD (Acc)",
+    "ticker": "H2OA"
+  },
+  {
+    "name": "iShares MSCI EMU Paris-Aligned Climate UCITS ETF EUR (Acc)",
+    "ticker": "EMPA"
+  },
+  {
+    "name": "iShares EUR High Yield Corporate Bond ESG SRI UCITS ETF EUR (Acc)",
+    "ticker": "EHYA"
+  },
+  {
+    "name": "iShares MSCI Europe Paris-Aligned Climate UCITS ETF EUR (Acc)",
+    "ticker": "EUPB"
+  },
+  {
+    "name": "iShares AEX UCITS ETF EUR (Acc)",
+    "ticker": "IAEA"
+  },
+  {
+    "name": "Vanguard ESG Developed Europe All Cap UCITS ETF (EUR) Accumulating",
+    "ticker": "V3EA"
+  },
+  {
+    "name": "FlexShares Listed Private Equity UCITS ETF USD Acc",
+    "ticker": "FLPE"
+  },
+  {
+    "name": "Vanguard ESG EUR Corporate Bond UCITS ETF (EUR) Accumulating",
+    "ticker": "V3RE"
+  },
+  {
+    "name": "Vanguard ESG North America All Cap UCITS ETF (USD) Accumulating",
+    "ticker": "V3NA"
+  },
+  {
+    "name": "Robeco Climate Euro Government Bond UCITS ETF EUR Acc",
+    "ticker": "RCEG"
+  },
+  {
+    "name": "iShares Stoxx Banks 30-15 UCITS ETF EUR (Acc)",
+    "ticker": "EXA1"
+  },
+  {
+    "name": "iShares STOXX Europe 600 Automobiles & Parts UCITS ETF (DE) EUR (Acc)",
+    "ticker": "SAOT"
+  },
+  {
+    "name": "iShares Europe Defence UCITS ETF EUR (Acc)",
+    "ticker": "DFEU"
+  },
+  {
+    "name": "iShares Euro Dividend UCITS ETF",
+    "ticker": "IDVY.SW"
+  },
+  {
+    "name": "iShares UK Dividend UCITS ETF",
+    "ticker": "IUKD.SW"
+  },
+  {
+    "name": "iShares € Govt Bond 1-3yr UCITS ETF EUR (Dist)",
+    "ticker": "IBGS.SW"
+  },
+  {
+    "name": "iShares Core MSCI Europe UCITS ETF EUR (Acc)",
+    "ticker": "IMEA.SW"
+  },
+  {
+    "name": "iShares VII PLC - iShares MSCI UK UCITS ETF GBP (Acc)",
+    "ticker": "CSUK.SW"
+  },
+  {
+    "name": "iShares VII PLC - iShares Core FTSE 100 UCITS ETF",
+    "ticker": "CSUKX.SW"
+  },
+  {
+    "name": "iShares VII PLC - iShares € Govt Bond 1-3yr UCITS ETF EUR (Acc)",
+    "ticker": "CSBGE3.SW"
+  },
+  {
+    "name": "iShares VII PLC -iShares Core MSCI EMU UCITS ETF EUR (Acc)",
+    "ticker": "CSEMU.SW"
+  },
+  {
+    "name": "iShares $ Corp Bond Interest Rate Hedged UCITS ETF USD (Dist)",
+    "ticker": "LQDH.SW"
+  },
+  {
+    "name": "iShares MSCI World CHF Hedged UCITS ETF (Acc)",
+    "ticker": "IWDC.SW"
+  },
+  {
+    "name": "iShares MSCI Japan CHF Hedged UCITS ETF (Acc)",
+    "ticker": "IJPC.SW"
+  },
+  {
+    "name": "iShares Global High Yield Corp Bond CHF Hedged UCITS ETF (Dist)",
+    "ticker": "GHYC.SW"
+  },
+  {
+    "name": "Xtrackers II Global Aggregate Bond Swap UCITS ETF 4C - CHF Hedged",
+    "ticker": "XBAC.SW"
+  },
+  {
+    "name": "iShares S&P 500 CHF Hedged UCITS ETF (Acc)",
+    "ticker": "IUSC.SW"
+  },
+  {
+    "name": "iShares VII PLC - iShares MSCI EMU CHF Hedged UCITS ETF (Acc)",
+    "ticker": "EMUC.SW"
+  },
+  {
+    "name": "WisdomTree Japan Equity UCITS ETF",
+    "ticker": "DXJD.SW"
+  },
+  {
+    "name": "UBS Core MSCI USA hCHF UCITS ETF CHF acc",
+    "ticker": "USCHWH.SW"
+  },
+  {
+    "name": "Xtrackers DAX ESG Screened UCITS ETF",
+    "ticker": "XDCH.SW"
+  },
+  {
+    "name": "iShares US Mortgage Backed Securities UCITS ETF",
+    "ticker": "IMBA.SW"
+  },
+  {
+    "name": "Amundi EURO STOXX 50 II UCITS ETF CHF Hedged Acc",
+    "ticker": "MSEC.SW"
+  },
+  {
+    "name": "iShares STOXX World Equity Multifactor UCITS ETF Accum Shs Hedged CHF",
+    "ticker": "DMFC.SW"
+  },
+  {
+    "name": "UBS MSCI ACWI Universal UCITS ETF Accum h CHF",
+    "ticker": "AWESGS.SW"
+  },
+  {
+    "name": "UBS MSCI World Socially Responsible UCITS ETF USD acc",
+    "ticker": "WSRUS.SW"
+  },
+  {
+    "name": "SPDR Bloomberg Emerging Markets Local Bond USD Base CCY Hdg to EUR UCITS ETF Acc",
+    "ticker": "EMDA.SW"
+  },
+  {
+    "name": "iShares $ Treasury Bond 20+yr UCITS ETF",
+    "ticker": "DTLC.SW"
+  },
+  {
+    "name": "iShares Edge MSCI World Minimum Volatility UCITS ETF",
+    "ticker": "MVSH.SW"
+  },
+  {
+    "name": "SPDR FTSE Global Convertible Bond UCITS ETF Accum Shs Hedged CHF",
+    "ticker": "GCVC.SW"
+  },
+  {
+    "name": "iShares Global Corp Bond UCITS ETF",
+    "ticker": "CORC.SW"
+  },
+  {
+    "name": "iShares $ Corp Bond UCITS ETF",
+    "ticker": "LQCE.SW"
+  },
+  {
+    "name": "iShares J.P. Morgan $ EM Bond UCITS ETF",
+    "ticker": "EMCH.SW"
+  },
+  {
+    "name": "iShares $ Treasury Bond 1-3yr UCITS ETF",
+    "ticker": "IBTC.SW"
+  },
+  {
+    "name": "iShares Global High Yield Corp Bond UCITS ETF",
+    "ticker": "HYLC.SW"
+  },
+  {
+    "name": "iShares J.P. Morgan ESG $ EM Bond UCITS ETF CHF Hedged (Acc)",
+    "ticker": "CMES.SW"
+  },
+  {
+    "name": "WisdomTree Enhanced Commodity UCITS ETF",
+    "ticker": "COMS.SW"
+  },
+  {
+    "name": "UBS (Lux) Fund Solutions – MSCI EMU UCITS ETF",
+    "ticker": "EMUCHF.SW"
+  },
+  {
+    "name": "iShares Edge MSCI Europe Minimum Volatility ESG UCITS ETF EUR (Acc)",
+    "ticker": "MVEE.SW"
+  },
+  {
+    "name": "iShares € High Yield Corp Bond UCITS ETF",
+    "ticker": "HIHC.SW"
+  },
+  {
+    "name": "iShares Global Govt Bond UCITS ETF",
+    "ticker": "IGLC.SW"
+  },
+  {
+    "name": "iShares $ Treasury Bond 7-10yr UCITS ETF USD (Dist)",
+    "ticker": "IDTC.SW"
+  },
+  {
+    "name": "Janus Henderson US Enhanced Inflation Core UCITS ETF CHF-H Acc",
+    "ticker": "TINC.SW"
+  },
+  {
+    "name": "iShares Edge MSCI World Minimum Volatility ESG UCITS ETF",
+    "ticker": "MVEC.SW"
+  },
+  {
+    "name": "iShares $ Corp Bond 0-3yr ESG UCITS ETF",
+    "ticker": "IU0C.SW"
+  },
+  {
+    "name": "iShares MSCI World SRI UCITS ETF",
+    "ticker": "SCWS.SW"
+  },
+  {
+    "name": "iShares € Corp Bond ESG UCITS ETF",
+    "ticker": "SUOC.SW"
+  },
+  {
+    "name": "iShares € High Yield Corp Bond ESG UCITS ETF",
+    "ticker": "EHYC.SW"
+  },
+  {
+    "name": "iShares $ High Yield Corp Bond ESG UCITS ETF",
+    "ticker": "DHYC.SW"
+  },
+  {
+    "name": "iShares € Corp Bond 0-3yr ESG UCITS ETF",
+    "ticker": "IE0C.SW"
+  },
+  {
+    "name": "iShares Global Aggregate Bond ESG UCITS ETF",
+    "ticker": "SHIR.SW"
+  },
+  {
+    "name": "iShares Core MSCI Europe UCITS ETF EUR (Acc)",
+    "ticker": "IEUC.SW"
+  },
+  {
+    "name": "iShares MSCI UK Small Cap UCITS ETF (Acc)",
+    "ticker": "SXRD"
+  },
+  {
+    "name": "iShares MSCI Japan UCITS ETF USD (Acc)",
+    "ticker": "SXR5"
+  },
+  {
+    "name": "iShares Core FTSE 100 UCITS ETF (Acc)",
+    "ticker": "SXRW"
+  },
+  {
+    "name": "iShares NASDAQ 100 UCITS ETF USD (Acc)",
+    "ticker": "SXRV"
+  },
+  {
+    "name": "iShares MSCI Canada UCITS ETF USD (Acc)",
+    "ticker": "SXR2"
+  },
+  {
+    "name": "SPDR FTSE UK All Share UCITS ETF (Acc)",
+    "ticker": "SPYF"
+  },
+  {
+    "name": "Invesco JPX-Nikkei 400 UCITS ETF EUR Hedged Accumulating",
+    "ticker": "NS4E"
+  },
+  {
+    "name": "iShares STOXX Europe Equity Multifactor UCITS ETF EUR (Acc)",
+    "ticker": "IBC0"
+  },
+  {
+    "name": "Invesco S&P 500 UCITS ETF EUR Hedged Accumulating",
+    "ticker": "E500"
+  },
+  {
+    "name": "iShares MSCI USA Mid-Cap Equal Weight UCITS ETF USD (Acc)",
+    "ticker": "QDVC"
+  },
+  {
+    "name": "iShares MSCI USA SRI UCITS ETF USD (Acc)",
+    "ticker": "QDVR"
+  },
+  {
+    "name": "iShares Edge MSCI World Minimum Volatility UCITS ETF USD (Acc)",
+    "ticker": "SXR0"
+  },
+  {
+    "name": "iShares MSCI Japan SRI UCITS ETF USD (Acc)",
+    "ticker": "SXR6"
+  },
+  {
+    "name": "Invesco KBW NASDAQ Fintech UCITS ETF Acc",
+    "ticker": "KFTK"
+  },
+  {
+    "name": "Invesco S&P SmallCap 600 UCITS ETF Acc",
+    "ticker": "SMLK"
+  },
+  {
+    "name": "iShares Edge MSCI EM Value Factor UCITS ETF USD (Acc)",
+    "ticker": "5MVL"
+  },
+  {
+    "name": "Vanguard EUR Corporate Bond UCITS ETF (EUR) Accumulating",
+    "ticker": "VECA"
+  },
+  {
+    "name": "Vanguard U.K. Gilt UCITS ETF GBP Accumulation",
+    "ticker": "VX6F"
+  },
+  {
+    "name": "iShares S&P U.S. Banks UCITS ETF USD (Acc)",
+    "ticker": "IUS2"
+  },
+  {
+    "name": "iShares MSCI Japan Screened UCITS ETF USD (Acc)",
+    "ticker": "SGAJ"
+  },
+  {
+    "name": "SPDR S&P 500 EUR Hedged UCITS ETF Accumulating",
+    "ticker": "SPPE"
+  },
+  {
+    "name": "JPMorgan ETFs Ireland ICAV - EUR Corporate Bond Research Enhanced Index ESG UCITS ETF EUR Acc",
+    "ticker": "JREB"
+  },
+  {
+    "name": "iShares MSCI Japan ESG Enhanced CTB UCITS ETF USD (Acc)",
+    "ticker": "EDMJ"
+  },
+  {
+    "name": "iShares Nasdaq 100 UCITS ETF EUR Hedged (Acc)",
+    "ticker": "NQSE"
+  },
+  {
+    "name": "Vanguard FTSE 250 UCITS ETF (GBP) Accumulating",
+    "ticker": "VMIG"
+  },
+  {
+    "name": "Vanguard FTSE Emerging Markets UCITS ETF (USD) Accumulating",
+    "ticker": "VFEA"
+  },
+  {
+    "name": "Vanguard FTSE Developed Asia Pacific ex Japan UCITS ETF (USD) Accumulating",
+    "ticker": "VGEK"
+  },
+  {
+    "name": "iShares MSCI India UCITS ETF USD (Acc)",
+    "ticker": "QDV5"
+  },
+  {
+    "name": "Vanguard Global Aggregate Bond UCITS ETF EUR Hedged Accumulating",
+    "ticker": "VAGF"
+  },
+  {
+    "name": "iShares MSCI China UCITS ETF USD (Acc)",
+    "ticker": "ICGA"
+  },
+  {
+    "name": "WisdomTree AT1 CoCo UCITS ETF USD Acc",
+    "ticker": "WTIG"
+  },
+  {
+    "name": "Invesco MDAX UCITS ETF Acc",
+    "ticker": "DEAM"
+  },
+  {
+    "name": "iShares USD Development Bank Bonds UCITS ETF USD (Acc)",
+    "ticker": "36BD"
+  },
+  {
+    "name": "iShares MSCI Europe ESG Enhanced CTB UCITS ETF EUR (Acc)",
+    "ticker": "EMNU"
+  },
+  {
+    "name": "Vanguard FTSE All-World UCITS ETF (USD) Accumulating",
+    "ticker": "VWCE"
+  },
+  {
+    "name": "iShares USD Corporate Bond ESG SRI 0-3yr UCITS ETF EUR Hedged (Acc)",
+    "ticker": "IU0E"
+  },
+  {
+    "name": "iShares MSCI EM ESG Enhanced CTB UCITS ETF USD (Acc)",
+    "ticker": "EDM2"
+  },
+  {
+    "name": "Vanguard FTSE Japan UCITS ETF (USD) Accumulating",
+    "ticker": "VJPA"
+  },
+  {
+    "name": "iShares Core MSCI World UCITS ETF USD (Acc)}",
+    "ticker": "CBUF"
+  },
+  {
+    "name": "HANetf Saturna Al-Kawthar Global Focused Equity UCITS ETF Accumulating",
+    "ticker": "ASWE"
+  },
+  {
+    "name": "iShares MSCI Europe Consumer Discretionary Sector UCITS ETF EUR (Acc)",
+    "ticker": "ESIC"
+  },
+  {
+    "name": "iShares MSCI Europe Financials Sector UCITS ETF EUR (Acc)",
+    "ticker": "ESIF"
+  },
+  {
+    "name": "SPDR MSCI All Country World EUR Hedged UCITS ETF (Acc)",
+    "ticker": "SPP1"
+  },
+  {
+    "name": "iShares Global Inflation Linked Government Bond UCITS ETF USD (Acc)",
+    "ticker": "IS3V"
+  },
+  {
+    "name": "Vanguard LifeStrategy 60% Equity UCITS ETF Accumulating",
+    "ticker": "V60A"
+  },
+  {
+    "name": "Vanguard LifeStrategy 40% Equity UCITS ETF Accumulating",
+    "ticker": "V40A"
+  },
+  {
+    "name": "Invesco Global Clean Energy UCITS ETF Acc",
+    "ticker": "G1CE"
+  },
+  {
+    "name": "SPDR S&P 500 ESG Leaders UCITS ETF Accumulating",
+    "ticker": "SPPY"
+  },
+  {
+    "name": "Vanguard USD Treasury Bond UCITS ETF EUR Hedged Accumulating",
+    "ticker": "VDTE"
+  },
+  {
+    "name": "Vanguard ESG Global All Cap UCITS ETF (USD) Accumulating",
+    "ticker": "V3AA"
+  },
+  {
+    "name": "iShares European Property Yield UCITS ETF EUR (Acc)",
+    "ticker": "IPRE"
+  },
+  {
+    "name": "Invesco Nasdaq-100 Swap UCITS ETF Acc",
+    "ticker": "EQQX"
+  },
+  {
+    "name": "iShares S&P 500 Paris-Aligned Climate UCITS ETF USD (Acc)",
+    "ticker": "UQAB"
+  },
+  {
+    "name": "L&G Multi-Strategy Enhanced Commodities UCITS ETF USD Accumulating",
+    "ticker": "EN4C"
+  },
+  {
+    "name": "iShares USD Development Bank Bonds UCITS ETF EUR Hedged (Acc)",
+    "ticker": "UEEG"
+  },
+  {
+    "name": "iShares MSCI Europe Energy Sector UCITS ETF EUR (Accumulating)",
+    "ticker": "ESIE"
+  },
+  {
+    "name": "HANetf AuAg ESG Gold Mining UCITS ETF Accumulating",
+    "ticker": "ESGP"
+  },
+  {
+    "name": "iShares MSCI World Information Technology Sector UCITS ETF USD (Acc)",
+    "ticker": "AYEW"
+  },
+  {
+    "name": "SPDR MSCI Europe Climate Paris Aligned UCITS ETF (Acc)",
+    "ticker": "SPF5"
+  },
+  {
+    "name": "iShares MSCI Global Semiconductors UCITS ETF USD (Acc)",
+    "ticker": "SEC0"
+  },
+  {
+    "name": "HANetf AuAg ESG Gold Mining UCITS ETF Accumulating",
+    "ticker": "ZSG0"
+  },
+  {
+    "name": "Vanguard FTSE Developed Europe ex UK UCITS ETF (EUR) Accumulating",
+    "ticker": "VERE"
+  },
+  {
+    "name": "iShares MSCI Europe Industrials Sector UCITS ETF EUR (Acc)",
+    "ticker": "ESIN"
+  },
+  {
+    "name": "SPDR MSCI USA Climate Paris Aligned UCITS ETF Accumulating",
+    "ticker": "SPF9"
+  },
+  {
+    "name": "WRCY UCITS ETF USD Acc",
+    "ticker": "WRCY"
+  },
+  {
+    "name": "iShares MSCI China Tech UCITS ETF USD (Acc)",
+    "ticker": "CBUK"
+  },
+  {
+    "name": "SPDR MSCI ACWI Climate Paris Aligned UCITS ETF (Acc)",
+    "ticker": "SPF8"
+  },
+  {
+    "name": "SPDR MSCI World Climate Paris Aligned PAB UCITS ETF Accumulating",
+    "ticker": "SPFW"
+  },
+  {
+    "name": "Global X Hydrogen UCITS ETF USD Accumulating",
+    "ticker": "HYCN"
+  },
+  {
+    "name": "WT Biorevolution UCITS ETF USD Acc",
+    "ticker": "WRNA"
+  },
+  {
+    "name": "Invesco Global Enhanced Equity UCITS ETF EUR PfHdg Acc",
+    "ticker": "LVLE"
+  },
+  {
+    "name": "GX Chinevbattery UCITS ETF Acc",
+    "ticker": "CAUT"
+  },
+  {
+    "name": "HSBC Euro Stoxx 50 UCITS ETF EUR (Acc)",
+    "ticker": "H4ZZ"
+  },
+  {
+    "name": "iShares S&P 500 Scored and Screened UCITS ETF EUR Hedged (Acc)",
+    "ticker": "CBUM"
+  },
+  {
+    "name": "HSBC MSCI Pacific ex Japan UCITS ETF USD (Acc)",
+    "ticker": "W450"
+  },
+  {
+    "name": "HSBC MSCI China UCITS ETF USD (Acc)",
+    "ticker": "HCHS"
+  },
+  {
+    "name": "HSBC S&P 500 UCITS ETF USD (Accumulating)",
+    "ticker": "H4ZN"
+  },
+  {
+    "name": "iShares MSCI World Momentum Factor Advanced UCITS ETF USD (Acc)",
+    "ticker": "CBUH"
+  },
+  {
+    "name": "iShares EUR Green Bond UCITS ETF EUR (Acc)",
+    "ticker": "CBUP"
+  },
+  {
+    "name": "AXA IM ACT Biodiversity Equity UCITS ETF EUR Hedged Accumulation",
+    "ticker": "ABIE"
+  },
+  {
+    "name": "iShares EUR Corporate Bond ESG SRI UCITS ETF EUR (Acc)",
+    "ticker": "SUA0"
+  },
+  {
+    "name": "Amundi S&P World Consumer Staples Screened UCITS ETF Acc",
+    "ticker": "WELW"
+  },
+  {
+    "name": "iShares Euro Corporate Bond ESG Paris-Aligned UCITS ETF EUR Hedged Acc",
+    "ticker": "CBUJ"
+  },
+  {
+    "name": "iShares UK Property UCITS ETF EUR Hedged (Acc)",
+    "ticker": "UKPH"
+  },
+  {
+    "name": "AXA IM ACT Climate Equity UCITS ETF EUR Hedged Acc",
+    "ticker": "ACLE"
+  },
+  {
+    "name": "Amundi S&P World Utilities Screened UCITS ETF Acc",
+    "ticker": "WELD"
+  },
+  {
+    "name": "iShares USD High Yield Corporate Bond ESG SRI UCITS ETF EUR Hedged (Acc)",
+    "ticker": "UEEF"
+  },
+  {
+    "name": "iShares EUR Aggregate Bond ESG SRI UCITS ETF EUR (Acc)",
+    "ticker": "CBU2"
+  },
+  {
+    "name": "SPDR MSCI Japan Climate Paris Aligned UCITS ETF (Acc)",
+    "ticker": "SPF6"
+  },
+  {
+    "name": "L&G Gerd Kommer Multifactor Equity UCITS ETF USD Accumulating",
+    "ticker": "GERD"
+  },
+  {
+    "name": "iShares Broad USD High Yield Corporate Bond UCITS ETF EUR Hedged (Acc)",
+    "ticker": "CBU1"
+  },
+  {
+    "name": "iShares MSCI ACWI SRI UCITS ETF USD (Acc)",
+    "ticker": "CBUY"
+  },
+  {
+    "name": "AXA IM EUR IG PAB UCITS Accumulation",
+    "ticker": "AIPE"
+  },
+  {
+    "name": "Invesco S&P World Financials ESG UCITS ETF Acc",
+    "ticker": "WF1E"
+  },
+  {
+    "name": "iShares EURO STOXX 50 ESG UCITS ETF EUR (Acc)",
+    "ticker": "ES50"
+  },
+  {
+    "name": "Global X S&P 500 Quarterly Tail Hedge UCITS ETF USD Accumulating",
+    "ticker": "SPQH"
+  },
+  {
+    "name": "Vanguard USD Corporate 1-3 Year Bond UCITS ETF (EUR) Hedged Accumulating",
+    "ticker": "VCDE"
+  },
+  {
+    "name": "iShares USD Short Duration Corporate Bond UCITS ETF EUR Hedged (Acc)",
+    "ticker": "CEBU"
+  },
+  {
+    "name": "ETC Group Web 3.0 UCITS ETF Accumulating",
+    "ticker": "WEBP"
+  },
+  {
+    "name": "Invesco S&P World Health Care ESG UCITS ETF Acc",
+    "ticker": "WH2E"
+  },
+  {
+    "name": "AXA Investment Managers USD IG PAB UCITS Accumulation",
+    "ticker": "AIPT"
+  },
+  {
+    "name": "Invesco NASDAQ-100 Equal Weight UCITS ETF Acc",
+    "ticker": "EWQA"
+  },
+  {
+    "name": "iShares Global High Yield Corporate Bond UCITS ETF EUR Hedged (Acc)",
+    "ticker": "CEBR"
+  },
+  {
+    "name": "Amundi S&P World Energy Screened UCITS ETF Acc",
+    "ticker": "WELN"
+  },
+  {
+    "name": "WisdomTree Megatrends UCITS ETF - USD Acc",
+    "ticker": "WMGT"
+  },
+  {
+    "name": "Invesco BulletShares 2028 EUR Corporate Bond UCITS ETF Acc",
+    "ticker": "BSE8"
+  },
+  {
+    "name": "iShares EUR Corporate Bond Dec 2026 UCITS ETF Acc",
+    "ticker": "CEBE"
+  },
+  {
+    "name": "L&G Multi-Strategy Enhanced Commodities UCITS ETF EUR Hedged Acc",
+    "ticker": "BATJ"
+  },
+  {
+    "name": "iShares EUR Government Bond 20yr Target Duration UCITS ETF EUR (Acc)",
+    "ticker": "CEB1"
+  },
+  {
+    "name": "SPDR S&P 500 UCITS ETF (Acc)",
+    "ticker": "SPYL"
+  },
+  {
+    "name": "First Trust SMID Rising Dividend Achievers UCITS ETF Class A Accumulation",
+    "ticker": "FTGD"
+  },
+  {
+    "name": "Amundi Prime All Country World UCITS ETF Acc",
+    "ticker": "WEBN"
+  },
+  {
+    "name": "Franklin FTSE Japan UCITS ETF (Acc)",
+    "ticker": "FLXJ"
+  },
+  {
+    "name": "Invesco BulletShares 2030 EUR Corporate Bond UCITS ETF Acc",
+    "ticker": "BSE0"
+  },
+  {
+    "name": "Avantis Global Small Cap Value UCITS ETF USD Acc",
+    "ticker": "AVWS"
+  },
+  {
+    "name": "Invesco MSCI USA UCITS ETF EUR Hedged Acc",
+    "ticker": "MXUE"
+  },
+  {
+    "name": "iShares India INR Government Bond UCITS ETF USD (Acc)",
+    "ticker": "CEB6"
+  },
+  {
+    "name": "SPDR Bloomberg 0-3 Year Euro Corporate Bond UCITS ETF Accumulating",
+    "ticker": "SEUA"
+  },
+  {
+    "name": "Sprott Junior Uranium Miners UCITS ETF USD Accumulating",
+    "ticker": "U8NJ"
+  },
+  {
+    "name": "Amundi MSCI USA UCITS ETF - Acc",
+    "ticker": "WEBH"
+  },
+  {
+    "name": "Robeco 3D US Equity UCITS ETF USD Acc",
+    "ticker": "3DUS"
+  },
+  {
+    "name": "iShares Core MSCI Europe UCITS ETF EUR (Acc)",
+    "ticker": "CEBZ"
+  },
+  {
+    "name": "Invesco MSCI World Equal Weight UCITS ETF Acc",
+    "ticker": "MWEQ"
+  },
+  {
+    "name": "iShares Asia ex Japan Equity Enhanced Active UCITS ETF USD (Acc)",
+    "ticker": "AZEH"
+  },
+  {
+    "name": "Amundi MSCI USA Ex Mega Cap UCITS ETF Acc",
+    "ticker": "XMGA"
+  },
+  {
+    "name": "iShares World Equity Enhanced Active UCITS ETF USD (Acc)",
+    "ticker": "WOEE"
+  },
+  {
+    "name": "Global X European Infrastructure Development UCITS ETF EUR Accumulating",
+    "ticker": "B41J"
+  },
+  {
+    "name": "iShares EUR Government Bond 0-3 Month UCITS ETF EUR (Acc)",
+    "ticker": "E0UA"
+  },
+  {
+    "name": "Amundi MSCI World ESG Leaders UCITS ETF Hedged EUR Acc",
+    "ticker": "MWOS"
+  },
+  {
+    "name": "iShares iBonds Dec 2033 Term EUR Corporate UCITS ETF EUR (Acc)",
+    "ticker": "IG33"
+  },
+  {
+    "name": "iShares Core FTSE 100 UCITS ETF EUR Hedged (Acc)",
+    "ticker": "CEB4"
+  },
+  {
+    "name": "Robeco Dynamic Theme Machine UCITS ETF USD Acc",
+    "ticker": "RDYN"
+  },
+  {
+    "name": "Amundi MSCI World IMI Value Advanced UCITS ETF Acc",
+    "ticker": "WMMS"
+  },
+  {
+    "name": "Janus Henderson Tabula Japan High Conviction Equity UCITS ETF JPY Acc.",
+    "ticker": "JCPN"
+  },
+  {
+    "name": "Robeco 3D Global Equity UCITS ETF USD Acc",
+    "ticker": "3DGL"
+  },
+  {
+    "name": "SPDR J.P. Morgan Saudi Arabia Aggregate Bond UCITS ETF (Acc)",
+    "ticker": "KSAB"
+  },
+  {
+    "name": "WisdomTree Strategic Metals UCITS ETF - EUR Hedged Acc",
+    "ticker": "WENH"
+  },
+  {
+    "name": "iShares Europe Equity Enhanced Active UCITS ETF EUR (Acc)",
+    "ticker": "EUEE"
+  },
+  {
+    "name": "iShares MSCI World ex-USA UCITS ETF USD (Acc)",
+    "ticker": "IXUA"
+  },
+  {
+    "name": "AXA Investment Managers Global Inflation-Linked Bond Opportunities UCITS ETF EUR Hedged Accumulation",
+    "ticker": "ACPE"
+  },
+  {
+    "name": "SPDR S&P 500 Quality Aristocrats UCITS ETF USD Unhedged (Acc)",
+    "ticker": "QUS5"
+  },
+  {
+    "name": "AXA IM Global Inflation-Linked Bond Opportunities UCITS ETF USD Acc",
+    "ticker": "ACPH"
+  },
+  {
+    "name": "SPDR Bloomberg 1-5 Year U.S. Corporate Bond UCITS ETF USD (Acc)",
+    "ticker": "SPP5"
+  },
+  {
+    "name": "iShares II PLC - iShares USD Corporate Bond ESG SRI UCITS ETF Accumulating Hedged EUR",
+    "ticker": "CEMJ"
+  },
+  {
+    "name": "iShares AI Adopters & Applications UCITS ETF USD (Acc)",
+    "ticker": "AIAA"
+  },
+  {
+    "name": "Vanguard U.S. Treasury 7-10 Year Bond UCITS ETF (USD) Accumulating",
+    "ticker": "VLDS"
+  },
+  {
+    "name": "Goldman Sachs Alpha Enhanced Emerging Markets Equity Active UCITS ETF USD Acc",
+    "ticker": "GQEM"
+  },
+  {
+    "name": "SPDR S&P 400 US Mid Cap Leaders UCITS ETF (Acc)",
+    "ticker": "400X"
+  },
+  {
+    "name": "HANetf Future of Defence Screened UCITS ETF (Acc)",
+    "ticker": "NATE"
+  },
+  {
+    "name": "Amundi DAX UCITS ETF Acc",
+    "ticker": "LYY7"
+  },
+  {
+    "name": "Amundi USD Floating Rate Corporate Bond ESG UCITS ETF Acc",
+    "ticker": "FRNU"
+  },
+  {
+    "name": "Amundi Pan Africa UCITS ETF Acc",
+    "ticker": "LGQM"
+  },
+  {
+    "name": "Amundi Core MSCI Japan UCITS ETF Acc",
+    "ticker": "LCUJ"
+  },
+  {
+    "name": "UBS Sustainable Development Bank Bonds UCITS ETF (hedged AUD) Accumulating",
+    "ticker": "MDBA"
+  },
+  {
+    "name": "UBS ETF MSCI USA Banks 20/35 UCITS ETF USD A-acc",
+    "ticker": "MDBU"
+  },
+  {
+    "name": "UBS MSCI USA Select Factor Mix UCITS ETF USD Accumulating",
+    "ticker": "USUE"
+  },
+  {
+    "name": "UBS J.P. Morgan USD EM IG Screened Diversified Bond UCITS ETF hedged to EUR Accumulating",
+    "ticker": "EMIE"
+  },
+  {
+    "name": "Amundi Core USD Corporate Bond UCITS ETF Acc",
+    "ticker": "PRAP"
+  },
+  {
+    "name": "UBS Core MSCI World UCITS ETF USD Acc",
+    "ticker": "UETW"
+  },
+  {
+    "name": "UBS Core MSCI Europe UCITS ETF (EUR Hedged) Accumulating",
+    "ticker": "UIMF"
+  },
+  {
+    "name": "UBS Euro Stoxx 50 ESG Ucits ETF (EUR) Accumulating",
+    "ticker": "UET5"
+  },
+  {
+    "name": "UBS (Irl) Fund Solutions plc – CMCI Commodity Carry SF UCITS ETF (USD) A-acc",
+    "ticker": "UEQC"
+  },
+  {
+    "name": "Amundi Prime Global Government Bond UCITS ETF Acc",
+    "ticker": "PRAG"
+  },
+  {
+    "name": "UBS (Lux) Fund Solutions – MSCI Pacific Socially Responsible UCITS ETF (USD) A-acc",
+    "ticker": "USUP"
+  },
+  {
+    "name": "Amundi US Treasury Bond 0-1Y UCITS ETF EUR Hedged Acc",
+    "ticker": "PR1H"
+  },
+  {
+    "name": "Amundi US Treasury Bond 0-1Y UCITS ETF Acc",
+    "ticker": "PR1T"
+  },
+  {
+    "name": "UBS S&P 500 Scored & Screened UCITS ETF (Hedged to EUR) A Acc",
+    "ticker": "S5SG"
+  },
+  {
+    "name": "UBS (Irl) ETF plc – S&P 500 ESG Elite UCITS ETF USD Accumulating",
+    "ticker": "AW1C"
+  },
+  {
+    "name": "UBS Asset Management (Ireland) Ltd - UBS ETF (IE) S&P EUROPE PAB UCITS ETF EUR Acc",
+    "ticker": "AW13"
+  },
+  {
+    "name": "UBS Core MSCI Japan UCITS ETF hEUR Accumulating",
+    "ticker": "UFMA"
+  },
+  {
+    "name": "UBS Solactive China Technology UCITS ETF hEUR acc",
+    "ticker": "UIC1"
+  },
+  {
+    "name": "UBS (Lux) Fund Solutions – MSCI United Kingdom UCITS ETF (hedged to EUR) A-acc",
+    "ticker": "UFMB"
+  },
+  {
+    "name": "Amundi Prime Euro Government Bond UCITS ETF Acc",
+    "ticker": "PRAR"
+  },
+  {
+    "name": "UBS MSCI USA Climate Paris Aligned UCITS ETF USD Acc",
+    "ticker": "AW16"
+  },
+  {
+    "name": "UBS MSCI Europe Socially Responsible UCITS ETF EUR Accumulating",
+    "ticker": "UIW1"
+  },
+  {
+    "name": "UBS S&P 500 ESG Elite UCITS ETF (hedged to EUR) A-acc",
+    "ticker": "AW1B"
+  },
+  {
+    "name": "UBS Solactive China Technology UCITS ETF USD Accumulating",
+    "ticker": "UIC2"
+  },
+  {
+    "name": "Sustainable Future UCITS ETF Accumulation",
+    "ticker": "CSE"
+  },
+  {
+    "name": "Rize USA Environmental Impact UCITS ETF USD Acc",
+    "ticker": "RIZJ"
+  },
+  {
+    "name": "iShares STOXX Europe 600 UCITS ETF (DE) EUR (Acc)",
+    "ticker": "EXIE"
+  },
+  {
+    "name": "UBS MSCI Japan Climate Paris Aligned UCITS ETF EUR Hedged Accumulating",
+    "ticker": "AW1Q"
+  },
+  {
+    "name": "UBS ETF (LU) MSCI EMU Climate Paris Aligned UCITS ETF (EUR) A-acc",
+    "ticker": "CHSE"
+  },
+  {
+    "name": "UBS Factor MSCI World Selection Minimum Volatility UCITS ETF USD Accumulating",
+    "ticker": "CSY9"
+  },
+  {
+    "name": "Amundi US Treasury Bond 7-10Y UCITS ETF EUR Hedged Acc",
+    "ticker": "7USH"
+  },
+  {
+    "name": "UBS MSCI USA NSL UCITS ETF USD Acc",
+    "ticker": "CSY1"
+  },
+  {
+    "name": "BNP Paribas Easy FTSE EPRA Nareit Global Developed Green CTB UCITS ETF EUR Acc",
+    "ticker": "ESAD"
+  },
+  {
+    "name": "Amundi Lifecycle 2039 UCITS ETF Acc",
+    "ticker": "LC39"
+  },
+  {
+    "name": "Amundi LC 2030 UCITS ETF Accumulating",
+    "ticker": "LC30"
+  },
+  {
+    "name": "UBS MSCI USA Mega Cap UCITS ETF USD Accumulating",
+    "ticker": "BCFV"
+  },
+  {
+    "name": "Amundi Euro High Yield Corporate Bond ESG UCITS ETF - Accumulating",
+    "ticker": "AEHY"
+  },
+  {
+    "name": "SPDR S&P 400 U.S. Mid Cap UCITS ETF (Acc)",
+    "ticker": "MDUC"
+  },
+  {
+    "name": "UBS BBG TIPS 10+ UCITS ETF hGBP acc",
+    "ticker": "T10A"
+  },
+  {
+    "name": "UBS Core S&P 500 UCITS ETF USD Accumulating",
+    "ticker": "UBSPX"
+  },
+  {
+    "name": "UBS ETF (LU) Bloomberg MSCI Global Liquid Corporates Sustainable UCITS ETF (EUR) A-Acc",
+    "ticker": "CHST"
+  },
+  {
+    "name": "Amundi EUR Cash Active UCITS ETF Acc",
+    "ticker": "CMMF"
+  },
+  {
+    "name": "Amundi Ibex 35 UCITS ETF Acc",
+    "ticker": "CS1"
+  },
+  {
+    "name": "Amundi MSCI World Ex EMU UCITS ETF Acc",
+    "ticker": "CM9"
+  },
+  {
+    "name": "Amundi Global Hydrogen UCITS ETF Acc",
+    "ticker": "ANRJ"
+  },
+  {
+    "name": "Amundi PEA S&P US Industrials Screened UCITS ETF Acc",
+    "ticker": "PDJE"
+  },
+  {
+    "name": "Amundi MSCI EMU ESG Broad Transition UCITS ETF Acc",
+    "ticker": "MFED"
+  },
+  {
+    "name": "Amundi MSCI China A UCITS ETF Acc",
+    "ticker": "CNAA"
+  },
+  {
+    "name": "Amundi S&P 500 UCITS ETF Accumulating",
+    "ticker": "SP5C"
+  },
+  {
+    "name": "Amundi Smart Overnight Return UCITS ETF Acc - GBP Hedged",
+    "ticker": "CSH2"
+  },
+  {
+    "name": "Amundi Core Global Government Bond UCITS ETF EUR Hedged Acc",
+    "ticker": "GOVH"
+  },
+  {
+    "name": "Amundi MSCI Europe Growth UCITS ETF Acc",
+    "ticker": "CG9"
+  },
+  {
+    "name": "Amundi Global Gender Equality UCITS ETF Acc",
+    "ticker": "ELLE"
+  },
+  {
+    "name": "Amundi Euro Government Inflation-Linked Bond UCITS ETF Acc",
+    "ticker": "MTI"
+  },
+  {
+    "name": "Amundi Euro Government Bond 15+Y UCITS ETF Acc",
+    "ticker": "MTF"
+  },
+  {
+    "name": "Amundi USD Floating Rate Corporate Bond ESG UCITS ETF Acc",
+    "ticker": "AFLT"
+  },
+  {
+    "name": "Amundi Euro Government Bond Highest Rated Investment Grade UCITS ETF Acc",
+    "ticker": "AM3A"
+  },
+  {
+    "name": "iShares J.P. Morgan EM Local Govt Bond UCITS ETF USD (Acc)",
+    "ticker": "QDV7"
+  },
+  {
+    "name": "Amundi Russell 2000 UCITS ETF EUR Acc.",
+    "ticker": "RS2K"
+  },
+  {
+    "name": "Amundi USD Floating Rate Corporate Bond ESG UCITS ETF EUR Hedged Acc",
+    "ticker": "AFLE"
+  },
+  {
+    "name": "Amundi MSCI World Swap UCITS ETF EUR Acc",
+    "ticker": "CW8"
+  },
+  {
+    "name": "Amundi MSCI India Swap II UCITS ETF USD Acc",
+    "ticker": "CI2U"
+  },
+  {
+    "name": "Amundi MSCI World Swap UCITS ETF USD Acc",
+    "ticker": "CW8U"
+  },
+  {
+    "name": "Amundi Nasdaq-100 Swap UCITS ETF EUR Acc",
+    "ticker": "ANX"
+  },
+  {
+    "name": "Amundi STOXX Europe 600 ESG UCITS ETF Acc",
+    "ticker": "C6E"
+  },
+  {
+    "name": "Amundi Euro Lowest Rated IG Government Bond UCITS ETF Acc",
+    "ticker": "X1G"
+  },
+  {
+    "name": "Amundi Euro Highest Rated Macro-Weighted Government Bond 1-3Y UCITS ETF Acc",
+    "ticker": "MA13"
+  },
+  {
+    "name": "Amundi Euro High-Grade Bond 3-5 Years UCITS ETF Acc",
+    "ticker": "MA35"
+  },
+  {
+    "name": "Amundi STOXX Europe 600 Basic Materials UCITS ETF Accumulating",
+    "ticker": "CHM"
+  },
+  {
+    "name": "Amundi PEA US Tech Screened UCITS ETF - Acc",
+    "ticker": "PANX"
+  },
+  {
+    "name": "Amundi MSCI Emerging Markets Swap UCITS ETF EUR Acc",
+    "ticker": "AEEM"
+  },
+  {
+    "name": "Amundi MSCI Smart Cities UCITS ETF - Acc",
+    "ticker": "SCITY"
+  },
+  {
+    "name": "Amundi MSCI EMU Climate Paris Aligned UCITS ETF Acc",
+    "ticker": "PABZ"
+  },
+  {
+    "name": "Amundi IS S&P Eurozone ESG Screened UCITS ETF Acc",
+    "ticker": "EPAB"
+  },
+  {
+    "name": "BNP Paribas Easy JPM ESG EMU Government Bond IG 3-5Y UCITS ETF (Acc)",
+    "ticker": "GEMU"
+  },
+  {
+    "name": "HSBC MSCI Japan UCITS ETF USD (Acc)",
+    "ticker": "HMJS"
+  },
+  {
+    "name": "HSBC MSCI World Islamic Screened UCITS ETF USD (Acc)",
+    "ticker": "HIWS"
+  },
+  {
+    "name": "iShares S&P 500 Equal Weight UCITS ETF USD (Acc)",
+    "ticker": "O4J0"
+  },
+  {
+    "name": "iShares Digital Entertainment and Education UCITS ETF USD (Acc)",
+    "ticker": "DGGE"
+  },
+  {
+    "name": "HSBC MSCI World Small Cap Screened UCITS ETF USD (Acc)",
+    "ticker": "HWSS"
+  },
+  {
+    "name": "VanEck Oil Services UCITS ETF Accumulating A USD",
+    "ticker": "V0IH"
+  },
+  {
+    "name": "BNP Paribas Easy EUR Corporate Bond SRI Fossil Free Ultrashort Duration UCITS ETF Acc",
+    "ticker": "SRIUC"
+  },
+  {
+    "name": "BNP Paribas Easy Sustainable EUR Corporate Bond December 2032 UCITS ETF Acc",
+    "ticker": "ACE32"
+  },
+  {
+    "name": "HSBC MSCI Europe UCITS ETF EUR Accumulating",
+    "ticker": "HMES"
+  },
+  {
+    "name": "iShares iBonds Dec 2028 Term USD High Yield Corporate UCITS ETF USD (Acc)",
+    "ticker": "IU28"
+  },
+  {
+    "name": "Amundi Core MSCI World UCITS ETF Acc",
+    "ticker": "WLSC"
+  },
+  {
+    "name": "iShares MSCI World Swap PEA UCITS ETF EUR (Acc)",
+    "ticker": "WPEH"
+  },
+  {
+    "name": "Amundi MSCI World (2x) Leveraged UCITS ETF Acc",
+    "ticker": "LVWC"
+  },
+  {
+    "name": "BNP Paribas Easy MSCI World UCITS ETF EUR Acc",
+    "ticker": "ESAN"
+  },
+  {
+    "name": "BNP Paribas Easy € High Yield SRI Fossil Free UCITS ETF Acc",
+    "ticker": "HYSRI"
+  },
+  {
+    "name": "Amundi MSCI Semiconductors ESG Screened UCITS ETF",
+    "ticker": "CHIP.SW"
+  },
+  {
+    "name": "iShares Edge MSCI World Value Factor UCITS ETF USD (Acc)",
+    "ticker": "IWVL.L"
+  },
+  {
+    "name": "iShares Edge MSCI USA Quality Factor UCITS ETF USD (Acc)",
+    "ticker": "IUQA.L"
+  },
+  {
+    "name": "iShares Automation & Robotics UCITS ETF",
+    "ticker": "RBOT.L"
+  },
+  {
+    "name": "iShares MSCI EM SRI UCITS ETF",
+    "ticker": "SUSM.L"
+  },
+  {
+    "name": "iShares Edge MSCI USA Momentum Factor UCITS ETF USD (Acc)",
+    "ticker": "IUMO.L"
+  },
+  {
+    "name": "iShares Edge MSCI USA Value Factor UCITS ETF USD (Acc)",
+    "ticker": "IUVL.L"
+  },
+  {
+    "name": "iShares Edge MSCI EM Value Factor UCITS ETF",
+    "ticker": "EMVL.L"
+  },
+  {
+    "name": "iShares V PLC - iShares MSCI ACWI UCITS ETF USD (Acc)",
+    "ticker": "ISAC.L"
+  },
+  {
+    "name": "iShares Digital Security UCITS ETF",
+    "ticker": "LOCK.L"
+  },
+  {
+    "name": "SPDR S&P U.S. Financials Select Sector UCITS ETF",
+    "ticker": "SXLF.L"
+  },
+  {
+    "name": "SPDR S&P U.S. Energy Select Sector UCITS ETF",
+    "ticker": "SXLE.L"
+  },
+  {
+    "name": "SPDR S&P U.S. Health Care Select Sector UCITS ETF",
+    "ticker": "SXLV.L"
+  },
+  {
+    "name": "SPDR S&P U.S. Industrials Select Sector UCITS ETF",
+    "ticker": "SXLI.L"
+  },
+  {
+    "name": "SPDR S&P U.S. Consumer Staples Select Sector UCITS ETF",
+    "ticker": "SXLP.L"
+  },
+  {
+    "name": "SPDR S&P U.S. Communication Services Select Sector UCITS ETF",
+    "ticker": "SXLC.L"
+  },
+  {
+    "name": "iShares $ Short Duration Corp Bond UCITS ETF",
+    "ticker": "SDIA.L"
+  },
+  {
+    "name": "iShares $ Treasury Bond 7-10yr UCITS ETF USD (Dist)",
+    "ticker": "IDTM.L"
+  },
+  {
+    "name": "iShares $ TIPS UCITS ETF USD (Acc)",
+    "ticker": "IDTP.L"
+  },
+  {
+    "name": "iShares Global Corp Bond UCITS ETF USD (Dist)",
+    "ticker": "CORP.L"
+  },
+  {
+    "name": "iShares J.P. Morgan $ EM Bond UCITS ETF USD (Dist)",
+    "ticker": "IEMB.L"
+  },
+  {
+    "name": "iShares V PLC - iShares Gold Producers UCITS ETF USD (Acc)",
+    "ticker": "IAUP.L"
+  },
+  {
+    "name": "iShares Bloomberg Enhanced Roll Yield Commodity Swap UCITS ETF",
+    "ticker": "ROLL.L"
+  },
+  {
+    "name": "iShares Diversified Commodity Swap UCITS ETF",
+    "ticker": "ICOM.L"
+  },
+  {
+    "name": "JPMorgan ETFs (Ireland) ICAV - Global Research Enhanced Index Equity UCITS ETF - USD (acc)",
+    "ticker": "JREG.L"
+  },
+  {
+    "name": "iShares MSCI Global Semiconductors UCITS ETF",
+    "ticker": "SEMI.AS"
+  },
+  {
+    "name": "Lyxor MSCI India UCITS ETF",
+    "ticker": "LYINR.SW"
+  },
+  {
+    "name": "Amundi EUR Overnight Return UCITS ETF",
+    "ticker": "CSHD.L"
+  },
+  {
+    "name": "Amundi MSCI World Information Technology UCITS ETF USD Acc",
+    "ticker": "TNOW.L"
+  },
+  {
+    "name": "Amundi MSCI World Health Care UCITS ETF USD ACC",
+    "ticker": "HLTW.L"
+  },
+  {
+    "name": "Amundi Global Equity Quality Income UCITS ETF ACC",
+    "ticker": "SGQD.L"
+  },
+  {
+    "name": "VanEck World Equal Weight Screened UCITS ETF",
+    "ticker": "TSWE.L"
+  },
+  {
+    "name": "UBS(Lux)Fund Solutions – Bloomberg Barclays US Liquid Corporates UCITS ETF(USD)A-dis",
+    "ticker": "CBUS.SW"
+  },
+  {
+    "name": "Amundi MSCI China A UCITS ETF Acc",
+    "ticker": "CNAA.L"
+  },
+  {
+    "name": "VanEck European Equal Weight Screened UCITS ETF",
+    "ticker": "TEET.L"
+  },
+  {
+    "name": "Amundi EURO STOXX 50 II UCITS ETF Act -Daily Hedged to USD Acc- Capitalisation",
+    "ticker": "MSEU.L"
+  },
+  {
+    "name": "Amundi USD Fed Funds Rate UCITS ETF",
+    "ticker": "FEDF.L"
+  },
+  {
+    "name": "Multi Units Luxembourg - Amundi Smart Overnight Return USD Hedged UCITS ETF Acc",
+    "ticker": "SMTC.L"
+  },
+  {
+    "name": "Amundi US Inflation Expectations 10Y UCITS ETF Acc",
+    "ticker": "INFU.L"
+  },
+  {
+    "name": "Amundi Core S&P 500 Swap UCITS ETF Acc Class C EUR",
+    "ticker": "SP5C.L"
+  },
+  {
+    "name": "Amundi Index Solutions - Amundi Index Barclays Global AGG 500M UCITS ETF DR",
+    "ticker": "GAGU.L"
+  },
+  {
+    "name": "Amundi Index Solutions - Amundi Index J.P. Morgan GBI Global Govies UCITS ETF DR",
+    "ticker": "GOVU.L"
+  },
+  {
+    "name": "Amundi Global Aggregate Green Bond UCITS ETF Acc",
+    "ticker": "CLMU.L"
+  },
+  {
+    "name": "Amundi Index Solutions - Amundi Index MSCI Emerging Markets UCITS ETF DR",
+    "ticker": "AEME.L"
+  },
+  {
+    "name": "UBS BBG Commodity CMCI SF UCITS ETF Accum USD",
+    "ticker": "BCCU.L"
+  },
+  {
+    "name": "Amundi Global Gender Equality UCITS ETF -Acc- Capitalisation",
+    "ticker": "ELLE.L"
+  },
+  {
+    "name": "Amundi Core MSCI Japan UCITS ETF Acc",
+    "ticker": "LCJD.L"
+  },
+  {
+    "name": "Amundi MSCI EM Asia ESG Broad Transition UCITS ETF Acc Shs Capitalisation",
+    "ticker": "LCAS.L"
+  },
+  {
+    "name": "Amundi MSCI All Country World UCITS ETF USD Acc",
+    "ticker": "ACWU.L"
+  },
+  {
+    "name": "Amundi MSCI Brazil UCITS ETF",
+    "ticker": "RIOU.L"
+  },
+  {
+    "name": "Amundi MSCI Turkey UCITS ETF",
+    "ticker": "TURU.L"
+  },
+  {
+    "name": "Amundi MSCI Emerging Ex China UCITS ETF Acc",
+    "ticker": "EMXC.L"
+  },
+  {
+    "name": "Amundi MSCI Disruptive Technology UCITS ETF Acc",
+    "ticker": "UNIC.L"
+  },
+  {
+    "name": "Amundi MSCI Smart Mobility UCITS ETF Capitalisation",
+    "ticker": "MOBI.L"
+  },
+  {
+    "name": "Amundi S&P Eurozone Climate Paris Aligned UCITS ETF Capitalisation",
+    "ticker": "EPAB.L"
+  },
+  {
+    "name": "Amundi Index Solutions - Amundi Prime US Treasury Bond 0-1 Y UCITS ETF DR - USD (C)",
+    "ticker": "PR1T.L"
+  },
+  {
+    "name": "Amundi MSCI Water ESG Screened UCITS ETF Acc",
+    "ticker": "WATC.L"
+  },
+  {
+    "name": "Multi Units France - Lyxor New Energy (DR) UCITS ETF",
+    "ticker": "NRJC.L"
+  },
+  {
+    "name": "Amundi USD Corporate Bond Climate Paris Aligned UCITS ETF C- Capitalisation",
+    "ticker": "USIC.L"
+  },
+  {
+    "name": "Lyxor Index Fund - Lyxor ESG USD High Yield (DR) UCITS ETF",
+    "ticker": "UHYC.L"
+  },
+  {
+    "name": "Multi Units Luxembourg - Lyxor Corporate Green Bond (DR) UCITS ETF",
+    "ticker": "PLAN.L"
+  },
+  {
+    "name": "Amundi US Treasury Bond Long Dated UCITS ETF Acc- Capitalisation",
+    "ticker": "U10C.L"
+  },
+  {
+    "name": "Amundi Core MSCI Emerging Markets Swap UCITS ETF Acc",
+    "ticker": "LEMA.L"
+  },
+  {
+    "name": "iShares MSCI North America UCITS ETF",
+    "ticker": "IDNA.L"
+  },
+  {
+    "name": "iShares Asia Property Yield UCITS ETF USD (Dist)",
+    "ticker": "IDAR.L"
+  },
+  {
+    "name": "iShares Global Infrastructure UCITS ETF",
+    "ticker": "IDIN.L"
+  },
+  {
+    "name": "iShares US Property Yield UCITS ETF",
+    "ticker": "IDUP.L"
+  },
+  {
+    "name": "iShares Developed Markets Property Yield UCITS ETF USD (Dist)",
+    "ticker": "IDWP.L"
+  },
+  {
+    "name": "iShares BRIC 50 UCITS ETF",
+    "ticker": "DBRC.L"
+  },
+  {
+    "name": "iShares MSCI EM Latin America UCITS ETF",
+    "ticker": "DLTM.L"
+  },
+  {
+    "name": "iShares Global Inflation Linked Govt Bond UCITS ETF USD (Acc)",
+    "ticker": "IGIL.L"
+  },
+  {
+    "name": "iShares S&P Small Cap 600 UCITS ETF USD (Dist)",
+    "ticker": "IDP6.L"
+  },
+  {
+    "name": "iShares MSCI EM Small Cap UCITS ETF USD (Dist)",
+    "ticker": "IEMS.L"
+  },
+  {
+    "name": "iShares MSCI EM UCITS ETF USD (Acc)",
+    "ticker": "IEMA.L"
+  },
+  {
+    "name": "iShares VII PLC - iShares MSCI USA UCITS ETF USD (Acc)",
+    "ticker": "CSUS.SW"
+  },
+  {
+    "name": "iShares VII PLC - iShares MSCI EM Asia UCITS ETF USD (Acc)",
+    "ticker": "CSEMAS.SW"
+  },
+  {
+    "name": "iShares V PLC - iShares MSCI Poland UCITS ETF",
+    "ticker": "IPOL.L"
+  },
+  {
+    "name": "SPDR MSCI All Country World Investable Market UCITS ETF",
+    "ticker": "IMID.L"
+  },
+  {
+    "name": "PIMCO Emerging Markets Advantage Local Bond UCITS ETF Accum Shs USD",
+    "ticker": "EMLB.L"
+  },
+  {
+    "name": "iShares Global AAA-AA Govt Bond UCITS ETF USD (Dist)",
+    "ticker": "IAAA.L"
+  },
+  {
+    "name": "iShares MSCI Japan USD Hedged UCITS ETF",
+    "ticker": "IJPD.L"
+  },
+  {
+    "name": "iShares V PLC - iShares MSCI EM Consumer Growth UCITS ETF USD (Acc)",
+    "ticker": "CEMG.L"
+  },
+  {
+    "name": "iShares Edge MSCI World Momentum Factor UCITS ETF",
+    "ticker": "IWMO.L"
+  },
+  {
+    "name": "iShares MSCI World Mid-Cap Equal Weight UCITS ETF USD",
+    "ticker": "IWSZ.L"
+  },
+  {
+    "name": "iShares $ Treasury Bond 20+yr UCITS ETF USD (Dist)",
+    "ticker": "IDTL.L"
+  },
+  {
+    "name": "SPDR S&P U.S. Consumer Discretionary Select Sector UCITS ETF",
+    "ticker": "SXLY.L"
+  },
+  {
+    "name": "SPDR S&P U.S. Materials Select Sector UCITS ETF",
+    "ticker": "SXLB.L"
+  },
+  {
+    "name": "SPDR S&P U.S. Technology Select Sector UCITS ETF",
+    "ticker": "SXLK.L"
+  },
+  {
+    "name": "SPDR S&P U.S. Utilities Select Sector UCITS ETF",
+    "ticker": "SXLU.L"
+  },
+  {
+    "name": "iShares Edge MSCI USA Multifactor UCITS ETF USD (Acc)",
+    "ticker": "IFSU.L"
+  },
+  {
+    "name": "iShares STOXX World Equity Multifactor UCITS ETF Accum Shs USD",
+    "ticker": "IFSW.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Consumer Discretionary Sector UCITS ETF USD (Acc)",
+    "ticker": "IUCD.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Energy Sector UCITS ETF USD (Acc)",
+    "ticker": "IUES.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Financials Sector UCITS ETF USD (Acc)",
+    "ticker": "IUFS.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Health Care Sector UCITS ETF USD (Acc)",
+    "ticker": "IUHC.L"
+  },
+  {
+    "name": "WisdomTree Enhanced Commodity UCITS ETF - USD Acc",
+    "ticker": "WCOA.L"
+  },
+  {
+    "name": "iShares US Mortgage Backed Securities UCITS ETF USD (Dist)",
+    "ticker": "IMBS.L"
+  },
+  {
+    "name": "WisdomTree Global Quality Dividend Growth UCITS ETF",
+    "ticker": "GGRA.L"
+  },
+  {
+    "name": "WisdomTree US Quality Dividend Growth UCITS ETF",
+    "ticker": "DGRA.L"
+  },
+  {
+    "name": "iShares Fallen Angels High Yield Corp Bond UCITS ETF",
+    "ticker": "WING.L"
+  },
+  {
+    "name": "iShares MSCI USA SRI UCITS ETF USD (Acc)",
+    "ticker": "SUAS.L"
+  },
+  {
+    "name": "iShares Digitalisation UCITS ETF",
+    "ticker": "DGTL.L"
+  },
+  {
+    "name": "iShares MSCI USA Mid-Cap Equal Weight UCITS ETF Accum Shs USD",
+    "ticker": "IUSZ.L"
+  },
+  {
+    "name": "WisdomTree Emerging Markets Equity Income UCITS ETF",
+    "ticker": "DEMR.L"
+  },
+  {
+    "name": "WisdomTree US Equity Income UCITS ETF - Acc",
+    "ticker": "DHSA.L"
+  },
+  {
+    "name": "iShares MSCI Japan SRI UCITS ETF",
+    "ticker": "SUJP.L"
+  },
+  {
+    "name": "WisdomTree Japan Equity UCITS ETF",
+    "ticker": "DXJA.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Consumer Staples Sector UCITS ETF",
+    "ticker": "IUCS.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Industrials Sector UCITS ETF",
+    "ticker": "IUIS.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Materials Sector UCITS ETF",
+    "ticker": "IUMS.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Utilities Sector UCITS ETF",
+    "ticker": "IUUS.L"
+  },
+  {
+    "name": "iShares $ TIPS 0-5 UCITS ETF USD (Dist)",
+    "ticker": "TIP5.L"
+  },
+  {
+    "name": "iShares $ Floating Rate Bond UCITS ETF",
+    "ticker": "FLOT.L"
+  },
+  {
+    "name": "iShares Global Corp Bond UCITS ETF",
+    "ticker": "CRPU.L"
+  },
+  {
+    "name": "iShares MSCI World SRI UCITS ETF",
+    "ticker": "SUWS.L"
+  },
+  {
+    "name": "iShares Automation & Robotics UCITS ETF",
+    "ticker": "RBOD.L"
+  },
+  {
+    "name": "iShares Global Govt Bond UCITS ETF",
+    "ticker": "IGLA.L"
+  },
+  {
+    "name": "iShares Global High Yield Corp Bond UCITS ETF USD (Acc)",
+    "ticker": "HYLA.L"
+  },
+  {
+    "name": "iShares € High Yield Corp Bond UCITS ETF",
+    "ticker": "HYGU.L"
+  },
+  {
+    "name": "SPDR Bloomberg Global Aggregate Bond USD Hdg UCITS ETF Acc",
+    "ticker": "GLAG.L"
+  },
+  {
+    "name": "WisdomTree AT1 CoCo Bond UCITS ETF",
+    "ticker": "COCB.L"
+  },
+  {
+    "name": "Invesco Communications S&P US Select Sector UCITS ETF",
+    "ticker": "XLCS.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P 500 Communication Sector UCITS ETF",
+    "ticker": "IUCM.L"
+  },
+  {
+    "name": "iShares J.P. Morgan ESG $ EM Bond UCITS ETF",
+    "ticker": "EMSA.L"
+  },
+  {
+    "name": "iShares IV PLC - iShares MSCI EM IMI Screened UCITS ETF AccumUnhedged USD",
+    "ticker": "SAEM.L"
+  },
+  {
+    "name": "iShares MSCI EM IMI ESG Screened UCITS ETF",
+    "ticker": "SEDM.L"
+  },
+  {
+    "name": "iShares MSCI Japan ESG Screened UCITS ETF",
+    "ticker": "SAJP.L"
+  },
+  {
+    "name": "iShares MSCI Japan ESG Screened UCITS ETF",
+    "ticker": "SDJP.L"
+  },
+  {
+    "name": "iShares MSCI USA ESG Screened UCITS ETF",
+    "ticker": "SASU.L"
+  },
+  {
+    "name": "iShares MSCI World ESG Screened UCITS ETF USD (Acc)",
+    "ticker": "SAWD.L"
+  },
+  {
+    "name": "iShares MSCI World ESG Screened UCITS ETF",
+    "ticker": "SDWD.L"
+  },
+  {
+    "name": "iShares Digital Security UCITS ETF",
+    "ticker": "SHLD.L"
+  },
+  {
+    "name": "WisdomTree Artificial Intelligence UCITS ETF",
+    "ticker": "WTAI.L"
+  },
+  {
+    "name": "iShares Electric Vehicles and Driving Technology UCITS ETF",
+    "ticker": "ECAR.L"
+  },
+  {
+    "name": "iShares $ Treasury Bond 0-1yr UCITS ETF USD (Acc)",
+    "ticker": "IB01.L"
+  },
+  {
+    "name": "iShares MSCI Saudi Arabia Capped UCITS ETF",
+    "ticker": "IKSA.L"
+  },
+  {
+    "name": "WisdomTree Cloud Computing UCITS ETF",
+    "ticker": "WCLD.L"
+  },
+  {
+    "name": "Fidelity Emerging Markets Quality Income UCITS ETF",
+    "ticker": "FEME.L"
+  },
+  {
+    "name": "SPDR Bloomberg Global Aggregate Bond USD Hdg UCITS ETF Acc",
+    "ticker": "GLAD.L"
+  },
+  {
+    "name": "Goldman Sachs Access China Government Bond UCITS ETF",
+    "ticker": "CBND.L"
+  },
+  {
+    "name": "iShares $ High Yield Corp Bond ESG UCITS ETF USD (Acc)",
+    "ticker": "DHYA.L"
+  },
+  {
+    "name": "WisdomTree Battery Solutions UCITS ETF",
+    "ticker": "VOLT.L"
+  },
+  {
+    "name": "Fidelity Global Equity Research Enhanced UCITS ETF Accum Shs USD",
+    "ticker": "FGLR.L"
+  },
+  {
+    "name": "Fidelity US Equity Research Enhanced UCITS ETF Accum Shs USD",
+    "ticker": "FUSR.L"
+  },
+  {
+    "name": "SPDR Bloomberg SASB U.S. Corporate ESG UCITS ETF",
+    "ticker": "USCR.L"
+  },
+  {
+    "name": "Fidelity Emerging Markets Equity Research Enhanced UCITS ETF",
+    "ticker": "FEMR.L"
+  },
+  {
+    "name": "Fidelity Japan Equity Research Enhanced UCITS ETF Accum Shs JPY",
+    "ticker": "FJPR.L"
+  },
+  {
+    "name": "Fidelity Pacific ex-Japan Equity Research Enhanced UCITS ETF USD Acc",
+    "ticker": "FPXR.L"
+  },
+  {
+    "name": "PIMCO US Short-Term High Yield Corporate Bond Index UCITS ETF USD Acc",
+    "ticker": "STYC.L"
+  },
+  {
+    "name": "WisdomTree Cybersecurity UCITS ETF",
+    "ticker": "WCBR.L"
+  },
+  {
+    "name": "iShares Core FTSE 100 UCITS ETF GBP (Dist)",
+    "ticker": "ISFU.L"
+  },
+  {
+    "name": "iShares MSCI Japan UCITS ETF USD (Dist)",
+    "ticker": "IJPU.L"
+  },
+  {
+    "name": "Invesco NASDAQ-100 Swap UCITS ETF",
+    "ticker": "EQQD.L"
+  },
+  {
+    "name": "WisdomTree Emerging Markets ex-State-Owned Enterprises ESG Screened UCITS ETF",
+    "ticker": "XSOE.L"
+  },
+  {
+    "name": "WisdomTree Enhanced Commodity ex-Agriculture UCITS ETF",
+    "ticker": "WXAG.L"
+  },
+  {
+    "name": "WisdomTree Broad Commodities UCITS ETF",
+    "ticker": "PCOM.L"
+  },
+  {
+    "name": "WisdomTree BioRevolution UCITS ETF - USD Acc",
+    "ticker": "WDNA.L"
+  },
+  {
+    "name": "Xtrackers MSCI EM Asia Swap UCITS ETF 1C",
+    "ticker": "XMAD.L"
+  },
+  {
+    "name": "BetaBuilders China Aggregate Bond UCITS ETF Accum USD",
+    "ticker": "JCHA.L"
+  },
+  {
+    "name": "iShares Broad $ High Yield Corp Bond UCITS ETF",
+    "ticker": "HYUS.L"
+  },
+  {
+    "name": "WisdomTree Recycling Decarbonisation UCITS ETF",
+    "ticker": "WRCY.L"
+  },
+  {
+    "name": "iShares Core MSCI Europe UCITS ETF EUR (Dist)",
+    "ticker": "ISEU.L"
+  },
+  {
+    "name": "WisdomTree US Efficient Core UCITS ETF USD Acc",
+    "ticker": "NTSX.L"
+  },
+  {
+    "name": "iShares Core MSCI Japan IMI UCITS ETF USD (Acc)",
+    "ticker": "IJPA.L"
+  },
+  {
+    "name": "iShares MSCI Australia UCITS ETF",
+    "ticker": "IAUS.L"
+  },
+  {
+    "name": "iShares Global Govt Bond UCITS ETF USD (Dist)",
+    "ticker": "IGLO.L"
+  },
+  {
+    "name": "Xtrackers MSCI Canada ESG Screened UCITS ETF",
+    "ticker": "XCAD.L"
+  },
+  {
+    "name": "iShares VII PLC -iShares Core MSCI EMU UCITS ETF EUR (Acc)",
+    "ticker": "IEMU.L"
+  },
+  {
+    "name": "Xtrackers MSCI Pacific ex Japan ESG Screened UCITS ETF",
+    "ticker": "XPXD.L"
+  },
+  {
+    "name": "Xtrackers II US Treasuries UCITS ETF 1D",
+    "ticker": "XUTD.L"
+  },
+  {
+    "name": "SPDR S&P 400 US Mid Cap UCITS ETF",
+    "ticker": "SPY4.L"
+  },
+  {
+    "name": "iShares V PLC - iShares Oil & Gas Exploration & Production UCITS ETF USD (Acc)",
+    "ticker": "IOGP.L"
+  },
+  {
+    "name": "iShares $ High Yield Corp Bond UCITS ETF USD (Dist)",
+    "ticker": "IHYU.L"
+  },
+  {
+    "name": "iShares J.P. Morgan EM Local Govt Bond UCITS ETF",
+    "ticker": "IEML.L"
+  },
+  {
+    "name": "Invesco Russell 2000 UCITS ETF",
+    "ticker": "RTYS.L"
+  },
+  {
+    "name": "SPDR MSCI ACWI UCITS ETF",
+    "ticker": "ACWD.L"
+  },
+  {
+    "name": "iShares V PLC - iShares EM Dividend UCITS ETF USD (Dist)",
+    "ticker": "IEDY.L"
+  },
+  {
+    "name": "SPDR S&P 500 Low Volatility UCITS ETF",
+    "ticker": "LOWV.L"
+  },
+  {
+    "name": "iShares Global High Yield Corp Bond UCITS ETF USD (Dist)",
+    "ticker": "HYLD.L"
+  },
+  {
+    "name": "iShares Emerging Asia Local Govt Bond UCITS ETF USD (Dist)",
+    "ticker": "IGEA.L"
+  },
+  {
+    "name": "iShares Edge MSCI EM Minimum Volatility UCITS ETF USD (Acc)",
+    "ticker": "EMMV.L"
+  },
+  {
+    "name": "Xtrackers Bloomberg Commodity ex-Agriculture & Livestock Swap UCITS ETF",
+    "ticker": "XBCU.L"
+  },
+  {
+    "name": "iShares V PLC - iShares Agribusiness UCITS ETF USD (Acc)",
+    "ticker": "ISAG.L"
+  },
+  {
+    "name": "iShares Edge MSCI Europe Minimum Volatility UCITS ETF",
+    "ticker": "IMVU.L"
+  },
+  {
+    "name": "Invesco MSCI Europe UCITS ETF",
+    "ticker": "SMEU.L"
+  },
+  {
+    "name": "iShares Edge MSCI World Minimum Volatility UCITS ETF USD (Acc)",
+    "ticker": "MVOL.L"
+  },
+  {
+    "name": "iShares Edge S&P 500 Minimum Volatility UCITS ETF",
+    "ticker": "SPMV.L"
+  },
+  {
+    "name": "First Trust Emerging Markets AlphaDEX UCITS ETF",
+    "ticker": "FEMU.L"
+  },
+  {
+    "name": "First Trust US Large Cap Core AlphaDEX UCITS ETF",
+    "ticker": "FEXU.L"
+  },
+  {
+    "name": "iShares $ Corp Bond Interest Rate Hedged UCITS ETF USD (Dist)",
+    "ticker": "LQDH.L"
+  },
+  {
+    "name": "iShares $ Ultrashort Bond UCITS ETF",
+    "ticker": "ERND.L"
+  },
+  {
+    "name": "SPDR Bloomberg SASB U.S. High Yield Corporate ESG UCITS ETF",
+    "ticker": "SJNK.L"
+  },
+  {
+    "name": "iShares $ Short Duration Corp Bond UCITS ETF USD (Dist)",
+    "ticker": "SDIG.L"
+  },
+  {
+    "name": "iShares $ Short Duration High Yield Corp Bond UCITS ETF",
+    "ticker": "SDHY.L"
+  },
+  {
+    "name": "First Trust Eurozone AlphaDEX UCITS ETF",
+    "ticker": "FTEU.L"
+  },
+  {
+    "name": "Xtrackers S&P 500 Equal Weight UCITS ETF",
+    "ticker": "XDEW.L"
+  },
+  {
+    "name": "SPDR MSCI World Small Cap UCITS ETF",
+    "ticker": "WDSC.L"
+  },
+  {
+    "name": "SPDR Russell 2000 US Small Cap UCITS ETF",
+    "ticker": "R2US.L"
+  },
+  {
+    "name": "Xtrackers MSCI USA Screened UCITS ETF 1C",
+    "ticker": "XRMU.L"
+  },
+  {
+    "name": "Xtrackers MSCI Japan Screened UCITS ETF 1D- JPY",
+    "ticker": "XDNY.L"
+  },
+  {
+    "name": "iShares Edge MSCI Europe Multifactor UCITS ETF EUR (Acc)",
+    "ticker": "IEEU.L"
+  },
+  {
+    "name": "Xtrackers MSCI Japan Screened UCITS ETF 4C USD Hedged",
+    "ticker": "XDNU.L"
+  },
+  {
+    "name": "VanEck J.P. Morgan EM Local Currency Bond UCITS ETF",
+    "ticker": "EMLC.L"
+  },
+  {
+    "name": "iShares J.P. Morgan $ EM Bond UCITS ETF",
+    "ticker": "JPEA.L"
+  },
+  {
+    "name": "Fidelity Emerging Markets Quality Income UCITS ETF USD Acc",
+    "ticker": "FEMI.L"
+  },
+  {
+    "name": "iShares $ Intermediate Credit Bond UCITS ETF",
+    "ticker": "ICBU.L"
+  },
+  {
+    "name": "iShares MSCI World Quality Dividend ESG UCITS ETF",
+    "ticker": "WQDV.L"
+  },
+  {
+    "name": "iShares US Mortgage Backed Securities UCITS ETF",
+    "ticker": "IMBA.L"
+  },
+  {
+    "name": "iShares Edge S&P 500 Minimum Volatility UCITS ETF",
+    "ticker": "SPMD.L"
+  },
+  {
+    "name": "iShares Core MSCI EM IMI UCITS ETF",
+    "ticker": "EIMU.L"
+  },
+  {
+    "name": "iShares MSCI World Small Cap UCITS ETF",
+    "ticker": "WSML.L"
+  },
+  {
+    "name": "Xtrackers MSCI World ESG Screened UCITS ETF",
+    "ticker": "XDWY.L"
+  },
+  {
+    "name": "iShares Fallen Angels High Yield Corp Bond UCITS ETF",
+    "ticker": "WIAU.L"
+  },
+  {
+    "name": "iShares Core FTSE 100 UCITS ETF",
+    "ticker": "ISFD.L"
+  },
+  {
+    "name": "Xtrackers ESG USD Corporate Bond Short Duration UCITS ETF",
+    "ticker": "XYLD.L"
+  },
+  {
+    "name": "iShares Nasdaq US Biotechnology UCITS ETF",
+    "ticker": "BTEE.L"
+  },
+  {
+    "name": "SPDR Bloomberg Global Aggregate Bond USD Hdg UCITS ETF Acc",
+    "ticker": "GLAU.L"
+  },
+  {
+    "name": "iShares V PLC - iShares Spain Govt Bond UCITS ETF EUR (Dist)",
+    "ticker": "SPEH.L"
+  },
+  {
+    "name": "VanEck Global Mining UCITS ETF",
+    "ticker": "GDIG.L"
+  },
+  {
+    "name": "iShares Edge MSCI World Value Factor UCITS ETF",
+    "ticker": "IWVU.L"
+  },
+  {
+    "name": "iShares Edge MSCI USA Momentum Factor UCITS ETF",
+    "ticker": "IUMD.L"
+  },
+  {
+    "name": "Xtrackers MSCI USA ESG UCITS ETF",
+    "ticker": "XZMU.L"
+  },
+  {
+    "name": "iShares $ Floating Rate Bond UCITS ETF",
+    "ticker": "FLOA.L"
+  },
+  {
+    "name": "iShares Global Corp Bond UCITS ETF",
+    "ticker": "CRPA.L"
+  },
+  {
+    "name": "iShares Edge MSCI USA Quality Factor UCITS ETF",
+    "ticker": "IUQD.L"
+  },
+  {
+    "name": "iShares $ Treasury Bond 20+yr UCITS ETF",
+    "ticker": "DTLA.L"
+  },
+  {
+    "name": "iShares V PLC - iShares S&P U.S. Banks UCITS ETF",
+    "ticker": "BNKS.L"
+  },
+  {
+    "name": "iShares Edge MSCI USA Value Factor UCITS ETF",
+    "ticker": "IUVD.L"
+  },
+  {
+    "name": "iShares Edge MSCI USA Multifactor UCITS ETF",
+    "ticker": "UFSD.L"
+  },
+  {
+    "name": "iShares $ Ultrashort Bond UCITS ETF",
+    "ticker": "ERNA.L"
+  },
+  {
+    "name": "iShares $ Short Duration High Yield Corp Bond UCITS ETF",
+    "ticker": "SDHA.L"
+  },
+  {
+    "name": "iShares Developed Markets Property Yield UCITS ETF",
+    "ticker": "DPYA.L"
+  },
+  {
+    "name": "iShares MSCI India UCITS ETF",
+    "ticker": "NDIA.L"
+  },
+  {
+    "name": "iShares Emerging Asia Local Govt Bond UCITS ETF USD (Dist)",
+    "ticker": "IGAA.L"
+  },
+  {
+    "name": "iShares J.P. Morgan EM Local Govt Bond UCITS ETF",
+    "ticker": "EMGA.L"
+  },
+  {
+    "name": "iShares $ Corp Bond Interest Rate Hedged UCITS ETF",
+    "ticker": "HLQD.L"
+  },
+  {
+    "name": "iShares Inclusion and Diversity UCITS ETF",
+    "ticker": "OPEN.L"
+  },
+  {
+    "name": "Vanguard USD Corporate Bond UCITS ETF",
+    "ticker": "VDPA.L"
+  },
+  {
+    "name": "Vanguard USD Corporate 1-3 Year Bond UCITS ETF USD Accumulation",
+    "ticker": "VDCA.L"
+  },
+  {
+    "name": "iShares Global AAA-AA Govt Bond UCITS ETF",
+    "ticker": "GAAA.L"
+  },
+  {
+    "name": "iShares MSCI World ESG Enhanced UCITS ETF",
+    "ticker": "EEWD.L"
+  },
+  {
+    "name": "iShares $ Treasury Bond 0-1yr UCITS ETF USD (Dist)",
+    "ticker": "IBTU.L"
+  },
+  {
+    "name": "Harbor Health Care UCITS ETF Accum Shs -A- USD",
+    "ticker": "WELL.L"
+  },
+  {
+    "name": "iShares MSCI USA ESG Enhanced UCITS ETF",
+    "ticker": "EEDS.L"
+  },
+  {
+    "name": "iShares MSCI Saudi Arabia Capped UCITS ETF",
+    "ticker": "IKSD.L"
+  },
+  {
+    "name": "WisdomTree USD Floating Rate Treasury Bond UCITS ETF",
+    "ticker": "TFRN.L"
+  },
+  {
+    "name": "L&G Healthcare Technology & Innovation UCITS ETF Accum Shs USD",
+    "ticker": "DOCT.L"
+  },
+  {
+    "name": "Vanguard FTSE Developed Europe UCITS ETF",
+    "ticker": "VWCG.L"
+  },
+  {
+    "name": "Vanguard USD Treasury Bond UCITS ETF",
+    "ticker": "VDTA.L"
+  },
+  {
+    "name": "Vanguard FTSE North America UCITS ETF",
+    "ticker": "VNRA.L"
+  },
+  {
+    "name": "Vanguard USD Emerging Markets Government Bond UCITS ETF",
+    "ticker": "VDEA.L"
+  },
+  {
+    "name": "Vanguard FTSE Emerging Markets UCITS ETF",
+    "ticker": "VFEA.L"
+  },
+  {
+    "name": "iShares MSCI Japan ESG Enhanced UCITS ETF",
+    "ticker": "EEJD.L"
+  },
+  {
+    "name": "Vanguard FTSE Developed Europe ex UK UCITS ETF",
+    "ticker": "VERE.L"
+  },
+  {
+    "name": "Global High Yield Corporate Bond Multi-Factor Active UCITS ETF Accum Shs Hedged USD",
+    "ticker": "JHYU.L"
+  },
+  {
+    "name": "Vanguard Global Aggregate Bond UCITS ETF USD Hedged Accumulation",
+    "ticker": "VAGU.L"
+  },
+  {
+    "name": "Invesco Global Active ESG Equity UCITS ETF USD Acc",
+    "ticker": "IQSA.L"
+  },
+  {
+    "name": "iShares MSCI EM ESG Enhanced UCITS ETF",
+    "ticker": "EEDM.L"
+  },
+  {
+    "name": "SPDR Dow Jones Global Real Estate UCITS ETF",
+    "ticker": "GLRA.L"
+  },
+  {
+    "name": "Xtrackers MSCI Emerging Markets ESG UCITS ETF",
+    "ticker": "XZEM.L"
+  },
+  {
+    "name": "Vanguard FTSE Japan UCITS ETF",
+    "ticker": "VJPU.L"
+  },
+  {
+    "name": "Vanguard FTSE Japan UCITS ETF",
+    "ticker": "VJPA.L"
+  },
+  {
+    "name": "Vanguard FTSE All-World High Dividend Yield UCITS ETF",
+    "ticker": "VHYA.L"
+  },
+  {
+    "name": "Vanguard U.S. Treasury 0-1 Year Bond UCITS ETF USD Accumulating",
+    "ticker": "VDST.L"
+  },
+  {
+    "name": "Xtrackers ESG USD Corporate Bond UCITS ETF",
+    "ticker": "XZBD.L"
+  },
+  {
+    "name": "Vanguard FTSE Developed Asia Pacific ex Japan UCITS ETF",
+    "ticker": "VAPU.L"
+  },
+  {
+    "name": "SPDR MSCI World Value UCITS ETF",
+    "ticker": "WVAL.L"
+  },
+  {
+    "name": "Vanguard Funds PLC - Vanguard ESG Global Corporate Bond UCITS ETF USD Hedged Acc",
+    "ticker": "V3GU.L"
+  },
+  {
+    "name": "VanEck Hydrogen Economy UCITS ETF",
+    "ticker": "HDRO.L"
+  },
+  {
+    "name": "SPDR S&P Global Dividend Aristocrats ESG UCITS ETF",
+    "ticker": "GEDV.L"
+  },
+  {
+    "name": "Janus Henderson US Enhanced Inflation Core UCITS ETF USD Acc",
+    "ticker": "TINF.L"
+  },
+  {
+    "name": "Hanetf ICAV - US Global Investors Travel UCITS ETF Accum USD",
+    "ticker": "TRYP.L"
+  },
+  {
+    "name": "L&G Emerging Markets Corporate Bond (USD) Screened UCITS ETF Accum Shs USD",
+    "ticker": "EMAU.L"
+  },
+  {
+    "name": "L&G Emerging Markets Quality Dividends Equal Weight UCITS ETF",
+    "ticker": "LDEM.L"
+  },
+  {
+    "name": "L&G India INR Government Bond UCITS ETF",
+    "ticker": "TIGR.L"
+  },
+  {
+    "name": "SPDR S&P U.S. Dividend Aristocrats ESG UCITS ETF",
+    "ticker": "UEDV.L"
+  },
+  {
+    "name": "Janus Henderson Haitong Asia ex-Japan High Yield Corp USD Bond Screened Core UCITS ETF Acc",
+    "ticker": "TAHY.L"
+  },
+  {
+    "name": "WisdomTree New Economy Real Estate UCITS ETF",
+    "ticker": "WTRE.L"
+  },
+  {
+    "name": "Xtrackers Bloomberg Commodity Swap UCITS ETF",
+    "ticker": "XCMC.L"
+  },
+  {
+    "name": "Global X Uranium UCITS ETF AccumUSD",
+    "ticker": "URNU.L"
+  },
+  {
+    "name": "Xtrackers MSCI USA ESG UCITS ETF",
+    "ticker": "XZMD.L"
+  },
+  {
+    "name": "iShares Russell 1000 Value UCITS ETF",
+    "ticker": "R1VL.L"
+  },
+  {
+    "name": "KraneShares ICBCCS S&P China 500 Index UCITS ETF",
+    "ticker": "CHIN.L"
+  },
+  {
+    "name": "iShares Healthcare Innovation UCITS ETF",
+    "ticker": "HEAL.L"
+  },
+  {
+    "name": "iShares J.P. Morgan ESG $ EM Bond UCITS ETF",
+    "ticker": "EMES.L"
+  },
+  {
+    "name": "UBS ETF - Solactive China Technology UCITS ETF",
+    "ticker": "CQQQ.SW"
+  },
+  {
+    "name": "UBS (Irl) ETF plc - S&P 500 ESG ELITE UCITS ETF (USD) A Acc",
+    "ticker": "SPESGE.SW"
+  },
+  {
+    "name": "UBS (Irl) ETF plc - UBS (Irl) ETF plc MSCI World Small Cap Socially Responsible UCITS ETF",
+    "ticker": "WSCSRI.SW"
+  },
+  {
+    "name": "iShares MSCI EM ex China UCITS ETF USD Acc",
+    "ticker": "EXCH.SW"
+  },
+  {
+    "name": "Amundi US TIPS Government Inflation-Linked Bond UCITS ETF Acc",
+    "ticker": "TIPA.L"
+  },
+  {
+    "name": "iShares VII PLC - iShares MSCI Korea UCITS ETF USD (Acc)",
+    "ticker": "CSKR.L"
+  },
+  {
+    "name": "iShares Edge MSCI EM Minimum Volatility UCITS ETF USD (Acc)",
+    "ticker": "EMV.L"
+  },
+  {
+    "name": "SPDR S&P 500 UCITS ETF USD Acc",
+    "ticker": "SPYL.L"
+  }
+]
