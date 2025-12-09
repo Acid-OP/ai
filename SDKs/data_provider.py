@@ -258,10 +258,12 @@ def get_portfolio_data(quiz_data: dict) -> dict:
         geographic_rows += f"""<tr>
             <td>{name}</td>
             <td>
-                <div class="allocation-bar">
-                    <div class="allocation-bar-fill" style="width: {weight}%;"></div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div class="allocation-bar">
+                        <div class="allocation-bar-fill" style="width: {weight}%;"></div>
+                    </div>
+                    <span>{weight:.1f}%</span>
                 </div>
-                <span>{weight:.1f}%</span>
             </td>
         </tr>"""
     
@@ -274,10 +276,12 @@ def get_portfolio_data(quiz_data: dict) -> dict:
         top_holdings_rows += f"""<tr>
             <td>{name}</td>
             <td>
-                <div class="allocation-bar">
-                    <div class="allocation-bar-fill" style="width: {min(weight, 100)}%;"></div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div class="allocation-bar">
+                        <div class="allocation-bar-fill" style="width: {min(weight, 100)}%;"></div>
+                    </div>
+                    <span>{weight:.1f}%</span>
                 </div>
-                <span>{weight:.1f}%</span>
             </td>
         </tr>"""
     

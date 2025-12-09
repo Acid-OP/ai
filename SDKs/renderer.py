@@ -1,10 +1,11 @@
 import os
 from datetime import datetime
-from xhtml2pdf import pisa
+from playwright.sync_api import sync_playwright
 
 def render_portfolio(template_data, output_dir):
     """
-    Renders portfolio report as PDF only
+    Renders portfolio report as PDF using Playwright (headless Chrome)
+    This ensures the PDF looks exactly like the HTML in a browser
     
     Args:
         template_data: Dictionary with all template variables
@@ -23,16 +24,42 @@ def render_portfolio(template_data, output_dir):
     # Ensure output directory exists
     os.makedirs(output_dir, exist_ok=True)
     
-    # Generate PDF
-    pdf_file = os.path.join(output_dir, 'portfolio_report.pdf')
-    with open(pdf_file, 'wb') as pdf:
-        pisa_status = pisa.CreatePDF(html_content, dest=pdf)
+    # Save HTML temporarily
+    html_file = os.path.join(output_dir, 'portfolio_report.html')
+    with open(html_file, 'w', encoding='utf-8') as f:
+        f.write(html_content)
     
-    if pisa_status.err:
-        raise Exception(f"PDF generation failed with errors")
+    # Generate PDF using Playwright (headless Chrome)
+    pdf_file = os.path.join(output_dir, 'portfolio_report.pdf')
+    
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page()
+        
+        # Load the HTML file
+        page.goto(f'file:///{os.path.abspath(html_file)}')
+        
+        # Wait for any images to load
+        page.wait_for_load_state('networkidle')
+        
+        # Generate PDF with proper settings
+        page.pdf(
+            path=pdf_file,
+            format='A4',
+            print_background=True,
+            margin={
+                'top': '0px',
+                'right': '0px',
+                'bottom': '0px',
+                'left': '0px'
+            }
+        )
+        
+        browser.close()
     
     print(f"[OK] PDF report generated: {pdf_file}")
     
     return {
-        'pdf': pdf_file
+        'pdf': pdf_file,
+        'html': html_file
     }
