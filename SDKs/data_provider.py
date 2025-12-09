@@ -8,18 +8,33 @@ import json
 import requests
 import base64
 from io import BytesIO
-from datetime import datetime
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
+import yfinance as yf
+import pandas as pd
 
 load_dotenv()
 
 PAASA_API_BASE = "https://api-stage.paasa.com/api/portfolio/v1"
 BEARER_TOKEN = os.getenv("PAASA_BEARER_TOKEN", "")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+
+# Professional color mapping for asset allocation categories
+# Colors follow risk gradient: Cool (safe) → Warm (risky)
+CATEGORY_COLORS = {
+    "Bond ETFs": "#1e3a8a",                    # Dark Navy - Conservative/Stable
+    "U.S. stocks ETFs": "#3b82f6",             # Royal Blue - Core Holdings
+    "Global markets ETFs": "#14b8a6",          # Teal - Diversified
+    "Technology ETFs": "#8b5cf6",              # Purple - Growth/Innovation
+    "Emerging markets ETFs": "#f97316",        # Orange - High Growth/Risk
+}
+
+# Fallback color for unknown categories
+DEFAULT_CATEGORY_COLOR = "#6b7280"  # Gray
 
 
 def get_portfolio_id(quiz_data: dict) -> int:
@@ -72,52 +87,137 @@ def fetch_from_api(portfolio_id: int) -> dict:
         return {}
 
 
+def fetch_sp500_data(start_date: str, end_date: str) -> dict:
+    """
+    Fetch real S&P 500 historical data from Yahoo Finance
+    Returns dict of {date: daily_return}
+    """
+    try:
+        print(f"Fetching S&P 500 data from {start_date} to {end_date}...")
+        
+        # Fetch S&P 500 data using ^GSPC ticker
+        sp500 = yf.download('^GSPC', start=start_date, end=end_date, progress=False, auto_adjust=True)
+        
+        if len(sp500) == 0:
+            print("Warning: No S&P 500 data received from yfinance")
+            return {}
+        
+        # Get Close prices - handle both single-column and multi-column DataFrames
+        if isinstance(sp500.columns, pd.MultiIndex):
+            close_prices = sp500['Close'].iloc[:, 0]
+        else:
+            close_prices = sp500['Close']
+        
+        # Calculate daily returns
+        daily_returns = close_prices.pct_change()
+        
+        # Convert to dict {date: return}
+        benchmark_returns = {}
+        for i in range(len(daily_returns)):
+            date = daily_returns.index[i]
+            return_value = daily_returns.iloc[i]
+            if pd.notna(return_value):
+                date_str = date.strftime('%Y-%m-%d')
+                benchmark_returns[date_str] = float(return_value)
+        
+        print(f"[OK] Fetched {len(benchmark_returns)} S&P 500 data points")
+        return benchmark_returns
+        
+    except Exception as e:
+        print(f"Error fetching S&P 500 data: {e}")
+        import traceback
+        traceback.print_exc()
+        return {}
+
+
 def generate_performance_chart(performance_data: dict) -> str:
     """
-    Generate performance chart as base64 encoded image
+    Generate professional performance comparison chart
+    Inspired by institutional investment report styling
     """
-    fig, ax = plt.subplots(figsize=(10, 4))
+    fig, ax = plt.subplots(figsize=(11, 4.8))
     
     labels = performance_data.get("labels", [])
     portfolio = performance_data.get("portfolio", [])
     benchmark = performance_data.get("benchmark", [])
     
-    # Plot lines
+    if not portfolio or not benchmark:
+        print("Warning: No data for performance chart")
+        return ""
+    
     x_values = range(len(labels))
-    ax.plot(x_values, portfolio, color='#3b82f6', linewidth=2, label='My portfolio', zorder=2)
-    ax.plot(x_values, benchmark, color='#ef4444', linewidth=2, linestyle='--', label='S&P 500', zorder=1)
     
-    # Fill area under portfolio line
-    ax.fill_between(x_values, portfolio, alpha=0.1, color='#3b82f6')
+    # PROFESSIONAL STYLING - Clean thin lines, no fill
+    ax.plot(x_values, portfolio, color='#3b82f6', linewidth=1.8, 
+            label='Your Portfolio', zorder=3, linestyle='-', alpha=0.95)
+    ax.plot(x_values, benchmark, color='#ef4444', linewidth=1.8, 
+            label='S&P 500 Benchmark', zorder=2, linestyle='-', alpha=0.85)
     
-    # Styling
-    ax.set_facecolor('#f8f9fa')
+    # Optimize Y-axis range - minimize wasted space
+    all_values = portfolio + benchmark
+    y_min = min(all_values)
+    y_max = max(all_values)
+    y_range = y_max - y_min
+    
+    # Add 8% padding above and below for breathing room
+    ax.set_ylim(y_min - (y_range * 0.08), y_max + (y_range * 0.08))
+    
+    # Clean white background
+    ax.set_facecolor('white')
     fig.patch.set_facecolor('white')
-    ax.grid(True, alpha=0.2, linestyle='-', linewidth=0.5)
+    
+    # Professional grid - very subtle horizontal lines only
+    ax.grid(True, axis='y', alpha=0.12, linestyle='-', linewidth=0.6, color='#d1d5db')
+    ax.grid(False, axis='x')
+    
+    # Clean borders - remove top and right
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
-    ax.spines['left'].set_color('#e0e0e0')
-    ax.spines['bottom'].set_color('#e0e0e0')
+    ax.spines['left'].set_color('#cbd5e1')
+    ax.spines['bottom'].set_color('#cbd5e1')
+    ax.spines['left'].set_linewidth(0.8)
+    ax.spines['bottom'].set_linewidth(0.8)
     
-    # X-axis
-    ax.set_xticks(range(0, len(labels), max(1, len(labels)//8)))
-    ax.set_xticklabels([labels[i] for i in range(0, len(labels), max(1, len(labels)//8))], fontsize=9)
+    # X-axis - clean date labels with proper spacing
+    num_labels = 7  # Fewer labels for vertical format
+    step = max(1, len(labels) // num_labels)
+    x_ticks = list(range(0, len(labels), step))
     
-    # Y-axis formatting
-    ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f'${int(y/1000)}k'))
-    ax.tick_params(axis='both', labelsize=9, colors='#666666')
+    # ALWAYS include the last date (Dec 2025)
+    last_index = len(labels) - 1
+    if len(x_ticks) == 0 or x_ticks[-1] != last_index:
+        # Only add if not too close to previous tick
+        if len(x_ticks) == 0 or (last_index - x_ticks[-1]) > (step * 0.4):
+            x_ticks.append(last_index)
     
-    # Legend
-    legend = ax.legend(loc='upper left', frameon=True, fontsize=10)
-    legend.get_frame().set_facecolor('white')
-    legend.get_frame().set_edgecolor('#e0e0e0')
+    ax.set_xticks(x_ticks)
+    ax.set_xticklabels([labels[i] for i in x_ticks], 
+                       fontsize=8, color='#64748b', fontfamily='sans-serif',
+                       verticalalignment='top')
+    plt.setp(ax.xaxis.get_majorticklabels(), rotation=0, ha='center')
     
-    # Tight layout
-    plt.tight_layout()
+    # Y-axis - professional formatting
+    ax.set_ylabel('Growth of $10,000 Investment', fontsize=10, 
+                 color='#475569', fontfamily='sans-serif', labelpad=12)
+    ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${x:,.0f}'))
+    ax.tick_params(axis='y', labelsize=8.5, colors='#64748b', length=4, width=0.8)
+    ax.tick_params(axis='x', labelsize=8.5, colors='#64748b', length=4, width=0.8)
     
-    # Convert to base64
+    # Professional legend - top left, clean
+    legend = ax.legend(loc='upper left', frameon=False, fontsize=9.5,
+                      labelspacing=0.6, handlelength=2.5, handletextpad=0.8)
+    for text in legend.get_texts():
+        text.set_color('#475569')
+        text.set_fontfamily('sans-serif')
+    
+    # Title - professional and clean
+    ax.set_title('Portfolio Performance vs S&P 500', fontsize=12, pad=18, 
+                color='#1e293b', fontfamily='sans-serif', fontweight='600', loc='left')
+    
+    # High-quality export
     buffer = BytesIO()
-    plt.savefig(buffer, format='png', dpi=150, bbox_inches='tight')
+    plt.savefig(buffer, format='png', dpi=200, bbox_inches='tight', 
+               facecolor='white', edgecolor='none')
     buffer.seek(0)
     image_base64 = base64.b64encode(buffer.read()).decode()
     plt.close(fig)
@@ -127,35 +227,36 @@ def generate_performance_chart(performance_data: dict) -> str:
 
 def generate_donut_chart(allocation_data: dict) -> str:
     """
-    Generate allocation donut chart as base64 encoded image
+    Generate professional allocation donut chart with dynamic colors
     """
-    fig, ax = plt.subplots(figsize=(3, 3))
+    fig, ax = plt.subplots(figsize=(3.2, 3.2))
     
     labels = allocation_data.get("labels", [])
     values = allocation_data.get("values", [])
-    colors = ['#1e40af', '#facc15', '#60a5fa']
     
-    # Create donut chart
+    # Get colors dynamically based on category names
+    colors = [CATEGORY_COLORS.get(label, DEFAULT_CATEGORY_COLOR) for label in labels]
+    
+    # Create donut chart with refined styling
     wedges, texts = ax.pie(values, colors=colors, startangle=90, 
-                            wedgeprops=dict(width=0.35))
+                            wedgeprops=dict(width=0.38, edgecolor='white', linewidth=2))
     
-    # Make it a donut
-    centre_circle = plt.Circle((0, 0), 0.65, fc='white')
+    # Clean center circle
+    centre_circle = plt.Circle((0, 0), 0.62, fc='white')
     fig.gca().add_artist(centre_circle)
     
-    # Equal aspect ratio ensures that pie is drawn as a circle
+    # Perfect circle
     ax.axis('equal')
     
-    # Remove background
+    # Clean background
     fig.patch.set_alpha(0.0)
     ax.set_facecolor('none')
     
-    # Tight layout
     plt.tight_layout(pad=0)
     
-    # Convert to base64
+    # High-quality export
     buffer = BytesIO()
-    plt.savefig(buffer, format='png', dpi=150, bbox_inches='tight', 
+    plt.savefig(buffer, format='png', dpi=200, bbox_inches='tight', 
                 transparent=True, pad_inches=0)
     buffer.seek(0)
     image_base64 = base64.b64encode(buffer.read()).decode()
@@ -293,20 +394,21 @@ def get_portfolio_data(quiz_data: dict) -> dict:
         weight = h.get("position", 0)  # position is already in percentage
         asset_classes[ac] = asset_classes.get(ac, 0) + weight
     
-    allocation_labels = list(asset_classes.keys())[:3] or ["Global markets ETFs", "Bond ETFs", "U.S. stocks ETFs"]
-    allocation_values = list(asset_classes.values())[:3] or [40, 30, 30]
+    # Get ALL categories for dynamic display
+    allocation_labels = list(asset_classes.keys()) or ["Global markets ETFs", "Bond ETFs", "U.S. stocks ETFs"]
+    allocation_values = list(asset_classes.values()) or [40, 30, 30]
     
     allocation_data = {
         "labels": allocation_labels,
         "values": allocation_values
     }
     
-    # Generate allocation legend HTML
-    color_classes = ['dark', 'blue', 'light']
+    # Generate allocation legend HTML with dynamic colors
     allocation_legend = ""
-    for i, label in enumerate(allocation_labels):
+    for label in allocation_labels:
+        color = CATEGORY_COLORS.get(label, DEFAULT_CATEGORY_COLOR)
         allocation_legend += f"""<div class="allocation-legend-item">
-            <span class="legend-dot {color_classes[i % 3]}"></span>
+            <span class="legend-dot" style="background-color: {color};"></span>
             <span>{label}</span>
         </div>"""
     
@@ -314,26 +416,63 @@ def get_portfolio_data(quiz_data: dict) -> dict:
     returns_data = api_data.get("portfolioReturns", {})
     benchmark_data = api_data.get("benchmarkReturns", {})
     
+    # If API doesn't provide benchmark data, fetch REAL S&P 500 data from Yahoo Finance
+    if returns_data and not benchmark_data:
+        all_dates = sorted(returns_data.keys())
+        if all_dates:
+            start_date = all_dates[0]
+            end_date = all_dates[-1]
+            print(f"\nAPI doesn't provide S&P 500 data")
+            print(f"Fetching REAL S&P 500 data from Yahoo Finance...")
+            benchmark_data = fetch_sp500_data(start_date, end_date)
+    
     # Generate performance chart data
     if returns_data and isinstance(returns_data, dict):
-        dates = sorted(returns_data.keys())[-24:]  # Last 24 data points
+        # Get all dates, use last 252 trading days (1 year) for better visualization
+        all_dates = sorted(returns_data.keys())
+        
+        # Use more data points for meaningful comparison (min 60, max 252 trading days)
+        num_points = min(252, max(60, len(all_dates)))
+        dates = all_dates[-num_points:]
+        
+        print(f"\n=== PERFORMANCE DATA VERIFICATION ===")
+        print(f"Portfolio data points: {len(returns_data)}")
+        print(f"S&P 500 data points: {len(benchmark_data) if benchmark_data else 0}")
+        print(f"Date range: {dates[0]} to {dates[-1]}")
+        print(f"Using {len(dates)} data points for chart")
+        
         portfolio_values = []
         benchmark_values = []
-        base_value = 10000
+        portfolio_base = 10000
+        benchmark_base = 10000
+        matched_dates = []
         
         for d in dates:
             p_return = returns_data.get(d, 0)
             b_return = benchmark_data.get(d, 0) if isinstance(benchmark_data, dict) else 0
-            base_value *= (1 + p_return)
-            portfolio_values.append(round(base_value, 2))
-            benchmark_values.append(round(10000 * (1 + b_return), 2))
+            
+            # Only include dates where we have data for both
+            if p_return != 0 or b_return != 0:
+                # Accumulate returns correctly (compound growth)
+                portfolio_base *= (1 + p_return)
+                benchmark_base *= (1 + b_return)
+                
+                portfolio_values.append(round(portfolio_base, 2))
+                benchmark_values.append(round(benchmark_base, 2))
+                matched_dates.append(d)
         
-        # Format dates for display
+        print(f"Matched dates with data: {len(matched_dates)}")
+        print(f"Portfolio: ${portfolio_values[0]:.2f} -> ${portfolio_values[-1]:.2f} ({((portfolio_values[-1]/10000 - 1) * 100):.2f}%)")
+        print(f"S&P 500:   ${benchmark_values[0]:.2f} -> ${benchmark_values[-1]:.2f} ({((benchmark_values[-1]/10000 - 1) * 100):.2f}%)")
+        print(f"=====================================\n")
+        
+        # Format dates for display - vertical stacking for clarity
         formatted_dates = []
-        for d in dates:
+        for d in matched_dates:
             try:
                 dt = datetime.strptime(d, "%Y-%m-%d")
-                formatted_dates.append(dt.strftime("%b %Y"))
+                # Vertical format: "Mar\n2024" for clarity
+                formatted_dates.append(dt.strftime("%b\n%Y"))
             except:
                 formatted_dates.append(d)
         
