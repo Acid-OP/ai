@@ -1,7 +1,4 @@
-/* ========================================
-   PAASA PORTFOLIO REPORT - SKELETON STYLES
-   ======================================== */
-
+/* Reset & Base */
 * {
     margin: 0;
     padding: 0;
@@ -9,344 +6,340 @@
 }
 
 body {
-    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
-    font-size: 11px;
-    color: #1F2937;
-    line-height: 1.5;
-    background: #ffffff;
-}
-
-/* ===== NAVBAR ===== */
-.navbar {
-    background: linear-gradient(135deg, #0A1628 0%, #1e3a5f 100%);
-    padding: 16px 30px;
-    color: white;
-}
-
-.navbar-brand {
-    font-size: 28px;
-    font-weight: 800;
-    color: #ffffff;
-    letter-spacing: -1px;
-}
-
-.navbar-tagline {
-    color: #94A3B8;
-    font-size: 11px;
-    margin-left: 10px;
-}
-
-.navbar-date {
-    float: right;
-    color: #94A3B8;
-    font-size: 10px;
-    padding-top: 10px;
-}
-
-/* ===== CONTENT ===== */
-.content {
-    padding: 25px 30px;
-}
-
-/* ===== PAGE TITLE ===== */
-.page-title {
-    font-size: 22px;
-    font-weight: 700;
-    color: #0A1628;
-    margin: 0 0 20px 0;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #E5E7EB;
-}
-
-/* ===== SECTION TITLE ===== */
-.section-title {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
     font-size: 12px;
-    font-weight: 700;
-    color: #0A1628;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 22px 0 12px 0;
-    padding-bottom: 6px;
-    border-bottom: 2px solid #0066CC;
-    display: inline-block;
-}
-
-/* ===== PROFILE TABLE ===== */
-.profile-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 15px;
-}
-
-.profile-table td {
-    width: 25%;
-    padding: 8px 0;
-    vertical-align: top;
-}
-
-.profile-label {
-    font-size: 9px;
-    color: #6B7280;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 3px;
-}
-
-.profile-value {
-    font-size: 14px;
-    font-weight: 700;
-    color: #0A1628;
-}
-
-.risk-badge {
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 15px;
-    font-size: 11px;
-    font-weight: 700;
-    color: white;
-    background: #10B981;
-}
-
-.risk-badge.low { background: #10B981; }
-.risk-badge.medium { background: #F59E0B; }
-.risk-badge.high { background: #EF4444; }
-
-/* ===== METHODOLOGY ===== */
-.methodology {
-    background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
-    border-left: 4px solid #0066CC;
-    border-radius: 0 8px 8px 0;
-    padding: 16px 20px;
-    margin: 10px 0 18px 0;
-}
-
-.methodology-title {
-    font-size: 14px;
-    font-weight: 700;
-    color: #0A1628;
-    margin-bottom: 8px;
-}
-
-.methodology-text {
-    font-size: 11px;
-    color: #4B5563;
-    line-height: 1.7;
-    margin-bottom: 10px;
-}
-
-.methodology ul {
-    margin: 0;
-    padding-left: 18px;
-}
-
-.methodology li {
-    font-size: 10px;
-    color: #6B7280;
-    margin-bottom: 4px;
     line-height: 1.5;
 }
 
-/* ===== HOLDINGS TABLE ===== */
-.holdings-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 10px 0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+.page {
+    width: 595px; /* A4 width in pixels at 72dpi */
+    min-height: 842px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 0;
+    position: relative;
 }
 
-.holdings-table th {
-    background: linear-gradient(135deg, #0A1628 0%, #1e3a5f 100%);
+/* Header */
+.header {
+    background: #0f172a;
     color: #ffffff;
-    padding: 12px 14px;
-    text-align: left;
-    font-size: 10px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 18px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
-.holdings-table td {
-    padding: 10px 14px;
+.header .date {
+    background: #334155;
+    padding: 6px 14px;
+    border-radius: 4px;
     font-size: 11px;
-    border-bottom: 1px solid #E5E7EB;
 }
 
-.holdings-table tr:nth-child(even) {
-    background: #F9FAFB;
+/* Investor Info */
+.investor-info {
+    padding: 20px 24px;
+    border-bottom: 1px solid #e2e8f0;
 }
 
-.holdings-table tr:hover {
-    background: #EFF6FF;
+.info-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 16px;
 }
 
-.ticker {
-    color: #0066CC;
-    font-weight: 700;
+.info-row:last-child {
+    margin-bottom: 0;
 }
 
-.weight {
-    text-align: center;
-    font-weight: 700;
-    color: #0A1628;
+.info-item {
+    flex: 1;
 }
 
-/* ===== METRICS TABLE ===== */
-.metrics-table {
+.info-item .label {
+    display: block;
+    font-size: 10px;
+    color: #64748b;
+    margin-bottom: 4px;
+    text-transform: capitalize;
+}
+
+.info-item .value {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+/* Portfolio Table */
+.portfolio-section {
+    padding: 20px 24px;
+}
+
+.portfolio-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 12px 0;
+    font-size: 10px;
 }
 
-.metrics-table td {
-    width: 25%;
-    padding: 10px 0;
-    vertical-align: top;
+.portfolio-table thead {
+    background: #0f172a;
+    color: #ffffff;
 }
 
-.metric-label {
+.portfolio-table th {
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 500;
     font-size: 9px;
-    color: #6B7280;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
 }
 
-.metric-value {
-    font-size: 26px;
-    font-weight: 700;
-    color: #1F2937;
-    margin: 5px 0;
+.portfolio-table td {
+    padding: 10px;
+    border-bottom: 1px solid #e2e8f0;
 }
 
-.metric-value.green {
-    color: #10B981;
+.portfolio-table tbody tr:hover {
+    background: #f8fafc;
 }
 
-.metric-sub {
+/* Symbol badges */
+.symbol-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
     font-size: 9px;
-    color: #9CA3AF;
 }
 
-/* ===== CHART CONTAINER ===== */
+.symbol-badge.green { background: #dcfce7; color: #166534; }
+.symbol-badge.purple { background: #f3e8ff; color: #7c3aed; }
+.symbol-badge.blue { background: #dbeafe; color: #1d4ed8; }
+.symbol-badge.orange { background: #ffedd5; color: #c2410c; }
+.symbol-badge.yellow { background: #fef9c3; color: #a16207; }
+
+/* Performance Section */
+.performance-section {
+    padding: 10px 24px 20px;
+}
+
 .chart-container {
-    margin: 10px 0 18px 0;
-    background: #FAFAFA;
-    border-radius: 8px;
-    padding: 15px;
-    height: 220px;
+    height: 120px;
+    position: relative;
 }
 
-/* ===== ALLOCATION ROW ===== */
-.allocation-row {
+.chart-legend {
     display: flex;
-    align-items: center;
-    margin: 12px 0;
-    gap: 30px;
-}
-
-.alloc-chart-wrap {
-    width: 160px;
-    height: 160px;
-}
-
-.alloc-legend {
-    flex: 1;
+    gap: 20px;
+    justify-content: flex-start;
+    margin-top: 8px;
+    font-size: 9px;
+    color: #64748b;
 }
 
 .legend-item {
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
+    gap: 6px;
 }
 
-.legend-color {
-    width: 14px;
-    height: 14px;
-    border-radius: 3px;
-    margin-right: 10px;
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
 }
 
-.legend-name {
+.dot.portfolio { background: #6366f1; }
+.dot.benchmark { background: #22d3ee; }
+
+/* Allocation Section */
+.allocation-section {
+    padding: 20px 24px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.allocation-content {
+    display: flex;
+    gap: 30px;
+}
+
+.allocation-chart {
+    flex: 0 0 180px;
+}
+
+.allocation-chart canvas {
+    width: 120px !important;
+    height: 120px !important;
+}
+
+.allocation-legend {
+    margin-top: 12px;
+    font-size: 9px;
+}
+
+.allocation-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+.legend-dot.dark { background: #1e3a5f; }
+.legend-dot.blue { background: #3b82f6; }
+.legend-dot.light { background: #93c5fd; }
+
+/* Metrics Comparison */
+.metrics-comparison {
     flex: 1;
-    color: #4B5563;
-    font-size: 11px;
 }
 
-.legend-percent {
-    font-weight: 700;
-    font-size: 12px;
-    color: #0A1628;
+.metrics-header {
+    display: grid;
+    grid-template-columns: 1fr 100px 120px;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
 }
 
-/* ===== GEO TABLE ===== */
-.geo-table {
-    width: 50%;
-    border-collapse: collapse;
-    margin: 10px 0;
-}
-
-.geo-table th {
-    background: #0A1628;
-    color: white;
-    padding: 10px 14px;
-    font-size: 10px;
-    text-align: left;
+.col-header {
+    font-size: 8px;
+    font-weight: 600;
+    color: #0f172a;
     text-transform: uppercase;
 }
 
-.geo-table th:last-child {
-    text-align: right;
+.metric-row {
+    display: grid;
+    grid-template-columns: 1fr 100px 120px;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f5f9;
 }
 
-.geo-table td {
-    padding: 8px 14px;
-    font-size: 11px;
-    border-bottom: 1px solid #E5E7EB;
-}
-
-.geo-table td:last-child {
-    text-align: right;
-    font-weight: 700;
-}
-
-.geo-table tr:hover {
-    background: #F9FAFB;
-}
-
-/* ===== STOCKS LIST ===== */
-.stocks-list {
-    font-size: 12px;
-    line-height: 2.2;
-}
-
-.stock-item {
-    display: inline-block;
-    margin-right: 18px;
-}
-
-.stock-symbol {
-    color: #0066CC;
-    font-weight: 700;
-}
-
-.stock-weight {
-    color: #6B7280;
-    font-size: 11px;
-}
-
-/* ===== FOOTER ===== */
-.footer {
-    background: #F8FAFC;
-    border-top: 1px solid #E5E7EB;
-    padding: 12px 30px;
+.metric-label {
     font-size: 9px;
-    color: #6B7280;
-    text-align: center;
-    margin-top: 30px;
+    color: #64748b;
 }
 
-/* ===== PAGE BREAK ===== */
-.page-break {
-    page-break-after: always;
-    height: 30px;
+.metric-value {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.metric-value.positive {
+    color: #16a34a;
+}
+
+.metric-value.benchmark-val {
+    color: #64748b;
+}
+
+/* Bottom Section - Geographic & Holdings */
+.bottom-section {
+    display: flex;
+    gap: 24px;
+    padding: 20px 24px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.geographic-section,
+.holdings-section {
+    flex: 1;
+}
+
+.geo-table,
+.holdings-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+}
+
+.geo-table thead,
+.holdings-table thead {
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.geo-table th,
+.holdings-table th {
+    padding: 6px 10px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 9px;
+}
+
+.geo-table td,
+.holdings-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.allocation-bar {
+    background: #e2e8f0;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.allocation-bar-fill {
+    height: 100%;
+    background: #3b82f6;
+    border-radius: 3px;
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e2e8f0;
+    background: #ffffff;
+}
+
+.footer-logo {
+    height: 20px;
+}
+
+.page-number {
+    font-size: 9px;
+    color: #94a3b8;
+}
+
+/* Print styles */
+@media print {
+    body { background: white; }
+    .page { 
+        width: 100%; 
+        margin: 0; 
+        box-shadow: none;
+        page-break-after: always;
+    }
 }

@@ -1,0 +1,6 @@
+requests==2.31.0
+python-dotenv==1.0.0
+xhtml2pdf==0.2.13
+google-genai==1.0.0
+matplotlib==3.8.2
+

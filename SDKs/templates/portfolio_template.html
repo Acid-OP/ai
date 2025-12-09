@@ -1,241 +1,577 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Investment Portfolio Report</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-<!-- ==================== PAGE 1 ==================== -->
-<div class="navbar">
-    <span class="navbar-brand">paasa</span>
-    <span class="navbar-tagline">Smart Investing Made Simple</span>
-    <span class="navbar-date">Generated: <span id="report-date">{{REPORT_DATE}}</span></span>
-</div>
-
-<div class="content">
-    <h1 class="page-title">Investment Portfolio Report</h1>
-    
-    <!-- INVESTOR PROFILE SKELETON -->
-    <div class="section-title">Investor Profile</div>
-    <table class="profile-table">
-        <tr>
-            <td>
-                <div class="profile-label">Investor Name</div>
-                <div class="profile-value" id="user-name">{{USER_NAME}}</div>
-            </td>
-            <td>
-                <div class="profile-label">Email Address</div>
-                <div class="profile-value" id="user-email">{{USER_EMAIL}}</div>
-            </td>
-            <td>
-                <div class="profile-label">Risk Profile</div>
-                <div class="profile-value">
-                    <span class="risk-badge" id="risk-badge">{{RISK_LEVEL}}</span>
-                </div>
-            </td>
-            <td>
-                <div class="profile-label">Investment Horizon</div>
-                <div class="profile-value" id="time-horizon">{{TIME_HORIZON}}</div>
-            </td>
-        </tr>
-    </table>
-    
-    <!-- METHODOLOGY SKELETON -->
-    <div class="section-title">Investment Methodology</div>
-    <div class="methodology">
-        <div class="methodology-title" id="methodology-title">{{METHODOLOGY_TITLE}}</div>
-        <div class="methodology-text" id="methodology-text">{{METHODOLOGY_TEXT}}</div>
-        <ul id="principles-list">{{PRINCIPLES_LIST}}</ul>
-    </div>
-    
-    <!-- HOLDINGS TABLE SKELETON -->
-    <div class="section-title">Portfolio Holdings</div>
-    <table class="holdings-table">
-        <thead>
-            <tr>
-                <th style="width:40px;text-align:center;">S.No</th>
-                <th style="width:70px;">Ticker</th>
-                <th>ETF Name</th>
-                <th style="width:60px;text-align:center;">Weight</th>
-                <th style="width:140px;">Category</th>
-            </tr>
-        </thead>
-        <tbody id="holdings-body">{{HOLDINGS_ROWS}}</tbody>
-    </table>
-</div>
-
-<div class="page-break"></div>
-
-<!-- ==================== PAGE 2 ==================== -->
-<div class="navbar">
-    <span class="navbar-brand">paasa</span>
-    <span class="navbar-tagline">Smart Investing Made Simple</span>
-</div>
-
-<div class="content">
-    <h1 class="page-title">Performance & Allocation</h1>
-    
-    <!-- PERFORMANCE CHART SKELETON -->
-    <div class="section-title">Backtested Performance (2020-2025)</div>
-    <div class="chart-container">
-        <canvas id="performance-chart"></canvas>
-    </div>
-    
-    <!-- KEY METRICS SKELETON -->
-    <div class="section-title">Key Performance Metrics</div>
-    <table class="metrics-table">
-        <tr>
-            <td>
-                <div class="metric-label">5-Year Return</div>
-                <div class="metric-value green" id="five-yr-return">{{FIVE_YR_RETURN}}%</div>
-                <div class="metric-sub">Annualized</div>
-            </td>
-            <td>
-                <div class="metric-label">3-Year Return</div>
-                <div class="metric-value green" id="three-yr-return">{{THREE_YR_RETURN}}%</div>
-                <div class="metric-sub">Annualized</div>
-            </td>
-            <td>
-                <div class="metric-label">Volatility</div>
-                <div class="metric-value" id="volatility">{{VOLATILITY}}%</div>
-                <div class="metric-sub">Std Deviation</div>
-            </td>
-            <td>
-                <div class="metric-label">S&P 500 Benchmark</div>
-                <div class="metric-value green" id="sp500-return">{{SP500_RETURN}}%</div>
-                <div class="metric-sub">5-Year Return</div>
-            </td>
-        </tr>
-    </table>
-    
-    <!-- ALLOCATION CHART SKELETON -->
-    <div class="section-title">Asset Allocation</div>
-    <div class="allocation-row">
-        <div class="alloc-chart-wrap">
-            <canvas id="allocation-chart"></canvas>
-        </div>
-        <div class="alloc-legend" id="allocation-legend">{{ALLOCATION_LEGEND}}</div>
-    </div>
-    
-    <!-- GEOGRAPHIC EXPOSURE SKELETON -->
-    <div class="section-title">Geographic Exposure</div>
-    <table class="geo-table">
-        <thead>
-            <tr>
-                <th>Region</th>
-                <th>Allocation</th>
-            </tr>
-        </thead>
-        <tbody id="regions-body">{{REGIONS_ROWS}}</tbody>
-    </table>
-    
-    <!-- TOP STOCKS SKELETON -->
-    <div class="section-title">Top Underlying Stocks</div>
-    <div class="stocks-list" id="stocks-list">{{STOCKS_LIST}}</div>
-</div>
-
-<div class="footer">
-    Paasa, Inc. &bull; Past performance does not guarantee future results. This is not financial advice.
-</div>
-
-<!-- DATA INJECTION POINT - Python injects JSON here -->
-<script id="portfolio-data" type="application/json">{{PORTFOLIO_JSON}}</script>
-
-<!-- CHART RENDERING SCRIPT -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Get injected data
-    const dataEl = document.getElementById('portfolio-data');
-    if (!dataEl || !dataEl.textContent.trim() || dataEl.textContent.includes('{{')) return;
-    
-    const data = JSON.parse(dataEl.textContent);
-    
-    // PERFORMANCE CHART
-    const chartData = data.chart_data || [];
-    if (chartData.length > 0) {
-        const ctx = document.getElementById('performance-chart').getContext('2d');
-        const labels = chartData.map(d => d.date.substring(0, 7));
-        const values = chartData.map(d => d.value);
-        
-        // Simulate S&P 500
-        let sp500 = [100];
-        for (let i = 1; i < values.length; i++) {
-            const change = (values[i] / values[i-1] - 1) * 1.15;
-            sp500.push(sp500[sp500.length-1] * (1 + change));
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Your Portfolio',
-                    data: values,
-                    borderColor: '#0066CC',
-                    backgroundColor: 'rgba(0, 102, 204, 0.1)',
-                    fill: true,
-                    tension: 0.3,
-                    pointRadius: 0
-                }, {
-                    label: 'S&P 500',
-                    data: sp500,
-                    borderColor: '#EF4444',
-                    borderDash: [5, 5],
-                    fill: false,
-                    tension: 0.3,
-                    pointRadius: 0
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { position: 'top', align: 'start' } },
-                scales: {
-                    x: { display: true, ticks: { maxTicksLimit: 6 } },
-                    y: { display: true }
-                }
-            }
-        });
-    }
-    
-    // ALLOCATION CHART
-    const holdings = data.holdings || [];
-    if (holdings.length > 0) {
-        const categories = {};
-        const colors = {};
-        holdings.forEach(h => {
-            if (!categories[h.category]) {
-                categories[h.category] = 0;
-                colors[h.category] = h.color || '#888888';
-            }
-            categories[h.category] += h.weight;
-        });
+        @page {
+            size: A4;
+            margin: 0;
+        }
         
-        const ctx2 = document.getElementById('allocation-chart').getContext('2d');
-        new Chart(ctx2, {
-            type: 'doughnut',
-            data: {
-                labels: Object.keys(categories),
-                datasets: [{
-                    data: Object.values(categories),
-                    backgroundColor: Object.values(colors),
-                    borderWidth: 2,
-                    borderColor: '#fff'
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                cutout: '60%',
-                plugins: { legend: { display: false } }
-            }
-        });
-    }
-});
-</script>
-
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            line-height: 1.5;
+            color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+            background: white;
+        }
+        
+        /* Header */
+        .header {
+            background-color: #061133;
+            color: white;
+            padding: 16px 40px;
+        }
+        
+        .header-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .header-table td {
+            padding: 0;
+            vertical-align: middle;
+        }
+        
+        .header-table td:last-child {
+            text-align: right;
+        }
+        
+        .header-title {
+            font-family: Georgia, serif;
+            font-size: 20px;
+            font-weight: 400;
+        }
+        
+        .header-date {
+            font-size: 12px;
+            font-weight: 400;
+        }
+        
+        /* Info Section */
+        .info-section {
+            padding: 30px 40px;
+            background-color: #FFFFFF;
+        }
+        
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 22px;
+        }
+        
+        .info-table:last-child {
+            margin-bottom: 0;
+        }
+        
+        .info-table td {
+            width: 33.33%;
+            padding: 0;
+            vertical-align: top;
+        }
+        
+        .info-item {
+            padding-right: 20px;
+        }
+        
+        .info-label {
+            font-size: 9px;
+            color: #666666;
+            font-weight: 400;
+            margin-bottom: 6px;
+        }
+        
+        .info-value {
+            font-size: 13px;
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+        
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 15px 40px 20px 40px;
+        }
+        
+        .section-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        /* Table */
+        .portfolio-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 10px;
+        }
+        
+        .portfolio-table thead {
+            background-color: #061133;
+            color: white;
+        }
+        
+        .portfolio-table th {
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 9px;
+        }
+        
+        .portfolio-table tbody tr {
+            border-bottom: 1px solid #e5e5e5;
+        }
+        
+        .portfolio-table td {
+            padding: 10px 12px;
+            color: #333333;
+            font-size: 10px;
+        }
+        
+        .symbol-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* Chart Section */
+        .chart-section {
+            padding: 0 40px 20px 40px;
+        }
+        
+        .chart-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Allocation Section */
+        .allocation-section {
+            padding: 20px 40px;
+        }
+        
+        .allocation-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .allocation-table td {
+            vertical-align: top;
+            padding: 0;
+        }
+        
+        .allocation-table td:first-child {
+            width: 220px;
+        }
+        
+        .allocation-chart-container {
+            width: 220px;
+        }
+        
+        .allocation-chart {
+            width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto 15px;
+        }
+        
+        .allocation-legend {
+            font-size: 9px;
+        }
+        
+        .allocation-legend-item {
+            margin-bottom: 8px;
+        }
+        
+        .allocation-legend-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        
+        .legend-dot.dark { background: #1e40af; }
+        .legend-dot.blue { background: #facc15; }
+        .legend-dot.light { background: #60a5fa; }
+        
+        /* Metrics Comparison */
+        .metrics-comparison {
+            flex: 1;
+        }
+        
+        .metrics-header {
+            width: 100%;
+            border-collapse: collapse;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #061133;
+            margin-bottom: 8px;
+        }
+        
+        .metrics-header td {
+            padding: 0;
+        }
+        
+        .metrics-header td:nth-child(2),
+        .metrics-header td:nth-child(3) {
+            width: 140px;
+        }
+        
+        .col-header {
+            font-size: 8px;
+            font-weight: 700;
+            color: #061133;
+            text-transform: uppercase;
+        }
+        
+        .metric-row {
+            width: 100%;
+            border-collapse: collapse;
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .metric-row td {
+            padding: 8px 0;
+        }
+        
+        .metric-row td:nth-child(2),
+        .metric-row td:nth-child(3) {
+            width: 140px;
+        }
+        
+        .metric-label {
+            font-size: 9px;
+            color: #666666;
+        }
+        
+        .metric-value {
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        .metric-value.positive {
+            color: #16a34a;
+        }
+        
+        .metric-value.negative {
+            color: #dc2626;
+        }
+        
+        .metric-value.neutral {
+            color: #333333;
+        }
+        
+        /* Bottom Section */
+        .bottom-section {
+            padding: 20px 40px;
+        }
+        
+        .bottom-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .bottom-table td {
+            width: 50%;
+            vertical-align: top;
+            padding-right: 15px;
+        }
+        
+        .bottom-table td:last-child {
+            padding-right: 0;
+            padding-left: 15px;
+        }
+        
+        .geographic-section,
+        .holdings-section {
+            width: 100%;
+        }
+        
+        .geo-table,
+        .holdings-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10px;
+        }
+        
+        .geo-table thead,
+        .holdings-table thead {
+            background: #061133;
+            color: white;
+        }
+        
+        .geo-table th,
+        .holdings-table th {
+            padding: 8px 12px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 9px;
+        }
+        
+        .geo-table td,
+        .holdings-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 10px;
+        }
+        
+        .allocation-bar {
+            background: #e5e5e5;
+            height: 6px;
+            border-radius: 3px;
+            width: 60px;
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        
+        .allocation-bar-fill {
+            height: 100%;
+            background: #3b82f6;
+            border-radius: 3px;
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 15px 40px;
+            border-top: 1px solid #e5e5e5;
+            margin-top: 20px;
+        }
+        
+        .footer-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .footer-table td {
+            padding: 0;
+            vertical-align: middle;
+        }
+        
+        .footer-table td:last-child {
+            text-align: right;
+        }
+        
+        .footer-brand {
+            font-size: 11px;
+            font-weight: 600;
+            color: #061133;
+        }
+        
+        .page-number {
+            font-size: 9px;
+            color: #999999;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <table class="header-table">
+            <tr>
+                <td><div class="header-title">Managed strategies portfolio</div></td>
+                <td><div class="header-date">{{report_date}}</div></td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- Info Section -->
+    <div class="info-section">
+        <table class="info-table">
+            <tr>
+                <td>
+                    <div class="info-item">
+                        <div class="info-label">Investor name</div>
+                        <div class="info-value">{{investor_name}}</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="info-item">
+                        <div class="info-label">Email address</div>
+                        <div class="info-value">{{email}}</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="info-item">
+                        <div class="info-label">Age</div>
+                        <div class="info-value">{{age}}</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table class="info-table">
+            <tr>
+                <td>
+                    <div class="info-item">
+                        <div class="info-label">Annual investment</div>
+                        <div class="info-value">${{investment_amount}}</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="info-item">
+                        <div class="info-label">Time horizon</div>
+                        <div class="info-value">{{time_horizon}}</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="info-item">
+                        <div class="info-label">Risk profile</div>
+                        <div class="info-value">{{risk_profile}}</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- Portfolio Section -->
+    <div class="portfolio-section">
+        <div class="section-title">Your portfolio</div>
+        
+        <!-- Holdings Table -->
+        <table class="portfolio-table">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Expense ratio</th>
+                    <th>Allocation</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{holdings_rows}}
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Chart Section -->
+    <div class="chart-section">
+        <img src="{{performance_chart}}" class="chart-image" />
+    </div>
+    
+    <!-- Allocation Section -->
+    <div class="allocation-section">
+        <table class="allocation-table">
+            <tr>
+                <td>
+                    <div class="allocation-chart-container">
+                        <div class="section-title">Allocation</div>
+                        <img src="{{allocation_chart}}" class="allocation-chart" />
+                        <div class="allocation-legend">
+                            {{allocation_legend}}
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <!-- Metrics Comparison -->
+                    <div class="metrics-comparison">
+            <table class="metrics-header">
+                <tr>
+                    <td><div class="col-header"></div></td>
+                    <td><div class="col-header">This Portfolio</div></td>
+                    <td><div class="col-header">S&P 500 Benchmark</div></td>
+                </tr>
+            </table>
+            <table class="metric-row">
+                <tr>
+                    <td><div class="metric-label">YTD estimated return</div></td>
+                    <td><div class="metric-value positive">{{ytd_return}}</div></td>
+                    <td><div class="metric-value positive">{{ytd_benchmark}}</div></td>
+                </tr>
+            </table>
+            <table class="metric-row">
+                <tr>
+                    <td><div class="metric-label">1Y annualized return</div></td>
+                    <td><div class="metric-value positive">{{one_year_return}}</div></td>
+                    <td><div class="metric-value positive">{{one_year_benchmark}}</div></td>
+                </tr>
+            </table>
+            <table class="metric-row">
+                <tr>
+                    <td><div class="metric-label">3Y annualized return</div></td>
+                    <td><div class="metric-value positive">{{three_year_return}}</div></td>
+                    <td><div class="metric-value positive">{{three_year_benchmark}}</div></td>
+                </tr>
+            </table>
+            <table class="metric-row">
+                <tr>
+                    <td><div class="metric-label">5Y annualized volatility</div></td>
+                    <td><div class="metric-value neutral">{{five_year_volatility}}</div></td>
+                    <td><div class="metric-value neutral">{{five_year_vol_benchmark}}</div></td>
+                </tr>
+            </table>
+        </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- Bottom Section -->
+    <div class="bottom-section">
+        <table class="bottom-table">
+            <tr>
+                <td>
+                    <!-- Geographic Exposure -->
+                    <div class="geographic-section">
+                        <div class="section-title">Geographic exposure</div>
+                        <table class="geo-table">
+                            <thead>
+                                <tr>
+                                    <th>Region</th>
+                                    <th>Allocation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{geographic_rows}}
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+                <td>
+                    <!-- Top Holdings -->
+                    <div class="holdings-section">
+                        <div class="section-title">Top 10 underlying holdings</div>
+                        <table class="holdings-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Weight</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{top_holdings_rows}}
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <table class="footer-table">
+            <tr>
+                <td><div class="footer-brand">Portfolio</div></td>
+                <td><div class="page-number">Page 1/2</div></td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
