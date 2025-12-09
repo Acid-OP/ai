@@ -47,11 +47,13 @@ def render_portfolio(template_data, output_dir):
             path=pdf_file,
             format='A4',
             print_background=True,
+            prefer_css_page_size=True,
+            display_header_footer=False,
             margin={
-                'top': '0px',
-                'right': '0px',
-                'bottom': '0px',
-                'left': '0px'
+                'top': '0mm',
+                'right': '0mm',
+                'bottom': '0mm',
+                'left': '0mm'
             }
         )
         

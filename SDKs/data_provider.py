@@ -203,6 +203,21 @@ Keep it professional and concise."""
         }
 
 
+def get_logo_base64() -> str:
+    """
+    Load logo image and convert to base64 for embedding in PDF
+    """
+    logo_path = os.path.join(os.path.dirname(__file__), 'utils', 'Logo.png')
+    try:
+        with open(logo_path, 'rb') as f:
+            logo_data = f.read()
+            logo_base64 = base64.b64encode(logo_data).decode()
+            return f"data:image/png;base64,{logo_base64}"
+    except Exception as e:
+        print(f"Error loading logo: {e}")
+        return ""
+
+
 def get_portfolio_data(quiz_data: dict) -> dict:
     """
     Main function: Get all data needed for portfolio template
@@ -377,14 +392,16 @@ def get_portfolio_data(quiz_data: dict) -> dict:
     five_yr = api_data.get("five_yr_annualized", portfolio_return * 80)
     vol = api_data.get("volatility", volatility * 100)
     
-    ytd_return = f"+{one_yr:.1f}%" if one_yr else "+14.5%"
-    ytd_benchmark = f"+{one_yr * 0.95:.1f}%" if one_yr else "+14.5%"
-    one_year_return = f"+{one_yr:.1f}%" if one_yr else "+14.5%"
-    one_year_benchmark = f"+{one_yr * 0.95:.1f}%" if one_yr else "+14.5%"
-    three_year_return = f"+{three_yr:.1f}%" if three_yr else "+13.1%"
-    three_year_benchmark = f"+{three_yr * 0.9:.1f}%" if three_yr else "+12.3%"
+    # Format metrics for display
+    five_year_return = f"+{five_yr:.1f}%" if five_yr else "+14.5%"
+    five_year_return_benchmark = f"+{five_yr * 0.95:.1f}%" if five_yr else "+14.5%"
+    three_year_return = f"+{three_yr:.1f}%" if three_yr else "+20.5%"
+    three_year_benchmark = f"+{three_yr * 0.9:.1f}%" if three_yr else "+20.5%"
     five_year_volatility = f"+{vol:.1f}%"
     five_year_vol_benchmark = f"+{vol * 0.95:.1f}%"
+    
+    # Get logo for footer
+    logo_path = get_logo_base64()
     
     # Build complete data dictionary for template
     template_data = {
@@ -399,6 +416,10 @@ def get_portfolio_data(quiz_data: dict) -> dict:
         "time_horizon": quiz_data.get("time_horizon", "1-3 years"),
         "risk_profile": risk_profile,
         
+        # Footer
+        "logo_path": logo_path,
+        "page_number": "1",
+        
         # Holdings table
         "holdings_rows": holdings_rows,
         
@@ -410,10 +431,8 @@ def get_portfolio_data(quiz_data: dict) -> dict:
         "allocation_legend": allocation_legend,
         
         # Metrics comparison
-        "ytd_return": ytd_return,
-        "ytd_benchmark": ytd_benchmark,
-        "one_year_return": one_year_return,
-        "one_year_benchmark": one_year_benchmark,
+        "five_year_return": five_year_return,
+        "five_year_return_benchmark": five_year_return_benchmark,
         "three_year_return": three_year_return,
         "three_year_benchmark": three_year_benchmark,
         "five_year_volatility": five_year_volatility,

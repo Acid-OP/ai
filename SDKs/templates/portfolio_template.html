@@ -14,13 +14,18 @@
             margin: 0;
         }
         
+        html {
+            margin: 0;
+            padding: 0;
+        }
+        
         body {
             font-family: Arial, sans-serif;
             font-size: 11px;
             line-height: 1.5;
             color: #1a1a1a;
             margin: 0;
-            padding: 0;
+            padding: 0 0 24px 0;
             background: white;
         }
         
@@ -72,28 +77,37 @@
         }
         
         .info-label {
-            font-size: 9px;
+            font-size: 10px;
             color: #666666;
-            font-weight: 400;
+            font-weight: 500;
             margin-bottom: 6px;
+            letter-spacing: 0.3px;
         }
         
         .info-value {
-            font-size: 13px;
+            font-size: 14px;
             color: #1a1a1a;
             font-weight: 500;
         }
         
         /* Portfolio Section */
         .portfolio-section {
-            padding: 15px 40px 20px 40px;
+            padding: 8px 40px 10px 40px;
         }
         
         .section-title {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             color: #1a1a1a;
+        }
+        
+        .portfolio-description {
+            font-size: 11px;
+            line-height: 1.5;
+            color: #555555;
+            margin-bottom: 12px;
+            max-width: 95%;
         }
         
         /* Table */
@@ -111,7 +125,7 @@
         }
         
         .portfolio-table th {
-            padding: 10px 12px;
+            padding: 6px 6px;
             text-align: left;
             font-weight: 500;
             font-size: 9px;
@@ -125,6 +139,11 @@
         
         .portfolio-table tbody tr {
             border-bottom: 1px solid #e5e5e5;
+            background-color: #ffffff;
+        }
+        
+        .portfolio-table tbody tr:nth-child(even) {
+            background-color: #e7f1f1;
         }
         
         .portfolio-table tbody tr:last-child {
@@ -132,7 +151,7 @@
         }
         
         .portfolio-table td {
-            padding: 10px 12px;
+            padding: 6px 6px;
             color: #333333;
             font-size: 10px;
             border-right: 1px solid #e5e5e5;
@@ -154,31 +173,34 @@
         
         /* Chart Section */
         .chart-section {
-            padding: 0 40px 20px 40px;
+            padding: 0 40px 15px 40px;
         }
         
         .chart-image {
-            width: 100%;
+            width: 90%;
             height: auto;
             display: block;
+            margin: 0 auto;
         }
         
         /* Allocation Section */
         .allocation-section {
-            padding: 20px 40px;
+            padding: 10px 40px 15px 40px;
             display: flex;
-            gap: 30px;
+            gap: 15px;
+            page-break-after: always;
+            margin-left: 20px;
         }
         
         .allocation-chart-container {
-            flex: 0 0 220px;
+            flex: 0 0 180px;
         }
         
         .allocation-chart {
-            width: 150px;
+            width: 130px;
             height: auto;
             display: block;
-            margin: 0 auto 15px;
+            margin: 0 auto 10px;
         }
         
         .allocation-legend {
@@ -207,39 +229,70 @@
         /* Metrics Comparison */
         .metrics-comparison {
             flex: 1;
+            max-width: 450px;
         }
         
-        .metrics-header {
-            display: grid;
-            grid-template-columns: 1fr 140px 140px;
-            gap: 10px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #061133;
-            margin-bottom: 8px;
+        .metrics-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #e5e5e5;
+            table-layout: fixed;
         }
         
-        .col-header {
-            font-size: 8px;
-            font-weight: 700;
-            color: #061133;
+        .metrics-table thead {
+            background-color: #061133;
+            color: white;
+        }
+        
+        .metrics-table th {
+            padding: 8px 5px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 10px;
+            color: white;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
-        .metric-row {
-            display: grid;
-            grid-template-columns: 1fr 140px 140px;
-            gap: 10px;
-            padding: 8px 0;
+        .metrics-table tbody tr {
             border-bottom: 1px solid #e5e5e5;
+        }
+        
+        .metrics-table tbody tr:last-child {
+            border-bottom: none;
+        }
+        
+        .metrics-table td {
+            padding: 12px 5px;
+            text-align: center;
+            vertical-align: top;
+            width: 50%;
+        }
+        
+        .metrics-table td:first-child {
+            background-color: #fcfcfc;
+        }
+        
+        .metrics-table td:last-child {
+            background-color: #f7f7f7;
+        }
+        
+        .metric-item {
+            margin-bottom: 15px;
+        }
+        
+        .metric-item:last-child {
+            margin-bottom: 0;
         }
         
         .metric-label {
             font-size: 9px;
             color: #666666;
+            margin-bottom: 4px;
         }
         
         .metric-value {
-            font-size: 11px;
+            font-size: 20px;
             font-weight: 600;
         }
         
@@ -257,9 +310,9 @@
         
         /* Bottom Section */
         .bottom-section {
-            padding: 20px 40px;
+            padding: 15px 40px;
             display: flex;
-            gap: 25px;
+            gap: 20px;
         }
         
         .geographic-section,
@@ -283,7 +336,7 @@
         
         .geo-table th,
         .holdings-table th {
-            padding: 8px 12px;
+            padding: 5px 10px;
             text-align: left;
             font-weight: 500;
             font-size: 9px;
@@ -298,10 +351,10 @@
         
         .geo-table td,
         .holdings-table td {
-            padding: 8px 12px;
+            padding: 5px 10px;
             border-bottom: 1px solid #e5e5e5;
             border-right: 1px solid #e5e5e5;
-            font-size: 10px;
+            font-size: 9px;
         }
         
         .geo-table td:last-child,
@@ -330,23 +383,33 @@
         
         /* Footer */
         .footer {
-            padding: 15px 40px;
-            border-top: 1px solid #e5e5e5;
-            margin-top: 20px;
+            background-color: #061133;
+            padding: 4px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: fixed;
+            bottom: 0 !important;
+            left: 0;
+            right: 0;
+            margin: 0;
+            border: 0;
+            width: 100%;
+            height: 22px;
+            box-sizing: border-box;
         }
         
-        .footer-brand {
-            font-size: 11px;
-            font-weight: 600;
-            color: #061133;
+        .footer-logo {
+            height: 14px;
+            width: auto;
+            display: block;
         }
         
         .page-number {
-            font-size: 9px;
-            color: #999999;
+            font-size: 8px;
+            color: white;
+            font-weight: 400;
+            line-height: 14px;
         }
     </style>
 </head>
@@ -394,6 +457,9 @@
     <!-- Portfolio Section -->
     <div class="portfolio-section">
         <div class="section-title">Your portfolio</div>
+        <div class="portfolio-description">
+            This portfolio is constructed using principles of Modern Portfolio Theory (MPT), which seeks to optimize risk-adjusted returns through broad diversification across various asset classes. Similar to methodologies popularized by platforms like Wealthfront.
+        </div>
         
         <!-- Holdings Table -->
         <table class="portfolio-table">
@@ -429,31 +495,46 @@
         
         <!-- Metrics Comparison -->
         <div class="metrics-comparison">
-            <div class="metrics-header">
-                <div class="col-header"></div>
-                <div class="col-header">This Portfolio</div>
-                <div class="col-header">S&P 500 Benchmark</div>
-            </div>
-            <div class="metric-row">
-                <div class="metric-label">YTD estimated return</div>
-                <div class="metric-value positive">{{ytd_return}}</div>
-                <div class="metric-value positive">{{ytd_benchmark}}</div>
-            </div>
-            <div class="metric-row">
-                <div class="metric-label">1Y annualized return</div>
-                <div class="metric-value positive">{{one_year_return}}</div>
-                <div class="metric-value positive">{{one_year_benchmark}}</div>
-            </div>
-            <div class="metric-row">
-                <div class="metric-label">3Y annualized return</div>
-                <div class="metric-value positive">{{three_year_return}}</div>
-                <div class="metric-value positive">{{three_year_benchmark}}</div>
-            </div>
-            <div class="metric-row">
-                <div class="metric-label">5Y annualized volatility</div>
-                <div class="metric-value neutral">{{five_year_volatility}}</div>
-                <div class="metric-value neutral">{{five_year_vol_benchmark}}</div>
-            </div>
+            <table class="metrics-table">
+                <thead>
+                    <tr>
+                        <th>THIS PORTFOLIO</th>
+                        <th>S&P 500 (BENCHMARK)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="metric-item">
+                                <div class="metric-label">5YR annualized return</div>
+                                <div class="metric-value positive">{{five_year_return}}</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-label">3YR annualized return</div>
+                                <div class="metric-value positive">{{three_year_return}}</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-label">Volatility (Standard deviation)</div>
+                                <div class="metric-value neutral">{{five_year_volatility}}</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="metric-item">
+                                <div class="metric-label">5YR annualized return</div>
+                                <div class="metric-value positive">{{five_year_return_benchmark}}</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-label">3YR annualized return</div>
+                                <div class="metric-value positive">{{three_year_benchmark}}</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-label">Volatility (Standard deviation)</div>
+                                <div class="metric-value neutral">{{five_year_vol_benchmark}}</div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     
@@ -494,8 +575,8 @@
     
     <!-- Footer -->
     <div class="footer">
-        <div class="footer-brand">Portfolio</div>
-        <div class="page-number">Page 1/2</div>
+        <img src="{{logo_path}}" alt="Paasa" class="footer-logo" />
+        <div class="page-number">Page {{page_number}} of 2</div>
     </div>
 </body>
 </html>
