@@ -349,6 +349,16 @@
             border-right: none;
         }
         
+        .geo-table tbody tr,
+        .holdings-table tbody tr {
+            background-color: #ffffff;
+        }
+        
+        .geo-table tbody tr:nth-child(even),
+        .holdings-table tbody tr:nth-child(even) {
+            background-color: #e7f1f1;
+        }
+        
         .geo-table td,
         .holdings-table td {
             padding: 5px 10px;
@@ -410,6 +420,92 @@
             color: white;
             font-weight: 400;
             line-height: 14px;
+        }
+        
+        /* Themes Section */
+        .themes-section {
+            padding: 20px 40px;
+        }
+        
+        .themes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px 20px;
+            margin-top: 12px;
+        }
+        
+        .theme-item {
+            font-size: 11px;
+            color: #333333;
+            padding-left: 12px;
+            position: relative;
+        }
+        
+        .theme-item:before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: #16a34a;
+            font-weight: 600;
+        }
+        
+        /* Methodology Section */
+        .methodology-section {
+            padding: 20px 40px;
+        }
+        
+        .methodology-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #1a1a1a;
+        }
+        
+        .methodology-subtitle {
+            font-size: 11px;
+            color: #666666;
+            margin-bottom: 12px;
+        }
+        
+        .methodology-description {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #333333;
+            margin-bottom: 12px;
+        }
+        
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .bullet-list li {
+            font-size: 11px;
+            color: #333333;
+            margin-bottom: 6px;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .bullet-list li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #333333;
+        }
+        
+        /* Next Steps Section */
+        .next-steps-section {
+            padding: 20px 40px;
+        }
+        
+        .disclaimer {
+            font-size: 9px;
+            color: #999999;
+            text-align: center;
+            margin-top: 20px;
+            line-height: 1.4;
         }
     </style>
 </head>
@@ -570,6 +666,45 @@
                     {{top_holdings_rows}}
                 </tbody>
             </table>
+        </div>
+    </div>
+    
+    <!-- Themes Covered Section -->
+    <div class="themes-section">
+        <div class="section-title">Themes covered</div>
+        <div class="themes-grid">
+            {{themes_items}}
+        </div>
+    </div>
+    
+    <!-- Methodology Section -->
+    <div class="methodology-section">
+        <div class="methodology-title">Global Diversification for Short-Term Preservation</div>
+        <div class="methodology-subtitle">Investment methodology</div>
+        <div class="methodology-description">
+            This portfolio is constructed using principles of Modern Portfolio Theory (MPT), which seeks to optimize risk-adjusted returns through broad diversification across various asset classes. Similar to methodologies popularized by platforms like Wealthfront, we emphasize global diversification to mitigate specific market risks and achieve stable growth. This approach focuses on building a resilient portfolio designed for capital preservation and modest returns.
+        </div>
+        <ul class="bullet-list">
+            <li>Prioritizes capital preservation and low volatility.</li>
+            <li>Globally diversified across equities, bonds, and real estate.</li>
+            <li>Utilizes cost-effective Exchange Traded Funds (ETFs).</li>
+            <li>Strategic asset allocation tailored for shorter time horizons.</li>
+        </ul>
+    </div>
+    
+    <!-- Next Steps Section -->
+    <div class="next-steps-section">
+        <div class="section-title">Next steps</div>
+        <ul class="bullet-list">
+            <li>Add funds to your account.</li>
+            <li>Invest in this portfolio with a lump sum or set recurring contributions.</li>
+            <li>Your investment amount is automatically allocated across holdings based on target weights.</li>
+            <li>We rebalance quarterly (or if allocation drifts by more than 5%).</li>
+            <li>Tax-loss harvesting is done when applicable.</li>
+            <li>We'll always take your approval before rebalancing or tax-loss harvesting your portfolio.</li>
+        </ul>
+        <div class="disclaimer">
+            Past performance does not guarantee future results. Backtested returns are simulated using historical data. This is not financial advice. Consult a qualified advisor before investing. Paasa, Inc. | support@paasa.com
         </div>
     </div>
     

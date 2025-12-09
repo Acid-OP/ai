@@ -272,14 +272,7 @@ def get_portfolio_data(quiz_data: dict) -> dict:
         weight = r.get("size", 0)  # size is already in percentage
         geographic_rows += f"""<tr>
             <td>{name}</td>
-            <td>
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <div class="allocation-bar">
-                        <div class="allocation-bar-fill" style="width: {weight}%;"></div>
-                    </div>
-                    <span>{weight:.1f}%</span>
-                </div>
-            </td>
+            <td>{weight:.0f}%</td>
         </tr>"""
     
     # Extract top underlying holdings
@@ -290,14 +283,7 @@ def get_portfolio_data(quiz_data: dict) -> dict:
         weight = s.get("weight", 0)  # weight is already in percentage
         top_holdings_rows += f"""<tr>
             <td>{name}</td>
-            <td>
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <div class="allocation-bar">
-                        <div class="allocation-bar-fill" style="width: {min(weight, 100)}%;"></div>
-                    </div>
-                    <span>{weight:.1f}%</span>
-                </div>
-            </td>
+            <td>{weight:.0f}%</td>
         </tr>"""
     
     # Allocation data for doughnut chart
@@ -403,6 +389,28 @@ def get_portfolio_data(quiz_data: dict) -> dict:
     # Get logo for footer
     logo_path = get_logo_base64()
     
+    # Generate themes covered (based on preferred topics + standard themes)
+    preferred_topics = quiz_data.get("preferred_topics", [])
+    all_themes = [
+        "World (all regions)",
+        "Latin America",
+        "Energy",
+        "Electric Vehicles",
+        "Asia-Pacific",
+        "Technology",
+        "Industrials",
+        "Biotech",
+        "Emerging markets",
+        "Healthcare",
+        "Nuclear Energy",
+        "Palladium"
+    ]
+    
+    # Generate theme items HTML
+    themes_items = ""
+    for theme in all_themes:
+        themes_items += f'<div class="theme-item">{theme}</div>'
+    
     # Build complete data dictionary for template
     template_data = {
         # Header
@@ -441,6 +449,9 @@ def get_portfolio_data(quiz_data: dict) -> dict:
         # Geographic and top holdings
         "geographic_rows": geographic_rows,
         "top_holdings_rows": top_holdings_rows,
+        
+        # Themes covered
+        "themes_items": themes_items,
     }
     
     return template_data
