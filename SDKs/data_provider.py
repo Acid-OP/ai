@@ -426,7 +426,6 @@ def get_portfolio_data(quiz_data: dict) -> dict:
         
         # Footer
         "logo_path": logo_path,
-        "page_number": "1",
         
         # Holdings table
         "holdings_rows": holdings_rows,

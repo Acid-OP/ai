@@ -19,14 +19,30 @@
             padding: 0;
         }
         
+        html {
+            height: 100%;
+        }
+        
         body {
             font-family: Arial, sans-serif;
             font-size: 11px;
             line-height: 1.5;
             color: #1a1a1a;
             margin: 0;
-            padding: 0 0 24px 0;
+            padding: 0;
             background: white;
+            min-height: 100%;
+        }
+        
+        .page-wrapper {
+            min-height: 297mm;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .page-content {
+            flex: 1;
         }
         
         /* Header */
@@ -185,11 +201,25 @@
         
         /* Allocation Section */
         .allocation-section {
-            padding: 10px 40px 15px 40px;
+            padding: 10px 40px 10px 40px;
             display: flex;
             gap: 15px;
-            page-break-after: always;
             margin-left: 20px;
+            margin-bottom: 0;
+        }
+        
+        /* Page 1 container to push footer to bottom */
+        .page-one {
+            height: 297mm;
+            position: relative;
+            page-break-after: always;
+        }
+        
+        .page-one .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
         }
         
         .allocation-chart-container {
@@ -398,10 +428,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: fixed;
-            bottom: 0 !important;
-            left: 0;
-            right: 0;
             margin: 0;
             border: 0;
             width: 100%;
@@ -497,7 +523,24 @@
         
         /* Next Steps Section */
         .next-steps-section {
-            padding: 20px 40px;
+            padding: 20px 40px 20px 40px;
+        }
+        
+        /* Page 2 Container */
+        .page-two {
+            height: 297mm;
+            position: relative;
+        }
+        
+        .page-two .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        
+        .bottom-section {
+            page-break-before: always;
         }
         
         .disclaimer {
@@ -510,6 +553,8 @@
     </style>
 </head>
 <body>
+    <!-- Page 1 Container -->
+    <div class="page-one">
     <!-- Header -->
     <div class="header">
         <div class="header-content">
@@ -634,6 +679,16 @@
         </div>
     </div>
     
+    <!-- Footer Page 1 -->
+    <div class="footer">
+        <img src="{{logo_path}}" alt="Paasa" class="footer-logo" />
+        <div class="page-number">Page 1 of 2</div>
+    </div>
+    </div>
+    <!-- End Page 1 -->
+    
+    <!-- Page 2 Container -->
+    <div class="page-two">
     <!-- Bottom Section -->
     <div class="bottom-section">
         <!-- Geographic Exposure -->
@@ -708,10 +763,12 @@
         </div>
     </div>
     
-    <!-- Footer -->
+    <!-- Footer Page 2 -->
     <div class="footer">
         <img src="{{logo_path}}" alt="Paasa" class="footer-logo" />
-        <div class="page-number">Page {{page_number}} of 2</div>
+        <div class="page-number">Page 2 of 2</div>
     </div>
+    </div>
+    <!-- End Page 2 -->
 </body>
 </html>
