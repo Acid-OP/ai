@@ -71,7 +71,7 @@
         
         /* Info Section */
         .info-section {
-            padding: 30px 40px;
+            padding: 18px 40px;
             background-color: #FFFFFF;
         }
         
@@ -79,7 +79,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 35px;
-            margin-bottom: 22px;
+            margin-bottom: 14px;
         }
         
         .info-row:last-child {
@@ -89,14 +89,14 @@
         .info-item {
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 3px;
         }
         
         .info-label {
             font-size: 10px;
             color: #666666;
             font-weight: 500;
-            margin-bottom: 6px;
+            margin-bottom: 0;
             letter-spacing: 0.3px;
         }
         
@@ -108,21 +108,21 @@
         
         /* Portfolio Section */
         .portfolio-section {
-            padding: 8px 40px 10px 40px;
+            padding: 18px 40px;
         }
         
         .section-title {
             font-size: 14px;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #1a1a1a;
         }
         
         .portfolio-description {
-            font-size: 11px;
-            line-height: 1.5;
+            font-size: 10px;
+            line-height: 1.4;
             color: #555555;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             max-width: 95%;
         }
         
@@ -130,8 +130,8 @@
         .portfolio-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
-            font-size: 10px;
+            margin-bottom: 12px;
+            font-size: 9px;
             border: 1px solid #e5e5e5;
         }
         
@@ -141,10 +141,10 @@
         }
         
         .portfolio-table th {
-            padding: 6px 6px;
+            padding: 4px 5px;
             text-align: left;
             font-weight: 500;
-            font-size: 9px;
+            font-size: 8px;
             color: white;
             border-right: 1px solid rgba(255,255,255,0.1);
         }
@@ -167,9 +167,9 @@
         }
         
         .portfolio-table td {
-            padding: 6px 6px;
+            padding: 4px 5px;
             color: #333333;
-            font-size: 10px;
+            font-size: 9px;
             border-right: 1px solid #e5e5e5;
         }
         
@@ -189,23 +189,21 @@
         
         /* Chart Section */
         .chart-section {
-            padding: 0 40px 15px 40px;
+            padding: 0 20px;
+            margin-bottom: 18px;
         }
         
         .chart-image {
-            width: 90%;
+            width: 100%;
             height: auto;
             display: block;
-            margin: 0 auto;
         }
         
         /* Allocation Section */
         .allocation-section {
-            padding: 10px 40px 10px 40px;
+            padding: 18px 40px;
             display: flex;
-            gap: 15px;
-            margin-left: 20px;
-            margin-bottom: 0;
+            gap: 12px;
         }
         
         /* Page 1 container to push footer to bottom */
@@ -223,27 +221,35 @@
         }
         
         .allocation-chart-container {
-            flex: 0 0 180px;
+            flex: 0 0 280px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .allocation-content {
+            display: flex;
+            gap: 15px;
+            align-items: center;
         }
         
         .allocation-chart {
-            width: 130px;
-            height: auto;
-            display: block;
-            margin: 0 auto 10px;
+            width: 125px;
+            height: 125px;
+            flex-shrink: 0;
         }
         
         .allocation-legend {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            font-size: 9px;
+            gap: 6px;
+            font-size: 8px;
+            flex: 1;
         }
         
         .allocation-legend-item {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
         
         .legend-dot {
@@ -273,13 +279,13 @@
         }
         
         .metrics-table th {
-            padding: 8px 5px;
-            text-align: center;
+            padding: 6px 5px;
+            text-align: left;
             font-weight: 600;
-            font-size: 10px;
+            font-size: 9px;
             color: white;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
         
         .metrics-table tbody tr {
@@ -291,8 +297,8 @@
         }
         
         .metrics-table td {
-            padding: 12px 5px;
-            text-align: center;
+            padding: 8px 8px;
+            text-align: left;
             vertical-align: top;
             width: 50%;
         }
@@ -306,7 +312,7 @@
         }
         
         .metric-item {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         
         .metric-item:last-child {
@@ -314,14 +320,16 @@
         }
         
         .metric-label {
-            font-size: 9px;
+            font-size: 8px;
             color: #666666;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
+            text-align: left;
         }
         
         .metric-value {
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 16px;
+            font-weight: 400;
+            text-align: left;
         }
         
         .metric-value.positive {
@@ -338,7 +346,7 @@
         
         /* Bottom Section */
         .bottom-section {
-            padding: 15px 40px;
+            padding: 18px 40px;
             display: flex;
             gap: 20px;
         }
@@ -448,7 +456,7 @@
         
         /* Themes Section */
         .themes-section {
-            padding: 20px 40px;
+            padding: 18px 40px;
         }
         
         .themes-grid {
@@ -475,11 +483,11 @@
         
         /* Methodology Section */
         .methodology-section {
-            padding: 20px 40px;
+            padding: 18px 40px;
         }
         
         .methodology-title {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 700;
             margin-bottom: 4px;
             color: #1a1a1a;
@@ -521,13 +529,26 @@
         
         /* Next Steps Section */
         .next-steps-section {
-            padding: 20px 40px 20px 40px;
+            padding: 18px 40px;
         }
         
         /* Page 2 Container */
         .page-two {
             height: 297mm;
             position: relative;
+        }
+        
+        .page-two-header {
+            background-color: #061133;
+            padding: 4px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            border: 0;
+            width: 100%;
+            height: 22px;
+            box-sizing: border-box;
         }
         
         .page-two .footer {
@@ -537,8 +558,12 @@
             right: 0;
         }
         
-        .bottom-section {
+        .page-two {
             page-break-before: always;
+        }
+        
+        .page-two .bottom-section {
+            padding-top: 18px;
         }
         
         .disclaimer {
@@ -556,8 +581,8 @@
     <!-- Header -->
     <div class="header">
         <div class="header-content">
-            <div class="header-title">Managed strategies portfolio</div>
-            <div class="header-date">{{report_date}}</div>
+        <div class="header-title">Managed strategies portfolio</div>
+        <div class="header-date">{{report_date}}</div>
         </div>
     </div>
     
@@ -597,7 +622,7 @@
     <div class="portfolio-section">
         <div class="section-title">Your portfolio</div>
         <div class="portfolio-description">
-            This portfolio is constructed using principles of Modern Portfolio Theory (MPT), which seeks to optimize risk-adjusted returns through broad diversification across various asset classes. Similar to methodologies popularized by platforms like Wealthfront.
+            This portfolio is constructed using principles of Modern Portfolio Theory (MPT), which seeks to optimize risk-adjusted returns through broad diversification across various asset classes. Similar to methodologies popularized by platforms like Wealthfront, we utilize a systematic approach to asset allocation based on your risk profile and investment horizon.
         </div>
         
         <!-- Holdings Table -->
@@ -626,9 +651,11 @@
     <div class="allocation-section">
         <div class="allocation-chart-container">
             <div class="section-title">Allocation</div>
-            <img src="{{allocation_chart}}" class="allocation-chart" />
-            <div class="allocation-legend">
-                {{allocation_legend}}
+            <div class="allocation-content">
+                <img src="{{allocation_chart}}" class="allocation-chart" />
+                <div class="allocation-legend">
+                    {{allocation_legend}}
+                </div>
             </div>
         </div>
         
@@ -687,6 +714,12 @@
     
     <!-- Page 2 Container -->
     <div class="page-two">
+    <!-- Header Page 2 (Footer Style) -->
+    <div class="page-two-header">
+        <img src="{{logo_path}}" alt="Paasa" class="footer-logo" />
+        <div class="page-number">Page 2 of 2</div>
+    </div>
+    
     <!-- Bottom Section -->
     <div class="bottom-section">
         <!-- Geographic Exposure -->
@@ -732,16 +765,13 @@
     
     <!-- Methodology Section -->
     <div class="methodology-section">
-        <div class="methodology-title">Global Diversification for Short-Term Preservation</div>
+        <div class="methodology-title">{{methodology_title}}</div>
         <div class="methodology-subtitle">Investment methodology</div>
         <div class="methodology-description">
-            This portfolio is constructed using principles of Modern Portfolio Theory (MPT), which seeks to optimize risk-adjusted returns through broad diversification across various asset classes. Similar to methodologies popularized by platforms like Wealthfront, we emphasize global diversification to mitigate specific market risks and achieve stable growth. This approach focuses on building a resilient portfolio designed for capital preservation and modest returns.
+            {{methodology_description}}
         </div>
         <ul class="bullet-list">
-            <li>Prioritizes capital preservation and low volatility.</li>
-            <li>Globally diversified across equities, bonds, and real estate.</li>
-            <li>Utilizes cost-effective Exchange Traded Funds (ETFs).</li>
-            <li>Strategic asset allocation tailored for shorter time horizons.</li>
+            {{methodology_bullets}}
         </ul>
     </div>
     

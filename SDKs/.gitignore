@@ -1,5 +1,31 @@
+# Python
 __pycache__/
-*.pyc
-.env
-output/
+*.py[cod]
+*$py.class
+*.so
+.Python
 
+# Environment
+.env
+.venv
+env/
+venv/
+
+# Output
+output/
+*.pdf
+*.html
+
+# Input files (may contain sensitive data)
+input_*.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
